@@ -1,0 +1,3 @@
+"C:\Program Files (x86)\JetBrains\CLion 2016.3.2\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\genericwave.dir/objects.a
+C:\mingw64\bin\ar.exe cr CMakeFiles\genericwave.dir/objects.a @CMakeFiles\genericwave.dir\objects1.rsp
+C:\mingw64\bin\g++.exe  -IC:/dev/libs/jsoncpp/include -IC:/dev/libs/SFML/include -g  -LC:/dev/libs/jsoncpp/lib -LC:/dev/libs/SFML/lib -Wl,--whole-archive CMakeFiles\genericwave.dir/objects.a -Wl,--no-whole-archive  -o genericwave.exe -Wl,--out-implib,libgenericwave.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\genericwave.dir\linklibs.rsp

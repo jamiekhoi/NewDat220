@@ -1,0 +1,4 @@
+"C:\Program Files (x86)\JetBrains\CLion 2016.3.2\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_CXX_FLAGS=-IC:/dev/libs/jsoncpp/include -IC:/dev/libs/SFML/include" "-DCMAKE_EXE_LINKER_FLAGS=-LC:/dev/libs/jsoncpp/lib -LC:/dev/libs/SFML/lib" -G "CodeBlocks - MinGW Makefiles" C:\Users\Jack\CLionProjects\genericwave
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug
