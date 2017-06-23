@@ -17,6 +17,13 @@ public:
     void setPosition(float x, float y);
     void process();
     void draw(sf::RenderWindow &window);
+    bool checkCollision();
+    sf::Sprite getsfSprite();
+    void printPos();
+
+    float getX() const;
+
+    float getY() const;
 
 protected:
 

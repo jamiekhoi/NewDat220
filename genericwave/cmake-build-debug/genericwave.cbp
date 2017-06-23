@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="genericwave">
-				<Option output="C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/genericwave.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug"/>
+				<Option output="C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/genericwave.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -32,15 +32,15 @@
 					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include/c++/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 genericwave"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 genericwave"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="genericwave/fast">
-				<Option output="C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/genericwave.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug"/>
+				<Option output="C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/genericwave.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,91 +53,91 @@
 					<Add directory="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/include/c++/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 genericwave/fast"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 genericwave/fast"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/Pistol.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/Pistol.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/Player.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Player.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/Player.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/TestState.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/TestState.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/Weapon.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Weapon.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/gamemachine.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/gamemachine.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/layer.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/layer.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/layer.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/layer.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/main.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/main.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/map.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/map.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/map.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/map.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/object.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/object.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/object.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/object.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/sprite.cpp">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/sprite.cpp">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/sprite.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/sprite.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/state.h">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/state.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/CLionProjects/genericwave/CMakeLists.txt">
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

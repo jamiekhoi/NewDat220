@@ -10,7 +10,7 @@
 
 TestState::TestState() {
 // Load map information from JSON into object list
-    if (!Map::load("Bilder/Stages/TMX/teststage2.json", objects))
+    if (!Map::load("Bilder/Stages/TMX/teststage3.json", objects))
     {
         std::cout << "Failed to load map data." << std::endl;
     }
@@ -36,12 +36,24 @@ void TestState::Running() {
         object->draw(machine->getWindow());
     }
     player->process();
+    // Crude. Actually centers around player sprite's upper left corner
+    sf::View tempView = machine->getWindow().getView();
+    float tempx = player->getX();
+    float tempy = player->getY();
+    tempView.setCenter(tempx, tempy);
     player->draw(machine->getWindow());
+    machine->getWindow().setView(tempView);
     machine->getWindow().display();
 }
 
 void TestState::handleEvent(sf::Event &event) {
-
+    if (event.type == sf::Event::MouseButtonPressed)
+    {
+        player->printPos();
+        sf::Vector2f worldPos = machine->getWindow().mapPixelToCoords(sf::Mouse::getPosition(machine->getWindow()));
+        std::cout << "Relative Mouse pos" << std::endl << "x: " << worldPos.x << "\ty: " << worldPos.y << std::endl << std::endl;
+        std::cout << "Real Mouse pos" << std::endl << "x: " << sf::Mouse::getPosition(machine->getWindow()).x << "\ty: " << sf::Mouse::getPosition(machine->getWindow()).y << std::endl << std::endl;
+    }
 }
 
 void TestState::setMachine(GameMachine *machine) {

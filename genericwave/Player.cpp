@@ -94,3 +94,20 @@ void Player::process() {
 
     clock.restart();
 }
+
+sf::Sprite Player::getsfSprite() {
+    return sprite;
+}
+
+void Player::printPos() {
+    std::cout << "Player positions (variable): " << x << ", " << y << std::endl;
+    std::cout << "Player sprite position: " << sprite.getPosition().x << ", " << sprite.getPosition().y << std::endl;
+}
+
+float Player::getX() const {
+    return x;
+}
+
+float Player::getY() const {
+    return y;
+}

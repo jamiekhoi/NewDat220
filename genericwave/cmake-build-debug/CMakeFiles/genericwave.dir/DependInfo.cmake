@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Jack/CLionProjects/genericwave/Pistol.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Pistol.cpp.obj"
-  "C:/Users/Jack/CLionProjects/genericwave/Player.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Player.cpp.obj"
-  "C:/Users/Jack/CLionProjects/genericwave/TestState.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/TestState.cpp.obj"
-  "C:/Users/Jack/CLionProjects/genericwave/gamemachine.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/gamemachine.cpp.obj"
-  "C:/Users/Jack/CLionProjects/genericwave/layer.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/layer.cpp.obj"
-  "C:/Users/Jack/CLionProjects/genericwave/main.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/main.cpp.obj"
-  "C:/Users/Jack/CLionProjects/genericwave/map.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/map.cpp.obj"
-  "C:/Users/Jack/CLionProjects/genericwave/object.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/object.cpp.obj"
-  "C:/Users/Jack/CLionProjects/genericwave/sprite.cpp" "C:/Users/Jack/CLionProjects/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/sprite.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Pistol.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/Player.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Player.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/TestState.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/gamemachine.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/layer.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/layer.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/main.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/main.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/map.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/map.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/object.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/object.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/sprite.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/sprite.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

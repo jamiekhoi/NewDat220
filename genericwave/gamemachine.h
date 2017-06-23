@@ -30,10 +30,23 @@ protected:
     State* currentState;
     std::vector<State*> states;
     sf::RenderWindow window;
-    //int windowheight = 1080;
-    //int windowwidth = 1920;
-    int windowheight = 720;
-    int windowwidth = 1280;
+
+    // Window ratio
+    float windowRatio = 2.125;
+
+    //1920x1080 1280x720
+    //1700/800 = 2.125 (i.e. width = height*2.125)
+    int windowHeight = 800;
+    int windowWidth = 1700;
+    int lowResWindowHeight = 580;
+    float lowResWindowWidth = 1232.5;
+
+    int viewCenterX = 0;
+    int viewCenterY = 0;
+
+    //width/height = 2.125 (or same ratio as window)
+    int viewWidth = 1700;
+    int viewHeight = 800;
 
 };
 

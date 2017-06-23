@@ -42,10 +42,10 @@ RM = "C:\Program Files (x86)\JetBrains\CLion 2016.3.2\bin\cmake\bin\cmake.exe" -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Jack\CLionProjects\genericwave
+CMAKE_SOURCE_DIR = C:\Users\Jack\Desktop\NewDat220\genericwave
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/genericwave.dir/depend.make
@@ -58,16 +58,16 @@ include CMakeFiles/genericwave.dir/flags.make
 
 CMakeFiles/genericwave.dir/main.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/genericwave.dir/main.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\main.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/genericwave.dir/main.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\main.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\main.cpp
 
 CMakeFiles/genericwave.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/main.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\main.cpp > CMakeFiles\genericwave.dir\main.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\main.cpp > CMakeFiles\genericwave.dir\main.cpp.i
 
 CMakeFiles/genericwave.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/main.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\main.cpp -o CMakeFiles\genericwave.dir\main.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\main.cpp -o CMakeFiles\genericwave.dir\main.cpp.s
 
 CMakeFiles/genericwave.dir/main.cpp.obj.requires:
 
@@ -82,16 +82,16 @@ CMakeFiles/genericwave.dir/main.cpp.obj.provides.build: CMakeFiles/genericwave.d
 
 CMakeFiles/genericwave.dir/gamemachine.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/gamemachine.cpp.obj: ../gamemachine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/genericwave.dir/gamemachine.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\gamemachine.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\gamemachine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/genericwave.dir/gamemachine.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\gamemachine.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\gamemachine.cpp
 
 CMakeFiles/genericwave.dir/gamemachine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/gamemachine.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\gamemachine.cpp > CMakeFiles\genericwave.dir\gamemachine.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\gamemachine.cpp > CMakeFiles\genericwave.dir\gamemachine.cpp.i
 
 CMakeFiles/genericwave.dir/gamemachine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/gamemachine.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\gamemachine.cpp -o CMakeFiles\genericwave.dir\gamemachine.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\gamemachine.cpp -o CMakeFiles\genericwave.dir\gamemachine.cpp.s
 
 CMakeFiles/genericwave.dir/gamemachine.cpp.obj.requires:
 
@@ -106,16 +106,16 @@ CMakeFiles/genericwave.dir/gamemachine.cpp.obj.provides.build: CMakeFiles/generi
 
 CMakeFiles/genericwave.dir/TestState.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../TestState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/genericwave.dir/TestState.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\TestState.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\TestState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/genericwave.dir/TestState.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\TestState.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\TestState.cpp
 
 CMakeFiles/genericwave.dir/TestState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/TestState.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\TestState.cpp > CMakeFiles\genericwave.dir\TestState.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\TestState.cpp > CMakeFiles\genericwave.dir\TestState.cpp.i
 
 CMakeFiles/genericwave.dir/TestState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/TestState.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\TestState.cpp -o CMakeFiles\genericwave.dir\TestState.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\TestState.cpp -o CMakeFiles\genericwave.dir\TestState.cpp.s
 
 CMakeFiles/genericwave.dir/TestState.cpp.obj.requires:
 
@@ -130,16 +130,16 @@ CMakeFiles/genericwave.dir/TestState.cpp.obj.provides.build: CMakeFiles/genericw
 
 CMakeFiles/genericwave.dir/map.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/map.cpp.obj: ../map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/genericwave.dir/map.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\map.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/genericwave.dir/map.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\map.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\map.cpp
 
 CMakeFiles/genericwave.dir/map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/map.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\map.cpp > CMakeFiles\genericwave.dir\map.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\map.cpp > CMakeFiles\genericwave.dir\map.cpp.i
 
 CMakeFiles/genericwave.dir/map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/map.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\map.cpp -o CMakeFiles\genericwave.dir\map.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\map.cpp -o CMakeFiles\genericwave.dir\map.cpp.s
 
 CMakeFiles/genericwave.dir/map.cpp.obj.requires:
 
@@ -154,16 +154,16 @@ CMakeFiles/genericwave.dir/map.cpp.obj.provides.build: CMakeFiles/genericwave.di
 
 CMakeFiles/genericwave.dir/layer.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/layer.cpp.obj: ../layer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/genericwave.dir/layer.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\layer.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\layer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/genericwave.dir/layer.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\layer.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\layer.cpp
 
 CMakeFiles/genericwave.dir/layer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/layer.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\layer.cpp > CMakeFiles\genericwave.dir\layer.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\layer.cpp > CMakeFiles\genericwave.dir\layer.cpp.i
 
 CMakeFiles/genericwave.dir/layer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/layer.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\layer.cpp -o CMakeFiles\genericwave.dir\layer.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\layer.cpp -o CMakeFiles\genericwave.dir\layer.cpp.s
 
 CMakeFiles/genericwave.dir/layer.cpp.obj.requires:
 
@@ -178,16 +178,16 @@ CMakeFiles/genericwave.dir/layer.cpp.obj.provides.build: CMakeFiles/genericwave.
 
 CMakeFiles/genericwave.dir/object.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/object.cpp.obj: ../object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/genericwave.dir/object.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\object.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/genericwave.dir/object.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\object.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\object.cpp
 
 CMakeFiles/genericwave.dir/object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/object.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\object.cpp > CMakeFiles\genericwave.dir\object.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\object.cpp > CMakeFiles\genericwave.dir\object.cpp.i
 
 CMakeFiles/genericwave.dir/object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/object.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\object.cpp -o CMakeFiles\genericwave.dir\object.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\object.cpp -o CMakeFiles\genericwave.dir\object.cpp.s
 
 CMakeFiles/genericwave.dir/object.cpp.obj.requires:
 
@@ -202,16 +202,16 @@ CMakeFiles/genericwave.dir/object.cpp.obj.provides.build: CMakeFiles/genericwave
 
 CMakeFiles/genericwave.dir/sprite.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/sprite.cpp.obj: ../sprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/genericwave.dir/sprite.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\sprite.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\sprite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/genericwave.dir/sprite.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\sprite.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\sprite.cpp
 
 CMakeFiles/genericwave.dir/sprite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/sprite.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\sprite.cpp > CMakeFiles\genericwave.dir\sprite.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\sprite.cpp > CMakeFiles\genericwave.dir\sprite.cpp.i
 
 CMakeFiles/genericwave.dir/sprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/sprite.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\sprite.cpp -o CMakeFiles\genericwave.dir\sprite.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\sprite.cpp -o CMakeFiles\genericwave.dir\sprite.cpp.s
 
 CMakeFiles/genericwave.dir/sprite.cpp.obj.requires:
 
@@ -226,16 +226,16 @@ CMakeFiles/genericwave.dir/sprite.cpp.obj.provides.build: CMakeFiles/genericwave
 
 CMakeFiles/genericwave.dir/Player.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/genericwave.dir/Player.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\Player.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/genericwave.dir/Player.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\Player.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\Player.cpp
 
 CMakeFiles/genericwave.dir/Player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/Player.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\Player.cpp > CMakeFiles\genericwave.dir\Player.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\Player.cpp > CMakeFiles\genericwave.dir\Player.cpp.i
 
 CMakeFiles/genericwave.dir/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/Player.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\Player.cpp -o CMakeFiles\genericwave.dir\Player.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\Player.cpp -o CMakeFiles\genericwave.dir\Player.cpp.s
 
 CMakeFiles/genericwave.dir/Player.cpp.obj.requires:
 
@@ -250,16 +250,16 @@ CMakeFiles/genericwave.dir/Player.cpp.obj.provides.build: CMakeFiles/genericwave
 
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: CMakeFiles/genericwave.dir/flags.make
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Pistol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/genericwave.dir/Pistol.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\Pistol.cpp.obj -c C:\Users\Jack\CLionProjects\genericwave\Pistol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/genericwave.dir/Pistol.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\Pistol.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\Pistol.cpp
 
 CMakeFiles/genericwave.dir/Pistol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/Pistol.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\CLionProjects\genericwave\Pistol.cpp > CMakeFiles\genericwave.dir\Pistol.cpp.i
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\Pistol.cpp > CMakeFiles\genericwave.dir\Pistol.cpp.i
 
 CMakeFiles/genericwave.dir/Pistol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/Pistol.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\CLionProjects\genericwave\Pistol.cpp -o CMakeFiles\genericwave.dir\Pistol.cpp.s
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\Pistol.cpp -o CMakeFiles\genericwave.dir\Pistol.cpp.s
 
 CMakeFiles/genericwave.dir/Pistol.cpp.obj.requires:
 
@@ -300,7 +300,7 @@ genericwave.exe: CMakeFiles/genericwave.dir/build.make
 genericwave.exe: CMakeFiles/genericwave.dir/linklibs.rsp
 genericwave.exe: CMakeFiles/genericwave.dir/objects1.rsp
 genericwave.exe: CMakeFiles/genericwave.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable genericwave.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable genericwave.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\genericwave.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -325,6 +325,6 @@ CMakeFiles/genericwave.dir/clean:
 .PHONY : CMakeFiles/genericwave.dir/clean
 
 CMakeFiles/genericwave.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Jack\CLionProjects\genericwave C:\Users\Jack\CLionProjects\genericwave C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug C:\Users\Jack\CLionProjects\genericwave\cmake-build-debug\CMakeFiles\genericwave.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Jack\Desktop\NewDat220\genericwave C:\Users\Jack\Desktop\NewDat220\genericwave C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles\genericwave.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/genericwave.dir/depend
 
