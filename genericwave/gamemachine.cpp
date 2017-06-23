@@ -18,9 +18,12 @@ GameMachine::GameMachine() {
         window.create(sf::VideoMode(lowResWindowWidth, lowResWindowHeight), "Zombie Wave Annihilation", sf::Style::Default, settings);
     }
 
-    window.setVerticalSyncEnabled(true);
     // Set framerate limit. Otherwise game speed would be dependent on cpu speed.
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(0);
+    
+    // Vertical sync limits framerate. WHY???
+    //window.setVerticalSyncEnabled(true);
+
     // Disables a keypress held resulting in multiple presses
     window.setKeyRepeatEnabled(false);
 
