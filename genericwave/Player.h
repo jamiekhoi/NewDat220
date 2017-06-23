@@ -20,6 +20,9 @@ public:
     bool checkCollision();
     sf::Sprite getsfSprite();
     void printPos();
+    bool collisionWithPlayer();
+    bool collisionWithPlayer(int i);
+
 
     float getX() const;
 

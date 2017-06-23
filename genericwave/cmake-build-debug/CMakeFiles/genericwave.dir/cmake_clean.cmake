@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/genericwave.dir/sprite.cpp.obj"
   "CMakeFiles/genericwave.dir/Player.cpp.obj"
   "CMakeFiles/genericwave.dir/Pistol.cpp.obj"
+  "CMakeFiles/genericwave.dir/CollisionTester.cpp.obj"
   "genericwave.pdb"
   "genericwave.exe"
   "genericwave.exe.manifest"

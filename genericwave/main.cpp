@@ -3,6 +3,11 @@
 #include "TestState.h"
 
 int main() {
+    /*
+     * Need to create bounds for the game
+     * collision test for objects
+     *
+     */
     std::cout << "Hello, World!" << std::endl;
 
     GameMachine* WaveShooter = new GameMachine();

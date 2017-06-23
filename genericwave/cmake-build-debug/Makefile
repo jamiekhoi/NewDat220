@@ -122,6 +122,33 @@ genericwave/fast:
 	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/build
 .PHONY : genericwave/fast
 
+CollisionTester.obj: CollisionTester.cpp.obj
+
+.PHONY : CollisionTester.obj
+
+# target to build an object file
+CollisionTester.cpp.obj:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/CollisionTester.cpp.obj
+.PHONY : CollisionTester.cpp.obj
+
+CollisionTester.i: CollisionTester.cpp.i
+
+.PHONY : CollisionTester.i
+
+# target to preprocess a source file
+CollisionTester.cpp.i:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/CollisionTester.cpp.i
+.PHONY : CollisionTester.cpp.i
+
+CollisionTester.s: CollisionTester.cpp.s
+
+.PHONY : CollisionTester.s
+
+# target to generate assembly for a file
+CollisionTester.cpp.s:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/CollisionTester.cpp.s
+.PHONY : CollisionTester.cpp.s
+
 Pistol.obj: Pistol.cpp.obj
 
 .PHONY : Pistol.obj
@@ -374,6 +401,9 @@ help:
 	@echo ... genericwave
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... CollisionTester.obj
+	@echo ... CollisionTester.i
+	@echo ... CollisionTester.s
 	@echo ... Pistol.obj
 	@echo ... Pistol.i
 	@echo ... Pistol.s
