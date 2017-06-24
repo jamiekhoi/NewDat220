@@ -10,7 +10,7 @@
 
 TestState::TestState() {
 // Load map information from JSON into object list
-    if (!Map::load("Bilder/Stages/TMX/teststage3.json", objects))
+    if (!Map::load("Bilder/Stages/TMX/teststage3.json", objects, obstacles))
     {
         std::cout << "Failed to load map data." << std::endl;
     }
@@ -31,18 +31,42 @@ TestState::TestState() {
 
 void TestState::Running() {
     machine->getWindow().clear(sf::Color::Black);
+
+    // Draw the map
     for (Object* object : objects)
     {
         object->draw(machine->getWindow());
     }
+
+    // Move the user, ect.
     player->process();
+
+    // Draw the user
+    player->draw(machine->getWindow());
+
+    //std::cout << "OBSTACLE SIZE: " << obstacles.size() << std::endl;
+    // For testing. Drawing obstacles
+    for(sf::RectangleShape* obstacle: obstacles)
+    {
+        //std::cout << "OBSTACLE" << std::endl;
+        machine->getWindow().draw(*obstacle);
+    }
+
+    sf::RectangleShape rectangle;
+    rectangle.setSize(sf::Vector2f(100, 50));
+    rectangle.setOutlineColor(sf::Color::Red);
+    rectangle.setPosition(10, 20);
+    machine->getWindow().draw(rectangle);
+
+    // Set the view (what the user sees of the game map)
     // Crude. Actually centers around player sprite's upper left corner
     sf::View tempView = machine->getWindow().getView();
     float tempx = player->getX();
     float tempy = player->getY();
     tempView.setCenter(tempx, tempy);
-    player->draw(machine->getWindow());
     machine->getWindow().setView(tempView);
+
+    // Draw the screen
     machine->getWindow().display();
 }
 

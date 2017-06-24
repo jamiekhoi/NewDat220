@@ -15,7 +15,10 @@ class TestState: public State {
 public:
     TestState();
     void Running();
+
+    // Handles event
     void handleEvent(sf::Event& event);
+
     void setMachine(GameMachine* machine);
     void extrafunc(std::string command);
 
@@ -23,8 +26,13 @@ protected:
     GameMachine* machine;
     // List of game objects. Should of course be put somewhere else in a bigger game
     std::list<Object*> objects;
-    //std::list<sf::Rect*> obstacles;
+
+    // List of obstacles for hit-test collision
+    std::list<sf::RectangleShape*> obstacles;
+
     sf::Clock clock;
+
+    // Player that the user controls
     Player* player;
 };
 

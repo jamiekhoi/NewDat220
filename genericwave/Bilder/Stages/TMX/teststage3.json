@@ -14,7 +14,7 @@
         {
          "draworder":"topdown",
          "height":40,
-         "name":"hindringer",
+         "name":"obstacles",
          "objects":[
                 {
                  "height":432,

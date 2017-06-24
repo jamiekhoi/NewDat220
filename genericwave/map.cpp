@@ -16,7 +16,7 @@
 #include "sprite.h"
 #include "layer.h"
 
-bool Map::load(std::string filename, std::list<Object*>& objects)
+bool Map::load(std::string filename, std::list<Object*>& objects, std::list<sf::RectangleShape*>& obstacles)
 {
 	// Will contain the data we read in
 	Json::Value root;
@@ -45,10 +45,18 @@ bool Map::load(std::string filename, std::list<Object*>& objects)
 	// Read in each layer
 	for (Json::Value& layer: root["layers"])
 	{
-		if (layer["name"].asString() != "objects")
-			loadLayer(layer, objects, tileSize);
+		if (layer["name"].asString() == "objects")
+        {
+            loadObjects(root, layer, objects, tileSize);
+        }
+        else if(layer["name"].asString() == "obstacles"){
+            std::cout << "Loading obstacles" << std::endl;
+            loadObstacles(layer, obstacles, tileSize);
+        }
 		else
-			loadObjects(root, layer, objects, tileSize);
+        {
+            loadLayer(layer, objects, tileSize);
+        }
 	}
 
 	// Read in tileset (Should be handled by a resource handler)
@@ -101,4 +109,34 @@ void Map::loadObjects(Json::Value& root, Json::Value& layer, std::list<Object*>&
 
 		objects.push_back(sprite);
 	}
+}
+
+void Map::loadObstacles(Json::Value& layer, std::list<sf::RectangleShape*>& obstacles, TileSize tileSize)
+{
+    // Get all objects from layer
+    for (Json::Value& object: layer["objects"])
+    {
+        sf::RectangleShape* obstacle = new sf::RectangleShape();
+
+        // Load basic object info
+        obstacle->setSize(sf::Vector2f(object["width"].asInt(), object["height"].asInt()));
+        obstacle->setPosition(object["x"].asInt(), object["y"].asInt());
+        /*
+        obstacle->left = object["x"].asInt();
+        obstacle->top = object["y"].asInt();// - sprite->tileSize.y;
+        // std::cout << "y: " << sprite->y <<std::endl;
+        obstacle->width = object["width"].asInt();
+        obstacle->height = object["height"].asInt();
+        */
+
+        // For testing
+        obstacle->setFillColor(sf::Color::Red);
+        obstacle->setOutlineColor(sf::Color::Red);
+        obstacle->setOutlineThickness(5);
+
+        //std::cout << std::endl << "obstacle position: " << object["x"].asInt() << ", " << object["y"].asInt() << std::endl;
+        //std::cout << std::endl << "obstacle size: width " << object["width"].asInt() << ", height " << object["height"].asInt() << std::endl;
+
+        obstacles.push_back(obstacle);
+    }
 }
