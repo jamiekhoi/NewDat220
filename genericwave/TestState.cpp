@@ -30,6 +30,27 @@ TestState::TestState() {
 }
 
 void TestState::Running() {
+
+    // Move the user, ect.
+    player->process();
+
+    for(sf::RectangleShape* obs: obstacles) {
+        // Weird behaviour when this is while statement instead of if statement
+        if (player->checkCollision(obs)) {
+            std::cout << "hit obstacle!" << std::endl;
+            if(player->getLeftright() == "right"){
+                player->move(-2, 0);
+            } else{
+                player->move(2, 0);
+            }
+            if(player->getUpdown() == "up"){
+                player->move(0, 2);
+            } else{
+                player->move(0, -2);
+            }
+        }
+    }
+
     machine->getWindow().clear(sf::Color::Black);
 
     // Draw the map
@@ -37,9 +58,6 @@ void TestState::Running() {
     {
         object->draw(machine->getWindow());
     }
-
-    // Move the user, ect.
-    player->process();
 
     // Draw the user
     player->draw(machine->getWindow());
