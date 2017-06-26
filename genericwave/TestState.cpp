@@ -40,6 +40,7 @@ void TestState::Running() {
         //std::cout << "collision: " << player->checkCollision(obs) << std::endl;
         while (player->checkCollision(obs)) {
             //std::cout << "time" << std::endl;
+            /*
             if(player->getLeftright() == "right"){
                 player->move(-1, 0);
             } else{
@@ -49,7 +50,7 @@ void TestState::Running() {
                 player->move(0, 1);
             } else{
                 player->move(0, -1);
-            }
+            }*/
         }
         //std::cout << "out" << std::endl;
     }

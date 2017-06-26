@@ -27,7 +27,7 @@ Player::Player() {
     currentanimiation = 0;
 
     // Height and width of a frame for the character.
-    height = width = 50;
+    height = width = -50;
 
     // Starting position of the player.
     x = y = 50;
@@ -145,5 +145,22 @@ bool Player::checkCollision(Obstacle *a) {
     // For some reason the sf::sprite's .getGlobalBounds() doesn't update right away.
     // but the sf::sprite's info(position) is.
     sf::FloatRect* temp = new sf::FloatRect(x, y, width, height);
-    return a->getGlobalBounds().intersects(*temp);
+    while(a->left.getGlobalBounds().intersects(*temp)){
+        move(-1, 0);
+        temp = new sf::FloatRect(x, y, width, height);
+    }
+    while(a->right.getGlobalBounds().intersects(*temp)){
+        move(1, 0);
+        temp = new sf::FloatRect(x, y, width, height);
+    }
+    while(a->top.getGlobalBounds().intersects(*temp)){
+        move(0, -1);
+        temp = new sf::FloatRect(x, y, width, height);
+    }
+    while(a->bottom.getGlobalBounds().intersects(*temp)){
+        move(0, 1);
+        temp = new sf::FloatRect(x, y, width, height);
+    }
+    //return a->getGlobalBounds().intersects(*temp);
+    return false;
 }

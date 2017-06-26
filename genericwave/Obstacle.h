@@ -22,12 +22,13 @@ public:
     void setSize(const sf::Vector2f &size);
     void draw(sf::RenderWindow& window);
 
-protected:
     // Create hit-test objects for each side of the obstacle
     sf::RectangleShape left;
     sf::RectangleShape right;
     sf::RectangleShape top;
     sf::RectangleShape bottom;
+
+protected:
 
     int thickness = 2;
 
