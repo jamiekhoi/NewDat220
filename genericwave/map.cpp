@@ -120,6 +120,8 @@ void Map::loadObstacles(Json::Value& layer, std::list<Obstacle*>& obstacles, Til
         Obstacle* obstacle = new Obstacle();
 
         // Load basic object info
+        // NB!!!    Size must be set first for side collision to be implemented correctly
+        //          Check Obstacle members for more detail.
         obstacle->setSize(sf::Vector2f(object["width"].asInt(), object["height"].asInt()));
         obstacle->setPosition(object["x"].asInt(), object["y"].asInt());
         /*

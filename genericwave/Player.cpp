@@ -30,7 +30,7 @@ Player::Player() {
     height = width = 50;
 
     // Starting position of the player.
-    x = y = 500;
+    x = y = 50;
     sprite.setPosition(x, y);
 
     frameDuration = 700;

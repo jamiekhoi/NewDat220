@@ -21,10 +21,29 @@ protected:
     // Create hit-test objects for each side of the obstacle
     sf::RectangleShape left;
     sf::RectangleShape right;
-    sf::RectangleShape up;
-    sf::RectangleShape down;
+    sf::RectangleShape top;
+    sf::RectangleShape bottom;
 
 };
 
+
+class Obstacle2: public sf::FloatRect{
+public:
+    Obstacle2() : sf::FloatRect(){
+
+    }
+
+    // Extend base classes from sf::Rectangleshape
+    void setPosition (float x, float y);
+    void setSize(const sf::Vector2f &size);
+
+protected:
+    // Create hit-test objects for each side of the obstacle
+    sf::RectangleShape left;
+    sf::RectangleShape right;
+    sf::RectangleShape top;
+    sf::RectangleShape bottom;
+
+};
 
 #endif //GENERICWAVE_OBSTACLE_H

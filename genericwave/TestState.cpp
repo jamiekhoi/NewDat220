@@ -38,38 +38,21 @@ void TestState::Running() {
     for(Obstacle* obs: obstacles) {
         // Weird behaviour when this is while statement instead of if statement
         //std::cout << "collision: " << player->checkCollision(obs) << std::endl;
-        if (player->checkCollision(obs)) {
-            /*
+        while (player->checkCollision(obs)) {
+            //std::cout << "time" << std::endl;
             if(player->getLeftright() == "right"){
-                player->move(-0, 0);
+                player->move(-1, 0);
             } else{
-                player->move(0, 0);
+                player->move(1, 0);
             }
             if(player->getUpdown() == "up"){
-                player->move(0, 0);
+                player->move(0, 1);
             } else{
-                player->move(0, -0);
-            }*/
-            //player->move(-1,0);
+                player->move(0, -1);
+            }
         }
+        //std::cout << "out" << std::endl;
     }
-/*
-    std::list<Obstacle*>::iterator it = obstacles.begin();
-    bool a = player->checkCollision(*it);
-    bool b = true;
-    int i = 0;
-    sf::FloatRect playerrect= player->getsfSprite().getGlobalBounds();
-    Obstacle ob = **it;
-    sf::FloatRect obrect = ob.getGlobalBounds();
-    Player* &playah = player;
-    while(a == true){
-        i++;
-        player->move(60,60);
-        std::string name = "jack";
-        playerrect= player->getsfSprite().getGlobalBounds();
-        a = player->checkCollision(*it);
-    }
-*/
     machine->getWindow().clear(sf::Color::Black);
 
     // Draw the map
