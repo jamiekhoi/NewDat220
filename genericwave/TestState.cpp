@@ -66,17 +66,12 @@ void TestState::Running() {
 
     //std::cout << "OBSTACLE SIZE: " << obstacles.size() << std::endl;
     // For testing. Drawing obstacles
-    for(sf::RectangleShape* obstacle: obstacles)
+    for(Obstacle* obstacle: obstacles)
     {
         //std::cout << "OBSTACLE" << std::endl;
-        machine->getWindow().draw(*obstacle);
+        //machine->getWindow().draw(*obstacle);
+        obstacle->draw(machine->getWindow());
     }
-
-    sf::RectangleShape rectangle;
-    rectangle.setSize(sf::Vector2f(100, 50));
-    rectangle.setOutlineColor(sf::Color::Red);
-    rectangle.setPosition(10, 20);
-    machine->getWindow().draw(rectangle);
 
     // Set the view (what the user sees of the game map)
     // Crude. Actually centers around player sprite's upper left corner

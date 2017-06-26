@@ -124,21 +124,11 @@ void Map::loadObstacles(Json::Value& layer, std::list<Obstacle*>& obstacles, Til
         //          Check Obstacle members for more detail.
         obstacle->setSize(sf::Vector2f(object["width"].asInt(), object["height"].asInt()));
         obstacle->setPosition(object["x"].asInt(), object["y"].asInt());
-        /*
-        obstacle->left = object["x"].asInt();
-        obstacle->top = object["y"].asInt();// - sprite->tileSize.y;
-        // std::cout << "y: " << sprite->y <<std::endl;
-        obstacle->width = object["width"].asInt();
-        obstacle->height = object["height"].asInt();
-        */
 
         // For testing
-        obstacle->setFillColor(sf::Color::Red);
-        obstacle->setOutlineColor(sf::Color::Red);
-        obstacle->setOutlineThickness(5);
-
-        //std::cout << std::endl << "obstacle position: " << object["x"].asInt() << ", " << object["y"].asInt() << std::endl;
-        //std::cout << std::endl << "obstacle size: width " << object["width"].asInt() << ", height " << object["height"].asInt() << std::endl;
+        obstacle->setFillColor(sf::Color::Green);
+        obstacle->setOutlineColor(sf::Color::Green);
+        obstacle->setOutlineThickness(1);
 
         obstacles.push_back(obstacle);
     }

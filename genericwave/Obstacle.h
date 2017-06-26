@@ -10,6 +10,33 @@
 class Obstacle: public sf::RectangleShape{
 public:
     Obstacle() : sf::RectangleShape(){
+        left.setFillColor(sf::Color::Magenta);
+        right.setFillColor(sf::Color::Magenta);
+        top.setFillColor(sf::Color::Magenta);
+        bottom.setFillColor(sf::Color::Magenta);
+
+    }
+
+    // Extend base classes from sf::Rectangleshape
+    void setPosition (float x, float y);
+    void setSize(const sf::Vector2f &size);
+    void draw(sf::RenderWindow& window);
+
+protected:
+    // Create hit-test objects for each side of the obstacle
+    sf::RectangleShape left;
+    sf::RectangleShape right;
+    sf::RectangleShape top;
+    sf::RectangleShape bottom;
+
+    int thickness = 2;
+
+};
+
+
+class Obstacle2: public sf::FloatRect{
+public:
+    Obstacle2() : sf::FloatRect(){
 
     }
 
@@ -19,11 +46,12 @@ public:
 
 protected:
     // Create hit-test objects for each side of the obstacle
-    sf::FloatRect left;
-    sf::FloatRect right;
-    sf::FloatRect top;
-    sf::FloatRect bottom;
+    sf::FloatRect h_left;
+    sf::FloatRect h_right;
+    sf::FloatRect h_top;
+    sf::FloatRect h_bottom;
 
+    int thickness = 1;
 };
 
 #endif //GENERICWAVE_OBSTACLE_H

@@ -7,6 +7,8 @@ int main() {
      * Need to create bounds for the game
      * collision test for objects
      * Should view control be in gamemachine.cpp or in each state???
+     *
+     * Change Obstacle class in release.
      */
     std::cout << "Hello, World!" << std::endl;
 
