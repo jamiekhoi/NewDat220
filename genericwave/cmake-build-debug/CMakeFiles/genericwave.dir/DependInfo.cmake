@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/CollisionTester.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Obstacle.cpp.obj"
   "C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Pistol.cpp.obj"
   "C:/Users/Jack/Desktop/NewDat220/genericwave/Player.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Player.cpp.obj"
   "C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/TestState.cpp.obj"

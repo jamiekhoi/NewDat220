@@ -149,6 +149,33 @@ CollisionTester.cpp.s:
 	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/CollisionTester.cpp.s
 .PHONY : CollisionTester.cpp.s
 
+Obstacle.obj: Obstacle.cpp.obj
+
+.PHONY : Obstacle.obj
+
+# target to build an object file
+Obstacle.cpp.obj:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Obstacle.cpp.obj
+.PHONY : Obstacle.cpp.obj
+
+Obstacle.i: Obstacle.cpp.i
+
+.PHONY : Obstacle.i
+
+# target to preprocess a source file
+Obstacle.cpp.i:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Obstacle.cpp.i
+.PHONY : Obstacle.cpp.i
+
+Obstacle.s: Obstacle.cpp.s
+
+.PHONY : Obstacle.s
+
+# target to generate assembly for a file
+Obstacle.cpp.s:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Obstacle.cpp.s
+.PHONY : Obstacle.cpp.s
+
 Pistol.obj: Pistol.cpp.obj
 
 .PHONY : Pistol.obj
@@ -404,6 +431,9 @@ help:
 	@echo ... CollisionTester.obj
 	@echo ... CollisionTester.i
 	@echo ... CollisionTester.s
+	@echo ... Obstacle.obj
+	@echo ... Obstacle.i
+	@echo ... Obstacle.s
 	@echo ... Pistol.obj
 	@echo ... Pistol.i
 	@echo ... Pistol.s

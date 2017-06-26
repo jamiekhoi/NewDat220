@@ -4,15 +4,20 @@
 CMakeFiles/genericwave.dir/CollisionTester.cpp.obj: ../CollisionTester.cpp
 CMakeFiles/genericwave.dir/CollisionTester.cpp.obj: ../CollisionTester.h
 
+CMakeFiles/genericwave.dir/Obstacle.cpp.obj: ../Obstacle.cpp
+CMakeFiles/genericwave.dir/Obstacle.cpp.obj: ../Obstacle.h
+
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Pistol.cpp
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Pistol.h
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Weapon.h
 
+CMakeFiles/genericwave.dir/Player.cpp.obj: ../Obstacle.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Pistol.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Player.cpp
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Player.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Weapon.h
 
+CMakeFiles/genericwave.dir/TestState.cpp.obj: ../Obstacle.h
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../Player.h
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../TestState.cpp
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../TestState.h
@@ -35,6 +40,7 @@ CMakeFiles/genericwave.dir/main.cpp.obj: ../gamemachine.h
 CMakeFiles/genericwave.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/genericwave.dir/main.cpp.obj: ../state.h
 
+CMakeFiles/genericwave.dir/map.cpp.obj: ../Obstacle.h
 CMakeFiles/genericwave.dir/map.cpp.obj: ../layer.h
 CMakeFiles/genericwave.dir/map.cpp.obj: ../map.cpp
 CMakeFiles/genericwave.dir/map.cpp.obj: ../map.h

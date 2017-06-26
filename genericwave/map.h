@@ -12,6 +12,8 @@
 
 #include "object.h"
 
+class Obstacle;
+
 namespace Json
 {
 	class Value;
@@ -22,7 +24,7 @@ class Map
 {
 public:
 	// Load map from Tiled JSON file
-	static bool load(std::string filename, std::list<Object*>& objects, std::list<sf::RectangleShape*>& obstacles);
+	static bool load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles);
 
 private:
 	// Handles regular layers
@@ -31,7 +33,7 @@ private:
 	// Handles object layers
 	static void loadObjects(Json::Value& root, Json::Value& layer, std::list<Object*>& objects, TileSize tileSize);
 
-	static void loadObstacles(Json::Value &layer, std::list<sf::RectangleShape*> &obstacles, TileSize tileSize);
+	static void loadObstacles(Json::Value &layer, std::list<Obstacle*> &obstacles, TileSize tileSize);
 };
 
 #endif

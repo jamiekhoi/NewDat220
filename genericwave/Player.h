@@ -9,6 +9,7 @@
 #include <list>
 
 #include "Weapon.h"
+#include "Obstacle.h"
 
 class Player {
 public:
@@ -18,9 +19,7 @@ public:
     void move(float x, float y);
     void process();
     void draw(sf::RenderWindow &window);
-    bool checkCollision(sf::RectangleShape* a) {
-        return a->getGlobalBounds().intersects(sprite.getGlobalBounds());
-    }
+    bool checkCollision(Obstacle* a);
 
     sf::Sprite getsfSprite();
     void printPos();
@@ -64,8 +63,8 @@ protected:
     Weapon* currentWeapon;
 
     // Last direction moved
-    std::string leftright;
-    std::string updown;
+    std::string leftright = "";
+    std::string updown = "";
 
 };
 

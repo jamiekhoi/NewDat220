@@ -15,8 +15,9 @@
 #include <iostream>
 #include "sprite.h"
 #include "layer.h"
+#include "Obstacle.h"
 
-bool Map::load(std::string filename, std::list<Object*>& objects, std::list<sf::RectangleShape*>& obstacles)
+bool Map::load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles)
 {
 	// Will contain the data we read in
 	Json::Value root;
@@ -111,12 +112,12 @@ void Map::loadObjects(Json::Value& root, Json::Value& layer, std::list<Object*>&
 	}
 }
 
-void Map::loadObstacles(Json::Value& layer, std::list<sf::RectangleShape*>& obstacles, TileSize tileSize)
+void Map::loadObstacles(Json::Value& layer, std::list<Obstacle*>& obstacles, TileSize tileSize)
 {
     // Get all objects from layer
     for (Json::Value& object: layer["objects"])
     {
-        sf::RectangleShape* obstacle = new sf::RectangleShape();
+        Obstacle* obstacle = new Obstacle();
 
         // Load basic object info
         obstacle->setSize(sf::Vector2f(object["width"].asInt(), object["height"].asInt()));

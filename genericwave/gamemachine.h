@@ -48,6 +48,9 @@ protected:
     int viewWidth = 1700;
     int viewHeight = 800;
 
+    // Frame Rate Limit
+    int frameRateLimit = 60;
+
 };
 
 

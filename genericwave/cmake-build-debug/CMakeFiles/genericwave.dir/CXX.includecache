@@ -12,6 +12,14 @@ C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.h
 
+C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.cpp
+Obstacle.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+
+C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+SFML/Graphics.hpp
+-
+
 C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.cpp
 Pistol.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.h
@@ -35,6 +43,8 @@ list
 -
 Weapon.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Weapon.h
+Obstacle.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.cpp
 TestState.h
@@ -47,6 +57,8 @@ object.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/object.h
 Player.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
+Obstacle.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
 state.h
@@ -103,6 +115,8 @@ sprite.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/sprite.h
 layer.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/layer.h
+Obstacle.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/map.h
 string

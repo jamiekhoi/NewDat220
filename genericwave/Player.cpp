@@ -31,6 +31,7 @@ Player::Player() {
 
     // Starting position of the player.
     x = y = 500;
+    sprite.setPosition(x, y);
 
     frameDuration = 700;
 
@@ -57,7 +58,7 @@ void Player::draw(sf::RenderWindow &window) {
 }
 
 void Player::process() {
-
+    //std::cout << "IN PROCCESSS IN PLKAYER cLASS!!!!" << std::endl;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
         // left key is pressed: move our character
@@ -137,4 +138,12 @@ void Player::move(float x, float y) {
     this->x += x;
     this->y += y;
     sprite.setPosition(x, y);
+}
+
+bool Player::checkCollision(Obstacle *a) {
+    // Create a new sf::FloatRect to test collision
+    // For some reason the sf::sprite's .getGlobalBounds() doesn't update right away.
+    // but the sf::sprite's info(position) is.
+    sf::FloatRect* temp = new sf::FloatRect(x, y, width, height);
+    return a->getGlobalBounds().intersects(*temp);
 }

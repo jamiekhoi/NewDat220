@@ -10,6 +10,7 @@
 
 class Player;
 class Object;
+class Obstacle;
 
 class TestState: public State {
 public:
@@ -28,7 +29,7 @@ protected:
     std::list<Object*> objects;
 
     // List of obstacles for hit-test collision
-    std::list<sf::RectangleShape*> obstacles;
+    std::list<Obstacle*> obstacles;
 
     sf::Clock clock;
 

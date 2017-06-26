@@ -19,7 +19,7 @@ GameMachine::GameMachine() {
     }
 
     // Set framerate limit. Otherwise game speed would be dependent on cpu speed.
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(frameRateLimit);
 
     // Vertical sync limits framerate differently for differnt computers. WHY???
     //window.setVerticalSyncEnabled(true);

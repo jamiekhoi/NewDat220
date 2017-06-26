@@ -7,6 +7,7 @@
 #include <iostream>
 #include "object.h"
 #include "Player.h"
+#include "Obstacle.h"
 
 TestState::TestState() {
 // Load map information from JSON into object list
@@ -34,23 +35,41 @@ void TestState::Running() {
     // Move the user, ect.
     player->process();
 
-    for(sf::RectangleShape* obs: obstacles) {
+    for(Obstacle* obs: obstacles) {
         // Weird behaviour when this is while statement instead of if statement
+        //std::cout << "collision: " << player->checkCollision(obs) << std::endl;
         if (player->checkCollision(obs)) {
-            std::cout << "hit obstacle!" << std::endl;
+            /*
             if(player->getLeftright() == "right"){
-                player->move(-2, 0);
+                player->move(-0, 0);
             } else{
-                player->move(2, 0);
+                player->move(0, 0);
             }
             if(player->getUpdown() == "up"){
-                player->move(0, 2);
+                player->move(0, 0);
             } else{
-                player->move(0, -2);
-            }
+                player->move(0, -0);
+            }*/
+            //player->move(-1,0);
         }
     }
-
+/*
+    std::list<Obstacle*>::iterator it = obstacles.begin();
+    bool a = player->checkCollision(*it);
+    bool b = true;
+    int i = 0;
+    sf::FloatRect playerrect= player->getsfSprite().getGlobalBounds();
+    Obstacle ob = **it;
+    sf::FloatRect obrect = ob.getGlobalBounds();
+    Player* &playah = player;
+    while(a == true){
+        i++;
+        player->move(60,60);
+        std::string name = "jack";
+        playerrect= player->getsfSprite().getGlobalBounds();
+        a = player->checkCollision(*it);
+    }
+*/
     machine->getWindow().clear(sf::Color::Black);
 
     // Draw the map
@@ -86,15 +105,31 @@ void TestState::Running() {
 
     // Draw the screen
     machine->getWindow().display();
+
 }
 
 void TestState::handleEvent(sf::Event &event) {
     if (event.type == sf::Event::MouseButtonPressed)
     {
+        // Print Mouse Position
+        /*
         player->printPos();
         sf::Vector2f worldPos = machine->getWindow().mapPixelToCoords(sf::Mouse::getPosition(machine->getWindow()));
         std::cout << "Relative Mouse pos" << std::endl << "x: " << worldPos.x << "\ty: " << worldPos.y << std::endl << std::endl;
         std::cout << "Real Mouse pos" << std::endl << "x: " << sf::Mouse::getPosition(machine->getWindow()).x << "\ty: " << sf::Mouse::getPosition(machine->getWindow()).y << std::endl << std::endl;
+         */
+
+        // Print Player Position
+        std::cout << std::endl << "Player class pos: " << player->getX() << ", " << player->getY() << std::endl;
+        std::cout << "Sprite pos: " << player->getsfSprite().getPosition().x << ", " << player->getsfSprite().getPosition().y << std::endl;
+        sf::FloatRect fr = player->getsfSprite().getLocalBounds();
+        std::cout << "Player Local bounds pos: " << fr.left << ", " << fr.top << std::endl;
+        std::cout << "Player Local bounds size: " << fr.width << ", " << fr.height << std::endl;
+        fr = player->getsfSprite().getGlobalBounds();
+        std::cout << "Local global pos: " << fr.left << ", " << fr.top << std::endl;
+        std::cout << "Local global size: " << fr.width << ", " << fr.height << std::endl;
+
+
     }
 }
 
