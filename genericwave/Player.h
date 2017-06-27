@@ -20,6 +20,7 @@ public:
     void process();
     void draw(sf::RenderWindow &window);
     bool checkCollision(Obstacle* a);
+    bool checkPointCollision(sf::Vector2f point);
 
     sf::Sprite getsfSprite();
     void printPos();

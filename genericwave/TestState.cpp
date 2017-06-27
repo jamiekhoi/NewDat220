@@ -99,6 +99,7 @@ void TestState::handleEvent(sf::Event &event) {
          */
 
         // Print Player Position
+        /*
         std::cout << std::endl << "Player class pos: " << player->getX() << ", " << player->getY() << std::endl;
         std::cout << "Sprite pos: " << player->getsfSprite().getPosition().x << ", " << player->getsfSprite().getPosition().y << std::endl;
         sf::FloatRect fr = player->getsfSprite().getLocalBounds();
@@ -107,8 +108,15 @@ void TestState::handleEvent(sf::Event &event) {
         fr = player->getsfSprite().getGlobalBounds();
         std::cout << "Local global pos: " << fr.left << ", " << fr.top << std::endl;
         std::cout << "Local global size: " << fr.width << ", " << fr.height << std::endl;
+        */
 
-
+        // See if mouse collision with player
+        sf::Vector2f worldPos = machine->getWindow().mapPixelToCoords(sf::Mouse::getPosition(machine->getWindow()));
+        if(player->checkPointCollision(worldPos)){
+            std::cout << "hit player" << std::endl;
+        }else {
+            std::cout << "didnt hit player" << std::endl;
+        }
     }
 }
 

@@ -30,7 +30,7 @@ public:
 
 protected:
 
-    int thickness = 2;
+    int thickness = 1;
 
 };
 
