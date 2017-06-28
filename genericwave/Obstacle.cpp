@@ -7,9 +7,9 @@
 void Obstacle::setPosition(float x, float y) {
     // setSize must be call first for side variables to be positioned correctly.
     sf::RectangleShape::setPosition(x, y);
-    left.setPosition(x, y);
+    left.setPosition(x-thickness, y);
     right.setPosition(x + getSize().x , y);
-    top.setPosition(x, y);
+    top.setPosition(x, y-thickness);
     bottom.setPosition(x, y + getSize().y);
 
 }
