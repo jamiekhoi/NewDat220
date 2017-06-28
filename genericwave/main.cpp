@@ -10,7 +10,7 @@ int main() {
      * Fix player movement when game not in focus
      *
      * Change Obstacle class in release.
-     * Major memory leak
+     * Major memory leaks
      * Create de-constructors for classes
      */
     std::cout << "Hello, World!" << std::endl;
