@@ -154,45 +154,27 @@ bool Player::checkCollision(Obstacle *a) {
 
     while(a->left.getGlobalBounds().intersects(*temp)){
         move(-1, 0);
-        delete temp;
-        temp = new sf::FloatRect(x, y, width, height);
-    }
-    if(temp != nullptr){
-        delete temp;
-        temp = nullptr;
+        temp->left -= 1;
     }
 
     while(a->right.getGlobalBounds().intersects(*temp)){
         move(1, 0);
-        temp = new sf::FloatRect(x, y, width, height);
-    }
-    if(temp != nullptr){
-        delete temp;
-        temp = nullptr;
+        temp->left += 1;
     }
 
     while(a->top.getGlobalBounds().intersects(*temp)){
         move(0, -1);
-        temp = new sf::FloatRect(x, y, width, height);
-    }
-    if(temp != nullptr){
-        delete temp;
-        temp = nullptr;
+        temp->top -= 1;
     }
 
     while(a->bottom.getGlobalBounds().intersects(*temp)) {
         move(0, 1);
-        temp = new sf::FloatRect(x, y, width, height);
-    }
-    if(temp != nullptr){
-        delete temp;
-        temp = nullptr;
+        temp->top += 1;
     }
 
-    temp = new sf::FloatRect(x, y, width, height);
+
     bool b = a->getGlobalBounds().intersects(*temp);
     delete temp;
-    temp = nullptr;
 
     return b;
 }
