@@ -17,13 +17,28 @@ public:
     bool setTexture(sf::Texture texture);
     void setPosition(float x, float y);
     void move(float x, float y);
+
+    // Run from the state. Where the player moves
     void process();
+
     void draw(sf::RenderWindow &window);
+
+    // Fire weapon if possible
+    bool fireWeapon();
+
     bool checkCollision(Obstacle* a);
     bool checkPointCollision(sf::Vector2f point);
 
     sf::Sprite getsfSprite();
     void printPos();
+
+    std::ostream& operator<<(std::ostream& stream){
+        stream << "Player pos: (" << x << ", " << y << ")" << std::endl;
+        stream << "Frame count: " << framecount << std::endl;
+        return stream;
+
+    }
+
     bool collisionWithPlayer();
     bool collisionWithPlayer(int i);
 
@@ -32,13 +47,6 @@ public:
 
     float getY() const;
 
-    const std::string &getLeftright() const;
-
-    void setLeftright(const std::string &leftright);
-
-    const std::string &getUpdown() const;
-
-    void setUpdown(const std::string &updown);
 
 protected:
 
@@ -62,10 +70,6 @@ protected:
     int currentWeaponNr;
 
     Weapon* currentWeapon;
-
-    // Last direction moved
-    std::string leftright = "";
-    std::string updown = "";
 
 };
 

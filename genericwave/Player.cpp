@@ -35,6 +35,7 @@ Player::Player() {
 
     frameDuration = 700;
 
+    // Create default weapon
     currentWeaponNr = 0;
     currentWeapon = new Pistol();
     weapons.push_back(currentWeapon);
@@ -55,6 +56,7 @@ void Player::setPosition(float x, float y) {
 
 void Player::draw(sf::RenderWindow &window) {
     window.draw(sprite);
+    currentWeapon->draw(window);
 }
 
 void Player::process() {
@@ -63,29 +65,26 @@ void Player::process() {
     {
         // left key is pressed: move our character
         x -= 5;
-        leftright = "left";
         currentanimiation = 0;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
         // Right key is pressed: move our character
         x += 5;
-        leftright = "right";
         currentanimiation = 1;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
     {
         // Up key is pressed: move our character
-        updown = "up";
         y -= 5;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
     {
         // Down key is pressed: move our character
         y += 5;
-        updown = "down";
     }
     sprite.setPosition(x, y);
+    currentWeapon->setPosition(x,y);
 
     // Go to next animation frame if required
     if (clock.getElapsedTime().asMilliseconds() < frameDuration)
@@ -115,22 +114,6 @@ float Player::getX() const {
 
 float Player::getY() const {
     return y;
-}
-
-const std::string &Player::getLeftright() const {
-    return leftright;
-}
-
-void Player::setLeftright(const std::string &leftright) {
-    Player::leftright = leftright;
-}
-
-const std::string &Player::getUpdown() const {
-    return updown;
-}
-
-void Player::setUpdown(const std::string &updown) {
-    Player::updown = updown;
 }
 
 void Player::move(float x, float y) {
@@ -183,4 +166,9 @@ bool Player::checkPointCollision(sf::Vector2f point) {
     // Just to be safe (Problem in Player::CheckCollision). Nevermind.
     //sf::FloatRect* temp = new sf::FloatRect(x, y, width, height);
     return sprite.getGlobalBounds().contains(point);
+}
+
+bool Player::fireWeapon() {
+    currentWeapon->fire();
+    return false;
 }

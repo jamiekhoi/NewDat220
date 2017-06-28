@@ -38,23 +38,11 @@ void TestState::Running() {
     player->process();
 
     for(Obstacle* obs: obstacles) {
-        // Weird behaviour when this is while statement instead of if statement
-        //std::cout << "collision: " << player->checkCollision(obs) << std::endl;
+
         while (player->checkCollision(obs)) {
-            //std::cout << "time" << std::endl;
-            /*
-            if(player->getLeftright() == "right"){
-                player->move(-1, 0);
-            } else{
-                player->move(1, 0);
-            }
-            if(player->getUpdown() == "up"){
-                player->move(0, 1);
-            } else{
-                player->move(0, -1);
-            }*/
+
         }
-        //std::cout << "out" << std::endl;
+
     }
     machine->getWindow().clear(sf::Color::Black);
 
@@ -67,7 +55,6 @@ void TestState::Running() {
     // Draw the user
     player->draw(machine->getWindow());
 
-    //std::cout << "OBSTACLE SIZE: " << obstacles.size() << std::endl;
     // For testing. Drawing obstacles
     for(Obstacle* obstacle: obstacles)
     {

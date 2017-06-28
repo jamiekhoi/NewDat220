@@ -12,6 +12,7 @@ int main() {
      * Change Obstacle class in release.
      * Major memory leaks
      * Create de-constructors for classes
+     * Operation overload for <<. How to do this?
      */
     std::cout << "Hello, World!" << std::endl;
 

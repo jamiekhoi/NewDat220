@@ -12,6 +12,10 @@ public:
     virtual void fire(){}
     virtual void reload(){}
     virtual void addAmmo(){}
+    virtual void draw(sf::RenderWindow &window){}
+    virtual void setPosition(int x, int y){}
+    virtual void setRotation(float angle){}
+    virtual void rotate(float angle){}
 };
 
 
