@@ -35,6 +35,8 @@ C:/Users/Jack/Desktop/NewDat220/genericwave/Weapon.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Player.cpp
 iostream
 -
+cmath
+-
 Player.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
 Pistol.h

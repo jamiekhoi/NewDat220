@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <cmath>
 
 #include "Player.h"
 #include "Pistol.h"
@@ -55,7 +56,23 @@ void Player::setPosition(float x, float y) {
 }
 
 void Player::draw(sf::RenderWindow &window) {
+    // Draw Player
     window.draw(sprite);
+
+    // Update weapon position
+    currentWeapon->setPosition(x,y);
+
+    // Set weapon to mouse direction
+    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+    sf::Vector2f weaponPos = currentWeapon->getPosition();
+
+    double radians = atan2(mousePos.y - weaponPos.y, mousePos.x - weaponPos.x);
+    double angle = (radians*180)/3.14159265358979323846;
+
+    std::cout << angle << std::endl;
+
+    currentWeapon->setRotation(-45 + angle);
+    // Draw current weapon
     currentWeapon->draw(window);
 }
 
@@ -84,7 +101,6 @@ void Player::process() {
         y += 5;
     }
     sprite.setPosition(x, y);
-    currentWeapon->setPosition(x,y);
 
     // Go to next animation frame if required
     if (clock.getElapsedTime().asMilliseconds() < frameDuration)

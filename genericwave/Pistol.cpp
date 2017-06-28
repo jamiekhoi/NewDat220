@@ -43,14 +43,18 @@ void Pistol::setPosition(int x, int y) {
     weapon.setPosition(x, y);
 }
 
-void Pistol::setRotation(float angle) {
+void Pistol::setRotation(double angle) {
     weapon.setRotation(angle);
 }
 
-void Pistol::rotate(float angle) {
+void Pistol::rotate(double angle) {
     weapon.rotate(angle);
 }
 
 void Pistol::draw(sf::RenderWindow &window) {
     window.draw(weapon);
+}
+
+sf::Vector2f Pistol::getPosition() {
+    return weapon.getPosition();
 }

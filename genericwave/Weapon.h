@@ -14,8 +14,9 @@ public:
     virtual void addAmmo(){}
     virtual void draw(sf::RenderWindow &window){}
     virtual void setPosition(int x, int y){}
-    virtual void setRotation(float angle){}
-    virtual void rotate(float angle){}
+    virtual sf::Vector2f getPosition(){}
+    virtual void setRotation(double angle){}
+    virtual void rotate(double angle){}
 };
 
 

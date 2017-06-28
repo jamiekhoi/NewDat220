@@ -16,8 +16,9 @@ public:
     void addAmmo();
     void draw(sf::RenderWindow &window);
     void setPosition(int x, int y);
-    void setRotation(float angle);
-    void rotate(float angle);
+    sf::Vector2f getPosition();
+    void setRotation(double angle);
+    void rotate(double angle);
 
 protected:
     int ammo;
