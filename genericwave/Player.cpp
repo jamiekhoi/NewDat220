@@ -144,10 +144,9 @@ bool Player::checkCollision(Obstacle *a) {
     // Create a new sf::FloatRect to test collision
     // For some reason the sf::sprite's .getGlobalBounds() doesn't update right away.
     // but the sf::sprite's info(position) is.
+    // Should I be using pointer for this? Can I use normal variable?
     sf::FloatRect* temp = new sf::FloatRect(x, y, width, height);
 
-    // Why doesnt this work?
-    // this always returns false
     if(!a->getGlobalBounds().intersects(*temp)){
         delete temp;
         return false;
@@ -155,25 +154,45 @@ bool Player::checkCollision(Obstacle *a) {
 
     while(a->left.getGlobalBounds().intersects(*temp)){
         move(-1, 0);
+        delete temp;
         temp = new sf::FloatRect(x, y, width, height);
     }
-    delete temp;
+    if(temp != nullptr){
+        delete temp;
+        temp = nullptr;
+    }
+
     while(a->right.getGlobalBounds().intersects(*temp)){
         move(1, 0);
         temp = new sf::FloatRect(x, y, width, height);
     }
-    delete temp;
+    if(temp != nullptr){
+        delete temp;
+        temp = nullptr;
+    }
+
     while(a->top.getGlobalBounds().intersects(*temp)){
         move(0, -1);
         temp = new sf::FloatRect(x, y, width, height);
     }
-    delete temp;
+    if(temp != nullptr){
+        delete temp;
+        temp = nullptr;
+    }
+
     while(a->bottom.getGlobalBounds().intersects(*temp)) {
         move(0, 1);
         temp = new sf::FloatRect(x, y, width, height);
     }
+    if(temp != nullptr){
+        delete temp;
+        temp = nullptr;
+    }
+
+    temp = new sf::FloatRect(x, y, width, height);
     bool b = a->getGlobalBounds().intersects(*temp);
-    delete(temp);
+    delete temp;
+    temp = nullptr;
 
     return b;
 }
