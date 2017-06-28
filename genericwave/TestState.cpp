@@ -16,6 +16,8 @@ TestState::TestState() {
         std::cout << "Failed to load map data." << std::endl;
     }
 
+    // Do I need to do this? Or is it already created in initialization?
+    // Yes. I need to do this. Why doe?
     player = new Player();
 
     /*

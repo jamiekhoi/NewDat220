@@ -149,6 +149,7 @@ bool Player::checkCollision(Obstacle *a) {
     // Why doesnt this work?
     // this always returns false
     if(!a->getGlobalBounds().intersects(*temp)){
+        delete temp;
         return false;
     }
 
@@ -156,28 +157,29 @@ bool Player::checkCollision(Obstacle *a) {
         move(-1, 0);
         temp = new sf::FloatRect(x, y, width, height);
     }
+    delete temp;
     while(a->right.getGlobalBounds().intersects(*temp)){
         move(1, 0);
         temp = new sf::FloatRect(x, y, width, height);
     }
+    delete temp;
     while(a->top.getGlobalBounds().intersects(*temp)){
         move(0, -1);
         temp = new sf::FloatRect(x, y, width, height);
     }
-    while(a->bottom.getGlobalBounds().intersects(*temp)){
+    delete temp;
+    while(a->bottom.getGlobalBounds().intersects(*temp)) {
         move(0, 1);
         temp = new sf::FloatRect(x, y, width, height);
     }
+    bool b = a->getGlobalBounds().intersects(*temp);
+    delete(temp);
 
-    return a->getGlobalBounds().intersects(*temp);
+    return b;
 }
 
 bool Player::checkPointCollision(sf::Vector2f point) {
     // Just to be safe (Problem in Player::CheckCollision). Nevermind.
     //sf::FloatRect* temp = new sf::FloatRect(x, y, width, height);
-    if(sprite.getGlobalBounds().contains(point)){
-        return true;
-    }else {
-        return false;
-    }
+    return sprite.getGlobalBounds().contains(point);
 }
