@@ -27,10 +27,10 @@ Player::Player() {
     currentanimiation = 0;
 
     // Height and width of a frame for the character.
-    height = width = 0;
+    height = width = 50;
 
     // Starting position of the player.
-    x = y = 50;
+    x = y = 500;
     sprite.setPosition(x, y);
 
     frameDuration = 700;

@@ -7,8 +7,11 @@ int main() {
      * Need to create bounds for the game
      * collision test for objects
      * Should view control be in gamemachine.cpp or in each state???
+     * Fix player movement when game not in focus
      *
      * Change Obstacle class in release.
+     * Major memory leak
+     * Create de-constructors for classes
      */
     std::cout << "Hello, World!" << std::endl;
 
