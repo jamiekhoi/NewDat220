@@ -59,7 +59,7 @@ protected:
     // Height and width of the player
     int height, width;
 
-    int framecount, animations, currentframe, currentanimiation;
+    int framecount, animations, currentframe, currentDirectionAnimation;
     sf::Clock clock;
 
     // Duration of one frame in ms

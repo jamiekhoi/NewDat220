@@ -7,7 +7,7 @@
 
 Pistol::Pistol() {
 
-    if (!weaponTexture.loadFromFile("Bilder/Player/TestPlayer.png"))
+    if (!weaponTexture.loadFromFile("Bilder/Weapons/pistol.png"))
     {
         std::cout << "Failed to load Weapon texture" << std::endl;
     }

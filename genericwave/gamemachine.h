@@ -51,6 +51,9 @@ protected:
     // Frame Rate Limit
     int frameRateLimit = 60;
 
+    // Is the game in focus?
+    bool inFocus = true;
+
 };
 
 

@@ -37,7 +37,7 @@ protected:
     sf::Texture bulletTexture;
     sf::Sprite bullet;
 
-    int weaponWidth = 20;
+    int weaponWidth = 30;
     int weaponHeight = 20;
 
     int bulletWidth = 5;

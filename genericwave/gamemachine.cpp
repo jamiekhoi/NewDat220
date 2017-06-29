@@ -45,6 +45,16 @@ void GameMachine::Run() {
     sf::Event event;
     while (window.pollEvent(event))
     {
+        if(event.type == sf::Event::GainedFocus){
+            inFocus = true;
+        } else if (event.type == sf::Event::LostFocus){
+            inFocus = false;
+        }
+
+        if(!inFocus){
+            continue;
+        }
+
         if (event.type == sf::Event::Closed)
         {
             window.close();
@@ -74,7 +84,9 @@ void GameMachine::Run() {
     }
 
     // Should this wbe inside the while loop?
-    currentState->Running();
+    if(inFocus){
+        currentState->Running();
+    }
 }
 
 void GameMachine::SetState(GameMachine::StateId state) {

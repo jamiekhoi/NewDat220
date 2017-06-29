@@ -9,13 +9,18 @@
 #include "Pistol.h"
 
 Player::Player() {
-    if (!texture.loadFromFile("Bilder/Player/TestPlayer.png"))
+    if (!texture.loadFromFile("Bilder/Player/TestPlayer2.png"))
     {
         std::cout << "Failed to load Player texture" << std::endl;
     }
     sprite.setTexture(texture);
 
-    sprite.setTextureRect(sf::IntRect(0, 0, 50, 50));
+
+    // Height and width of a frame for the character.
+    height = 210;
+    width = 140;
+
+    sprite.setTextureRect(sf::IntRect(0, 0, width, height));
 
     // Two animations for the player, left facing animation and right facing animation.
     animations = 2;
@@ -25,10 +30,7 @@ Player::Player() {
 
 
     currentframe = 0;
-    currentanimiation = 0;
-
-    // Height and width of a frame for the character.
-    height = width = 50;
+    currentDirectionAnimation = 0;
 
     // Starting position of the player.
     x = y = 500;
@@ -45,7 +47,7 @@ Player::Player() {
 bool Player::setTexture(sf::Texture texture) {
     this->texture = texture;
     sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect(0, 0, 50, 50));
+    sprite.setTextureRect(sf::IntRect(0, 0, width, height));
 
     return true;
 }
@@ -56,24 +58,31 @@ void Player::setPosition(float x, float y) {
 }
 
 void Player::draw(sf::RenderWindow &window) {
-    // Draw Player
-    window.draw(sprite);
 
     // Update weapon position
     currentWeapon->setPosition(x,y);
 
-    // Set weapon to mouse direction
+    // Get direction mouse is pointing in
     sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
     sf::Vector2f weaponPos = currentWeapon->getPosition();
 
+    // Radians and angle are going clockwise, where direectly right = 0
     double radians = atan2(mousePos.y - weaponPos.y, mousePos.x - weaponPos.x);
     double angle = (radians*180)/3.14159265358979323846;
 
     std::cout << angle << std::endl;
 
+    // Set weapon to mouse direction
     currentWeapon->setRotation(-45 + angle);
+
+    // Update Player direction sprite
+
+
     // Draw current weapon
     currentWeapon->draw(window);
+
+    // Draw Player
+    window.draw(sprite);
 }
 
 void Player::process() {
@@ -82,13 +91,13 @@ void Player::process() {
     {
         // left key is pressed: move our character
         x -= 5;
-        currentanimiation = 0;
+        currentDirectionAnimation = 0;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
         // Right key is pressed: move our character
         x += 5;
-        currentanimiation = 1;
+        currentDirectionAnimation = 1;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
     {
@@ -110,7 +119,7 @@ void Player::process() {
         currentframe = 0;
     }
 
-    sprite.setTextureRect(sf::IntRect(currentframe*50, currentanimiation*50, 50, 50));
+    sprite.setTextureRect(sf::IntRect(currentframe*width, currentDirectionAnimation*height, width, height));
 
     clock.restart();
 }

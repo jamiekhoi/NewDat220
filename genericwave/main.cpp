@@ -13,6 +13,10 @@ int main() {
      * Major memory leaks
      * Create de-constructors for classes
      * Operation overload for <<. How to do this?
+     *
+     * Create an auto aim function cheat
+     * sf::Mouse::setPosition to enemy position.
+     * Create a sf::rect between player and enemy and check for obstacle collision
      */
     std::cout << "Hello, World!" << std::endl;
 
