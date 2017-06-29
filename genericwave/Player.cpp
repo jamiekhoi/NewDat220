@@ -60,7 +60,7 @@ void Player::setPosition(float x, float y) {
 void Player::draw(sf::RenderWindow &window) {
 
     // Update weapon position
-    currentWeapon->setPosition(x,y);
+    currentWeapon->setPosition(x,y + height);
 
     // Get direction mouse is pointing in
     sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
@@ -70,7 +70,7 @@ void Player::draw(sf::RenderWindow &window) {
     double radians = atan2(mousePos.y - weaponPos.y, mousePos.x - weaponPos.x);
     double angle = (radians*180)/3.14159265358979323846;
 
-    std::cout << angle << std::endl;
+    //std::cout << angle << std::endl;
 
     // Set weapon to mouse direction
     currentWeapon->setRotation(-45 + angle);
@@ -86,42 +86,60 @@ void Player::draw(sf::RenderWindow &window) {
 }
 
 void Player::process() {
-    //std::cout << "IN PROCCESSS IN PLKAYER cLASS!!!!" << std::endl;
+    int xdiff = 0;
+    int ydiff = 0;
+
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
         // left key is pressed: move our character
-        x -= 5;
+        xdiff -= 5;
         currentDirectionAnimation = 0;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
         // Right key is pressed: move our character
-        x += 5;
+        xdiff += 5;
         currentDirectionAnimation = 1;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
     {
         // Up key is pressed: move our character
-        y -= 5;
+        ydiff -= 5;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
     {
         // Down key is pressed: move our character
-        y += 5;
+        ydiff += 5;
     }
+
+    x += xdiff;
+    y += ydiff;
+
+    // Check if there was any movement
+    if(xdiff != 0 || ydiff != 0){
+        movements++;
+        // Set correct animation direction
+        if(xdiff < 0){
+            currentDirectionAnimation = 0;
+        }if(xdiff > 0){
+            currentDirectionAnimation = 1;
+        }
+    }
+
+
+
     sprite.setPosition(x, y);
 
     // Go to next animation frame if required
-    if (clock.getElapsedTime().asMilliseconds() < frameDuration)
-        return;
-
-    if (++currentframe >= framecount){
-        currentframe = 0;
+    if (movements > movementmax){
+        movements = 0;
+        if (++currentframe >= framecount){
+            currentframe = 0;
+        }
     }
 
     sprite.setTextureRect(sf::IntRect(currentframe*width, currentDirectionAnimation*height, width, height));
 
-    clock.restart();
 }
 
 sf::Sprite Player::getsfSprite() {

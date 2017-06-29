@@ -7,7 +7,7 @@ int main() {
      * Need to create bounds for the game
      * collision test for objects
      * Should view control be in gamemachine.cpp or in each state???
-     * Fix player movement when game not in focus
+     * fixed no image when player colliding with obstacle
      *
      * Change Obstacle class in release.
      * Major memory leaks
@@ -17,6 +17,11 @@ int main() {
      * Create an auto aim function cheat
      * sf::Mouse::setPosition to enemy position.
      * Create a sf::rect between player and enemy and check for obstacle collision
+     *
+     * Use Dijkstra's algorithm for enemy AI, using points on map
+     *
+     * Round obstacles for rebound shots
+     *
      */
     std::cout << "Hello, World!" << std::endl;
 

@@ -71,6 +71,9 @@ protected:
 
     Weapon* currentWeapon;
 
+    int movements = 0;
+    int movementmax = 6;
+
 };
 
 
