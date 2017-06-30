@@ -5,12 +5,12 @@
 int main() {
     /*
      * Need to create bounds for the game
-     * collision test for objects
      * Should view control be in gamemachine.cpp or in each state???
-     * fixed no image when player colliding with obstacle
+     * fix no image when player colliding with obstacle
+     * Switch animation direction to enum?
      *
      * Change Obstacle class in release.
-     * Major memory leaks
+     * Minor memory leaks?
      * Create de-constructors for classes
      * Operation overload for <<. How to do this?
      *

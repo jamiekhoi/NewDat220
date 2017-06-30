@@ -39,11 +39,12 @@ void TestState::Running() {
 
     for(Obstacle* obs: obstacles) {
 
-        while (player->checkCollision(obs)) {
-
-        }
+        // Everything is handled inside player->checkCollision()
+        while (player->checkCollision(obs)) {}
 
     }
+
+    // Clear screen
     machine->getWindow().clear(sf::Color::Black);
 
     // Draw the map
@@ -58,7 +59,6 @@ void TestState::Running() {
     // For testing. Drawing obstacles
     for(Obstacle* obstacle: obstacles)
     {
-        //std::cout << "OBSTACLE" << std::endl;
         //machine->getWindow().draw(*obstacle);
         obstacle->draw(machine->getWindow());
     }

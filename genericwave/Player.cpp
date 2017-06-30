@@ -7,20 +7,24 @@
 
 #include "Player.h"
 #include "Pistol.h"
+const double pi = 3.14159265358979323846;
 
 Player::Player() {
-    if (!texture.loadFromFile("Bilder/Player/TestPlayer2.png"))
+    if (!texture.loadFromFile("Bilder/Player/TestPlayer2scaleddown.png"))
     {
         std::cout << "Failed to load Player texture" << std::endl;
     }
     sprite.setTexture(texture);
 
+    // Height and width of a frame for the character. According to player image
+    height = 105;
+    width = 70;
 
-    // Height and width of a frame for the character.
-    height = 210;
-    width = 140;
-
+    // Set texture part
     sprite.setTextureRect(sf::IntRect(0, 0, width, height));
+
+    // Scale player if needed. Done manually
+    //sprite.scale(0.5, 0.5);
 
     // Two animations for the player, left facing animation and right facing animation.
     animations = 2;
@@ -59,24 +63,41 @@ void Player::setPosition(float x, float y) {
 
 void Player::draw(sf::RenderWindow &window) {
 
-    // Update weapon position
-    currentWeapon->setPosition(x,y + height);
-
     // Get direction mouse is pointing in
     sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-    sf::Vector2f weaponPos = currentWeapon->getPosition();
 
     // Radians and angle are going clockwise, where direectly right = 0
-    double radians = atan2(mousePos.y - weaponPos.y, mousePos.x - weaponPos.x);
-    double angle = (radians*180)/3.14159265358979323846;
+    double radians = atan2(mousePos.y - (y + height/2), mousePos.x - (x + width/2));
+    //double radians = atan2(weaponPos.y - mousePos.y, weaponPos.x - mousePos.x);
+    //if(radians < 0){ radians += pi; }
+    //radians += pi/2;
+    double angle = (radians*180)/pi;
 
     //std::cout << angle << std::endl;
 
-    // Set weapon to mouse direction
-    currentWeapon->setRotation(-45 + angle);
+    // Set correct animation direction for player
+    currentDirectionAnimation = angle < 90 && angle > -90 ? 1 : 0;
+    sprite.setTextureRect(sf::IntRect(currentframe*width, currentDirectionAnimation*height, width, height));
 
-    // Update Player direction sprite
+    // Set correct animation direction for weapon
+    currentWeapon->setAnimationDirection(currentDirectionAnimation);
 
+    // Update weapon position
+    if(currentDirectionAnimation == 0) // Facing left
+    {
+        currentWeapon->setPosition(x + (width/4) , y + height/2);
+        //currentWeapon->setPosition(x, y + height/2);
+
+        // Set weapon to mouse direction
+        currentWeapon->setRotation(angle);
+
+    }else // Facing right
+    {
+        currentWeapon->setPosition(x + (width*3)/4, y + height/2);
+
+        // Set weapon to mouse direction
+        currentWeapon->setRotation(angle);
+    }
 
     // Draw current weapon
     currentWeapon->draw(window);
@@ -93,13 +114,11 @@ void Player::process() {
     {
         // left key is pressed: move our character
         xdiff -= 5;
-        currentDirectionAnimation = 0;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
         // Right key is pressed: move our character
         xdiff += 5;
-        currentDirectionAnimation = 1;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
     {
@@ -118,14 +137,8 @@ void Player::process() {
     // Check if there was any movement
     if(xdiff != 0 || ydiff != 0){
         movements++;
-        // Set correct animation direction
-        if(xdiff < 0){
-            currentDirectionAnimation = 0;
-        }if(xdiff > 0){
-            currentDirectionAnimation = 1;
-        }
-    }
 
+    }
 
 
     sprite.setPosition(x, y);
@@ -137,8 +150,6 @@ void Player::process() {
             currentframe = 0;
         }
     }
-
-    sprite.setTextureRect(sf::IntRect(currentframe*width, currentDirectionAnimation*height, width, height));
 
 }
 
@@ -178,24 +189,26 @@ bool Player::checkCollision(Obstacle *a) {
         return false;
     }
 
-    while(a->left.getGlobalBounds().intersects(*temp)){
-        move(-1, 0);
-        temp->left -= 1;
-    }
+    while(a->getGlobalBounds().intersects(*temp)){
+        if(a->left.getGlobalBounds().intersects(*temp)){
+            move(-1, 0);
+            temp->left -= 1;
+        }
 
-    while(a->right.getGlobalBounds().intersects(*temp)){
-        move(1, 0);
-        temp->left += 1;
-    }
+        if(a->right.getGlobalBounds().intersects(*temp)){
+            move(1, 0);
+            temp->left += 1;
+        }
 
-    while(a->top.getGlobalBounds().intersects(*temp)){
-        move(0, -1);
-        temp->top -= 1;
-    }
+        if(a->top.getGlobalBounds().intersects(*temp)){
+            move(0, -1);
+            temp->top -= 1;
+        }
 
-    while(a->bottom.getGlobalBounds().intersects(*temp)) {
-        move(0, 1);
-        temp->top += 1;
+        if(a->bottom.getGlobalBounds().intersects(*temp)) {
+            move(0, 1);
+            temp->top += 1;
+        }
     }
 
 

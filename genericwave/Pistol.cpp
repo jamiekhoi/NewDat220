@@ -7,12 +7,13 @@
 
 Pistol::Pistol() {
 
-    if (!weaponTexture.loadFromFile("Bilder/Weapons/pistol.png"))
+    if (!weaponTexture.loadFromFile("Bilder/Weapons/pistola.png"))
     {
         std::cout << "Failed to load Weapon texture" << std::endl;
     }
     weapon.setTexture(weaponTexture);
-    weapon.setTextureRect(sf::IntRect(0, 0, weaponWidth, weaponHeight));
+    currentDirectionAnimation = 0;
+    weapon.setTextureRect(sf::IntRect(0, currentDirectionAnimation*weaponHeight, weaponWidth, weaponHeight));
 
     if (!bulletTexture.loadFromFile("Bilder/Player/TestPlayer.png"))
     {
@@ -39,7 +40,7 @@ void Pistol::addAmmo() {
 
 }
 
-void Pistol::setPosition(int x, int y) {
+void Pistol::setPosition(float x, float y) {
     weapon.setPosition(x, y);
 }
 
@@ -52,9 +53,16 @@ void Pistol::rotate(double angle) {
 }
 
 void Pistol::draw(sf::RenderWindow &window) {
+    //std::cout << currentDirectionAnimation << std::endl;
+
     window.draw(weapon);
 }
 
 sf::Vector2f Pistol::getPosition() {
     return weapon.getPosition();
+}
+
+void Pistol::setAnimationDirection(int direction) {
+    currentDirectionAnimation = direction;
+    weapon.setTextureRect(sf::IntRect(0, currentDirectionAnimation*weaponHeight, weaponWidth, weaponHeight));
 }

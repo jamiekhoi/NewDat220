@@ -15,10 +15,11 @@ public:
     void reload();
     void addAmmo();
     void draw(sf::RenderWindow &window);
-    void setPosition(int x, int y);
+    void setPosition(float x, float y);
     sf::Vector2f getPosition();
     void setRotation(double angle);
     void rotate(double angle);
+    void setAnimationDirection(int direction);
 
 protected:
     int ammo;
@@ -37,11 +38,13 @@ protected:
     sf::Texture bulletTexture;
     sf::Sprite bullet;
 
-    int weaponWidth = 30;
-    int weaponHeight = 20;
+    int weaponWidth = 80;
+    int weaponHeight = 40;
 
     int bulletWidth = 5;
     int bulletHeight = 5;
+
+    int currentDirectionAnimation;
 
 };
 
