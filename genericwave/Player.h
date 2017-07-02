@@ -11,6 +11,8 @@
 #include "Weapon.h"
 #include "Obstacle.h"
 
+class Bullet;
+
 class Player {
 public:
     Player();
@@ -24,7 +26,7 @@ public:
     void draw(sf::RenderWindow &window);
 
     // Fire weapon if possible
-    bool fireWeapon();
+    bool fireWeapon(std::vector<Bullet*>& bullet);
 
     bool checkCollision(Obstacle* a);
     bool checkPointCollision(sf::Vector2f point);

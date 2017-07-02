@@ -3,9 +3,27 @@
 //
 
 #include "Pistol.h"
+#include "Bullet.h"
 #include <iostream>
+#include <cmath>
 
 Pistol::Pistol() {
+
+    // Weapon specific info
+    weaponWidth = 80;
+    weaponHeight = 40;
+
+    bulletWidth = 5;
+    bulletHeight = 5;
+
+    ammo = 1;
+    maxAmmoCount = 17;
+    magazines = 1;
+    maxMagazineCount = 99;
+
+    damage = 5;
+
+    effectiveRange = 9999;
 
     if (!weaponTexture.loadFromFile("Bilder/Weapons/pistola.png"))
     {
@@ -15,20 +33,22 @@ Pistol::Pistol() {
     currentDirectionAnimation = 0;
     weapon.setTextureRect(sf::IntRect(0, currentDirectionAnimation*weaponHeight, weaponWidth, weaponHeight));
 
-    if (!bulletTexture.loadFromFile("Bilder/Player/TestPlayer.png"))
+    bulletTexture = new sf::Texture();
+    if (!bulletTexture->loadFromFile("Bilder/Player/TestPlayer.png"))
     {
         std::cout << "Failed to load Bullet texture" << std::endl;
     }
-    bullet.setTexture(bulletTexture);
-    bullet.setTextureRect(sf::IntRect(0, 55, bulletWidth, bulletHeight));
+    //bullet.setTexture(*bulletTexture);
+    //bullet.setTextureRect(sf::IntRect(0, 55, bulletWidth, bulletHeight));
 
 }
 
-void Pistol::fire() {
+void Pistol::fire(std::vector<Bullet*>& bullets) {
     // Should take in a list of live bullets as a parameter
     // Create a new bullet
     // Posistion of bullet is tip of gun
     // Bullet should move angle
+    Weapon::fire(bullets);
 
 }
 

@@ -11,6 +11,7 @@ int main() {
      *
      * Change Obstacle class in release.
      * Minor memory leaks?
+     * Check for memory leak in pistol.cpp constructor when creating new bullettexture pointer.
      * Create de-constructors for classes
      * Operation overload for <<. How to do this?
      *

@@ -11,7 +11,7 @@
 class Pistol: public Weapon {
 public:
     Pistol();
-    void fire();
+    void fire(std::vector<Bullet*>& bullets);
     void reload();
     void addAmmo();
     void draw(sf::RenderWindow &window);
@@ -22,6 +22,7 @@ public:
     void setAnimationDirection(int direction);
 
 protected:
+    /*
     int ammo;
     int magazines;
     // Since Pistol is default weapon it should have infinite ammo. Change later.
@@ -30,12 +31,13 @@ protected:
     int damage = 5;
     // Should change to infinte range after a while
     int effectiveRange = 10000;
-
+*/
     // Should these be in Weapon base class???
+    /*
     sf::Texture weaponTexture;
     sf::Sprite weapon;
 
-    sf::Texture bulletTexture;
+    sf::Texture* bulletTexture;
     sf::Sprite bullet;
 
     int weaponWidth = 80;
@@ -45,6 +47,7 @@ protected:
     int bulletHeight = 5;
 
     int currentDirectionAnimation;
+     */
 
 };
 

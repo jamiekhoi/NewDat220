@@ -7,7 +7,8 @@
 
 #include "Player.h"
 #include "Pistol.h"
-const double pi = 3.14159265358979323846;
+#include "Bullet.h"
+
 
 Player::Player() {
     if (!texture.loadFromFile("Bilder/Player/TestPlayer2scaleddown.png"))
@@ -87,17 +88,13 @@ void Player::draw(sf::RenderWindow &window) {
     {
         currentWeapon->setPosition(x + (width/4) , y + height/2);
         //currentWeapon->setPosition(x, y + height/2);
-
-        // Set weapon to mouse direction
-        currentWeapon->setRotation(angle);
-
     }else // Facing right
     {
         currentWeapon->setPosition(x + (width*3)/4, y + height/2);
-
-        // Set weapon to mouse direction
-        currentWeapon->setRotation(angle);
     }
+
+    // Set weapon to mouse direction
+    currentWeapon->setRotation(angle);
 
     // Draw current weapon
     currentWeapon->draw(window);
@@ -224,7 +221,7 @@ bool Player::checkPointCollision(sf::Vector2f point) {
     return sprite.getGlobalBounds().contains(point);
 }
 
-bool Player::fireWeapon() {
-    currentWeapon->fire();
+bool Player::fireWeapon(std::vector<Bullet*>& bullets) {
+    currentWeapon->fire(bullets);
     return false;
 }

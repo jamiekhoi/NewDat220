@@ -100,12 +100,15 @@ void TestState::handleEvent(sf::Event &event) {
         */
 
         // See if mouse collision with player
+        /*
         sf::Vector2f worldPos = machine->getWindow().mapPixelToCoords(sf::Mouse::getPosition(machine->getWindow()));
         if(player->checkPointCollision(worldPos)){
             std::cout << "hit player" << std::endl;
         }else {
             std::cout << "didnt hit player" << std::endl;
         }
+         */
+        player->fireWeapon(bullets);
     }
 }
 

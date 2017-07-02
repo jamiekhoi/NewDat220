@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.cpp">
+			<Option target="genericwave"/>
+		</Unit>
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.h">
+			<Option target="genericwave"/>
+		</Unit>
 		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.cpp">
 			<Option target="genericwave"/>
 		</Unit>

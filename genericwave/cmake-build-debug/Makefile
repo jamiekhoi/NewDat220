@@ -122,6 +122,33 @@ genericwave/fast:
 	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/build
 .PHONY : genericwave/fast
 
+Bullet.obj: Bullet.cpp.obj
+
+.PHONY : Bullet.obj
+
+# target to build an object file
+Bullet.cpp.obj:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Bullet.cpp.obj
+.PHONY : Bullet.cpp.obj
+
+Bullet.i: Bullet.cpp.i
+
+.PHONY : Bullet.i
+
+# target to preprocess a source file
+Bullet.cpp.i:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Bullet.cpp.i
+.PHONY : Bullet.cpp.i
+
+Bullet.s: Bullet.cpp.s
+
+.PHONY : Bullet.s
+
+# target to generate assembly for a file
+Bullet.cpp.s:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Bullet.cpp.s
+.PHONY : Bullet.cpp.s
+
 CollisionTester.obj: CollisionTester.cpp.obj
 
 .PHONY : CollisionTester.obj
@@ -428,6 +455,9 @@ help:
 	@echo ... genericwave
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Bullet.obj
+	@echo ... Bullet.i
+	@echo ... Bullet.s
 	@echo ... CollisionTester.obj
 	@echo ... CollisionTester.i
 	@echo ... CollisionTester.s

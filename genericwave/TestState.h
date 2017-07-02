@@ -11,6 +11,7 @@
 class Player;
 class Object;
 class Obstacle;
+class Bullet;
 
 class TestState: public State {
 public:
@@ -30,6 +31,9 @@ protected:
 
     // List of obstacles for hit-test collision
     std::list<Obstacle*> obstacles;
+
+    // List of live bullets
+    std::vector<Bullet*> bullets;
 
     sf::Clock clock;
 
