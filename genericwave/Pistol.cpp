@@ -21,8 +21,8 @@ Pistol::Pistol() {
     magazines = 1;
     maxMagazineCount = 99;
 
+    bulletSpeed = 3;
     damage = 5;
-
     effectiveRange = 9999;
 
     if (!weaponTexture.loadFromFile("Bilder/Weapons/pistola.png"))
@@ -34,7 +34,7 @@ Pistol::Pistol() {
     weapon.setTextureRect(sf::IntRect(0, currentDirectionAnimation*weaponHeight, weaponWidth, weaponHeight));
 
     bulletTexture = new sf::Texture();
-    if (!bulletTexture->loadFromFile("Bilder/Player/TestPlayer.png"))
+    if (!bulletTexture->loadFromFile("Bilder/Weapons/pistolbullet.png"))
     {
         std::cout << "Failed to load Bullet texture" << std::endl;
     }

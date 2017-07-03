@@ -30,12 +30,13 @@ public:
         bullet->width = bulletWidth;
         bullet->height = bulletHeight;
         bullet->sprite.setTexture(*bulletTexture);
+        bullet->setPosition(bulletx, bullety);
 
         bullet->penetration = weaponPenetration;
         bullet->damage = damage;
         bullet->effectiveRange = effectiveRange;
         bullet->speed = bulletSpeed;
-        bullet->angle = angle;
+        bullet->setAngle(angle);
 
         bullets.push_back(bullet);
     }
@@ -57,7 +58,7 @@ protected:
     int maxAmmoCount;
     int damage;
     // Should change to infinte range after a while
-    int effectiveRange;
+    int effectiveRange = 9999;
 
     sf::Texture weaponTexture;
     sf::Sprite weapon;
@@ -72,12 +73,13 @@ protected:
 
     int currentDirectionAnimation;
 
-    int weaponPenetration;
+    int weaponPenetration = 1;
 
     double angle;
 
-    int bulletSpeed;
+    int bulletSpeed = 3;
 };
+
 
 
 #endif //GENERICWAVE_WEAPON_H

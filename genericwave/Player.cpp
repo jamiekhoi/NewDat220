@@ -95,6 +95,7 @@ void Player::draw(sf::RenderWindow &window) {
 
     // Set weapon to mouse direction
     currentWeapon->setRotation(angle);
+    currentWeapon->angle = angle;
 
     // Draw current weapon
     currentWeapon->draw(window);

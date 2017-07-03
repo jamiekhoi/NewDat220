@@ -12,20 +12,23 @@ class Bullet {
 public:
     friend class Weapon;
     Bullet(){}
-    Bullet(int width, int height, int speed, int damage, int penetration = 1);
     void move();
-    void draw();
-    void setTexture(sf::Texture);
+    void draw(sf::RenderWindow & window);
+    void setAngle(double angle);
+    void setPosition(int x, int y);
 
 protected:
     float width;
     float height;
     float speed;
+    float xspeed;
+    float yspeed;
     int damage;
     int penetration;
     int effectiveRange;
     double angle;
     sf::Sprite sprite;
+    int x, y;
 };
 
 

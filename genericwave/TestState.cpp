@@ -37,6 +37,11 @@ void TestState::Running() {
     // Move the user, ect.
     player->process();
 
+    // Move live bullets
+    for(Bullet* bullet: bullets){
+        bullet->move();
+    }
+
     for(Obstacle* obs: obstacles) {
 
         // Everything is handled inside player->checkCollision()
@@ -61,6 +66,12 @@ void TestState::Running() {
     {
         //machine->getWindow().draw(*obstacle);
         obstacle->draw(machine->getWindow());
+    }
+
+    // Draw bullets
+    // Move live bullets
+    for(Bullet* bullet: bullets){
+        bullet->draw(machine->getWindow());
     }
 
     // Set the view (what the user sees of the game map)
