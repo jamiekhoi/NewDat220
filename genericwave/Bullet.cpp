@@ -3,6 +3,7 @@
 //
 
 #include <cmath>
+#include <iostream>
 #include "Bullet.h"
 
 const double pi = 3.14159265358979323846;
@@ -30,4 +31,16 @@ void Bullet::setPosition(int x, int y) {
     this->y = y;
     this->sprite.setPosition(x, y);
 
+}
+
+bool Bullet::checkCollisionObs(Obstacle * obs) {
+
+    return sprite.getGlobalBounds().intersects(obs->getGlobalBounds());
+}
+
+bool Bullet::hit() {
+    //std::cout << "hit" << std::endl;
+    penetration--;
+    // Return true if bullet can no longer penetrate object
+    return penetration < 1;
 }

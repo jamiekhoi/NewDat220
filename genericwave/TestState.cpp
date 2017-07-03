@@ -37,11 +37,7 @@ void TestState::Running() {
     // Move the user, ect.
     player->process();
 
-    // Move live bullets
-    for(Bullet* bullet: bullets){
-        bullet->move();
-    }
-
+    // Check player-obstacle collision
     for(Obstacle* obs: obstacles) {
 
         // Everything is handled inside player->checkCollision()
@@ -58,7 +54,7 @@ void TestState::Running() {
         object->draw(machine->getWindow());
     }
 
-    // Draw the user
+    // Draw the player
     player->draw(machine->getWindow());
 
     // For testing. Drawing obstacles
@@ -68,11 +64,46 @@ void TestState::Running() {
         obstacle->draw(machine->getWindow());
     }
 
-    // Draw bullets
-    // Move live bullets
-    for(Bullet* bullet: bullets){
-        bullet->draw(machine->getWindow());
+    // Move and draw bullets
+    for( std::vector<Bullet*>::iterator it = bullets.begin(); it != bullets.end();){
+
+        (*it)->move();
+
+        // Loop through obstacle objects
+        for(Obstacle* obs: obstacles) {
+
+            if(*it == nullptr){
+                break;
+            }
+            // Check collision with wall. Everything is handled inside bullet
+            if ((*it)->checkCollisionObs(obs)) {
+                // If hit a wall check bullet penetration level and delete if bullet cannot penetrate further
+                if ((*it)->hit()){
+                    // Is this correct?
+                    delete (*it);
+                    (*it) = nullptr;
+
+                    it = bullets.erase(it);
+
+                }
+
+            }
+
+        }
+
+        if((*it) != nullptr){
+            (*it)->draw(machine->getWindow());
+            it++;
+        }
     }
+    /*
+    for(Bullet* bullet: bullets){
+        bullet->move();
+        bullet->draw(machine->getWindow());
+    }*/
+
+    // Test bullet-enemy collision
+
 
     // Set the view (what the user sees of the game map)
     // Crude. Actually centers around player sprite's upper left corner

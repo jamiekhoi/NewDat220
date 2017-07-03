@@ -3,6 +3,7 @@
 
 CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../Bullet.cpp
 CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../Bullet.h
+CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../Obstacle.h
 
 CMakeFiles/genericwave.dir/CollisionTester.cpp.obj: ../CollisionTester.cpp
 CMakeFiles/genericwave.dir/CollisionTester.cpp.obj: ../CollisionTester.h
@@ -11,6 +12,7 @@ CMakeFiles/genericwave.dir/Obstacle.cpp.obj: ../Obstacle.cpp
 CMakeFiles/genericwave.dir/Obstacle.cpp.obj: ../Obstacle.h
 
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Bullet.h
+CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Obstacle.h
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Pistol.cpp
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Pistol.h
 CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Weapon.h

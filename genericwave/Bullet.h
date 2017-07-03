@@ -7,6 +7,7 @@
 
 
 #include <SFML/Graphics.hpp>
+#include "Obstacle.h"
 
 class Bullet {
 public:
@@ -16,6 +17,8 @@ public:
     void draw(sf::RenderWindow & window);
     void setAngle(double angle);
     void setPosition(int x, int y);
+    bool checkCollisionObs(Obstacle* obs);
+    bool hit();
 
 protected:
     float width;
