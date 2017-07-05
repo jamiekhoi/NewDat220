@@ -226,3 +226,7 @@ bool Player::fireWeapon(std::vector<Bullet*>& bullets) {
     currentWeapon->fire(bullets);
     return false;
 }
+
+sf::Vector2f Player::getPosition() {
+    return sf::Vector2f(x, y);
+}

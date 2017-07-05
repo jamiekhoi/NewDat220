@@ -8,6 +8,8 @@ int main() {
      * Should view control be in gamemachine.cpp or in each state???
      * fix no image when player colliding with obstacle
      * Switch animation direction to enum?
+     * Bullet exit angle off. Perhaps angle not accurate enough? Change to double?
+     * Headshots more damage
      *
      * Change Obstacle class in release.
      * Minor memory leaks?

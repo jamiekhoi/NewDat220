@@ -25,6 +25,8 @@ Pistol::Pistol() {
     damage = 5;
     effectiveRange = 9999;
 
+    weaponPenetration = 1;
+
     if (!weaponTexture.loadFromFile("Bilder/Weapons/pistola.png"))
     {
         std::cout << "Failed to load Weapon texture" << std::endl;
@@ -33,6 +35,7 @@ Pistol::Pistol() {
     currentDirectionAnimation = 0;
     weapon.setTextureRect(sf::IntRect(0, currentDirectionAnimation*weaponHeight, weaponWidth, weaponHeight));
 
+    // Is this correct?
     bulletTexture = new sf::Texture();
     if (!bulletTexture->loadFromFile("Bilder/Weapons/pistolbullet.png"))
     {

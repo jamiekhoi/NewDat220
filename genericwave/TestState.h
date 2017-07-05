@@ -12,6 +12,7 @@ class Player;
 class Object;
 class Obstacle;
 class Bullet;
+class Enemy;
 
 class TestState: public State {
 public:
@@ -34,6 +35,9 @@ protected:
 
     // List of live bullets
     std::vector<Bullet*> bullets;
+
+    // List of live enemies
+    std::vector<Enemy*> enemies;
 
     sf::Clock clock;
 

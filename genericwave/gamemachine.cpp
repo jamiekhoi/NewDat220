@@ -68,8 +68,11 @@ void GameMachine::Run() {
         else if (event.type == sf::Event::KeyPressed)
         {
             // Test if this results in multple key presses if button is help on another computer
-            if (event.key.code == sf::Keyboard::R)
+            if (event.key.code == sf::Keyboard::R){
                 std::cout << sf::VideoMode::getDesktopMode().height << ", w:" << sf::VideoMode::getDesktopMode().width << std::endl;
+            }else{
+                currentState->handleEvent(event);
+            }
         }
         else if (event.type == sf::Event::Resized)
         {
@@ -83,7 +86,7 @@ void GameMachine::Run() {
         }
     }
 
-    // Should this wbe inside the while loop?
+    // Should this wbe inside the while loop? No
     if(inFocus){
         currentState->Running();
     }

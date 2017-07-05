@@ -5,8 +5,8 @@
 #include <cmath>
 #include <iostream>
 #include "Bullet.h"
+#include "Enemy.h"
 
-const double pi = 3.14159265358979323846;
 
 void Bullet::setAngle(double angle) {
     this->angle = angle;
@@ -43,4 +43,12 @@ bool Bullet::hit() {
     penetration--;
     // Return true if bullet can no longer penetrate object
     return penetration < 1;
+}
+
+bool Bullet::checkCollisionEnemy(Enemy *en) {
+    return sprite.getGlobalBounds().intersects(en->sprite.getGlobalBounds());
+}
+
+int Bullet::getDamage() {
+    return damage;
 }

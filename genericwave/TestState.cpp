@@ -8,6 +8,7 @@
 #include "object.h"
 #include "Player.h"
 #include "Obstacle.h"
+#include "Enemy.h"
 
 TestState::TestState() {
 // Load map information from JSON into object list
@@ -43,6 +44,9 @@ void TestState::Running() {
         // Everything is handled inside player->checkCollision()
         while (player->checkCollision(obs)) {}
 
+        for(Enemy * en: enemies){
+            while (en->checkCollisionObs(obs)){}
+        }
     }
 
     // Clear screen
@@ -64,43 +68,70 @@ void TestState::Running() {
         obstacle->draw(machine->getWindow());
     }
 
+    // Move enemies
+    // Draw enemies
+    for(Enemy* en: enemies){
+        en->move(player->getPosition());
+        en->draw(machine->getWindow());
+    }
+
     // Move and draw bullets
-    for( std::vector<Bullet*>::iterator it = bullets.begin(); it != bullets.end();){
+    for( std::vector<Bullet*>::iterator bull = bullets.begin(); bull != bullets.end();){
 
-        (*it)->move();
+        (*bull)->move();
 
-        // Loop through obstacle objects
-        for(Obstacle* obs: obstacles) {
-
-            if(*it == nullptr){
+        // Loop through enemies
+        for(auto en = enemies.begin(); en != enemies.end();){
+            // Do I need this????
+            if(*en == nullptr){
                 break;
             }
-            // Check collision with wall. Everything is handled inside bullet
-            if ((*it)->checkCollisionObs(obs)) {
-                // If hit a wall check bullet penetration level and delete if bullet cannot penetrate further
-                if ((*it)->hit()){
-                    // Is this correct?
-                    delete (*it);
-                    (*it) = nullptr;
+            // Check collision with enemy
+            if((*bull)->checkCollisionEnemy((*en))){
 
-                    it = bullets.erase(it);
-
+                // Check enemy health
+                if((*en)->dead((*bull)->getDamage())){
+                    delete (*en);
+                    (*en) = nullptr;
+                    en = enemies.erase(en);
                 }
 
-            }
+                // Check bullet penetration
+                if ((*bull)->hit()){
+                    // Is this correct?
+                    delete (*bull);
+                    (*bull) = nullptr;
+                    bull = bullets.erase(bull);
+                    break;
+                }
 
+            }else{
+                en++;
+            }
         }
 
-        if((*it) != nullptr){
-            (*it)->draw(machine->getWindow());
-            it++;
+        if((*bull) != nullptr){
+            // Loop through obstacle objects
+            for(Obstacle* obs: obstacles) {
+                // Check collision with wall. Everything is handled inside bullet
+                if ((*bull)->checkCollisionObs(obs)) {
+                    // If hit a wall check bullet penetration level and delete if bullet cannot penetrate further
+                    if ((*bull)->hit()){
+                        // Is this correct?
+                        delete (*bull);
+                        (*bull) = nullptr;
+                        bull = bullets.erase(bull);
+                        break;
+                    }
+                }
+            }
+        }
+
+        if((*bull) != nullptr){
+            (*bull)->draw(machine->getWindow());
+            bull++;
         }
     }
-    /*
-    for(Bullet* bullet: bullets){
-        bullet->move();
-        bullet->draw(machine->getWindow());
-    }*/
 
     // Test bullet-enemy collision
 
@@ -151,7 +182,15 @@ void TestState::handleEvent(sf::Event &event) {
         }
          */
         player->fireWeapon(bullets);
+    }else if(event.type == sf::Event::KeyPressed){
+
+        if(event.key.code == sf::Keyboard::E){
+            // Create enemy
+            Enemy* en = new Enemy();
+            enemies.push_back(en);
+        }
     }
+
 }
 
 void TestState::setMachine(GameMachine *machine) {

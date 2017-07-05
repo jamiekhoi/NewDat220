@@ -13,6 +13,8 @@ iostream
 -
 Bullet.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.h
+Enemy.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.h
 SFML/Graphics.hpp
@@ -25,6 +27,20 @@ CollisionTester.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.h
+
+C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.cpp
+iostream
+-
+Enemy.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.h
+
+C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.h
+SFML/Graphics.hpp
+-
+Obstacle.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+Player.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.cpp
 Obstacle.h
@@ -85,6 +101,8 @@ Player.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
 Obstacle.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+Enemy.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
 state.h

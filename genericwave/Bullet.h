@@ -9,6 +9,8 @@
 #include <SFML/Graphics.hpp>
 #include "Obstacle.h"
 
+class Enemy;
+
 class Bullet {
 public:
     friend class Weapon;
@@ -18,7 +20,9 @@ public:
     void setAngle(double angle);
     void setPosition(int x, int y);
     bool checkCollisionObs(Obstacle* obs);
+    bool checkCollisionEnemy(Enemy* en);
     bool hit();
+    int getDamage();
 
 protected:
     float width;

@@ -19,6 +19,7 @@ public:
     bool setTexture(sf::Texture texture);
     void setPosition(float x, float y);
     void move(float x, float y);
+    sf::Vector2f getPosition();
 
     // Run from the state. Where the player moves
     void process();
