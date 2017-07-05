@@ -11,20 +11,33 @@
 #include "Enemy.h"
 
 TestState::TestState() {
-// Load map information from JSON into object list
+
+    if (!font.loadFromFile("Font/Montserrat-Regular.ttf"))
+    {
+        std::cout << "Error loading font" << std::endl;
+    }
+    sfWave.setCharacterSize(24);
+    sfWave.setFillColor(sf::Color::White);
+    sfWave.setOutlineColor(sf::Color::Black);
+    sfWave.setOutlineThickness(2);
+    sfWave.setString("Wave " + std::to_string(wave));
+    sfWave.setFont(font);
+
+    sfPoints.setCharacterSize(24);
+    sfPoints.setFillColor(sf::Color::White);
+    sfPoints.setOutlineColor(sf::Color::Black);
+    sfPoints.setOutlineThickness(2);
+    sfPoints.setString("Points: " + std::to_string(wave));
+    sfPoints.setFont(font);
+
+    // Load map information from JSON into object list
     if (!Map::load("Bilder/Stages/TMX/teststage3.json", objects, obstacles))
     {
         std::cout << "Failed to load map data." << std::endl;
     }
-
-    // Do I need to do this? Or is it already created in initialization?
-    // Yes. I need to do this. Why doe?
     player = new Player();
 
     /*
-    // Standard SFML setup
-    window.create(sf::VideoMode(640, 480), "Mario?");
-
     // Double the size of the screen
     sf::View view = window.getDefaultView();
     view.setSize(view.getSize().x / 2, view.getSize().y / 2);
@@ -94,6 +107,7 @@ void TestState::Running() {
                     delete (*en);
                     (*en) = nullptr;
                     en = enemies.erase(en);
+                    points += 50;
                 }
 
                 // Check bullet penetration
@@ -143,6 +157,17 @@ void TestState::Running() {
     float tempy = player->getY();
     tempView.setCenter(tempx, tempy);
     machine->getWindow().setView(tempView);
+
+    sf::View tempv = machine->getWindow().getView();
+    auto tempcenter = tempv.getCenter();
+    auto tempsize = tempv.getSize();
+
+    sfWave.setPosition(tempcenter.x - tempsize.x/2 + 50, tempcenter.y - tempsize.y/2 + 50);
+    machine->getWindow().draw(sfWave);
+
+    sfPoints.setString("Points: " + std::to_string(points));
+    sfPoints.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y - tempsize.y/2 + 50);
+    machine->getWindow().draw(sfPoints);
 
     // Draw the screen
     machine->getWindow().display();

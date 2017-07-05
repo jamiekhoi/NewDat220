@@ -21,7 +21,7 @@ Pistol::Pistol() {
     magazines = 1;
     maxMagazineCount = 99;
 
-    bulletSpeed = 3;
+    bulletSpeed = 20;
     damage = 5;
     effectiveRange = 9999;
 

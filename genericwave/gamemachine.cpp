@@ -86,7 +86,6 @@ void GameMachine::Run() {
         }
     }
 
-    // Should this wbe inside the while loop? No
     if(inFocus){
         currentState->Running();
     }

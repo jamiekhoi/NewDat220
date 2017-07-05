@@ -92,28 +92,24 @@ bool Enemy::checkCollisionObs(Obstacle *ob) {
         bool fuckyou = true;
         if(ob->left.getGlobalBounds().intersects(*temp)){
             x--;
-            std::cout << "a" << std::endl;
             temp->left -= 1;
             fuckyou = false;
         }
 
         if(ob->right.getGlobalBounds().intersects(*temp)){
             x++;
-            std::cout << "b" << std::endl;
             temp->left += 1;
             fuckyou = false;
         }
 
         if(ob->top.getGlobalBounds().intersects(*temp)){
             y--;
-            std::cout << "c" << std::endl;
             temp->top -= 1;
             fuckyou = false;
         }
 
         if(ob->bottom.getGlobalBounds().intersects(*temp)) {
             y++;
-            std::cout << "d" << std::endl;
             temp->top += 1;
             fuckyou = false;
         }

@@ -43,6 +43,15 @@ protected:
 
     // Player that the user controls
     Player* player;
+
+    int points = 0;
+
+    int wave = 1;
+
+    sf::Text sfWave;
+    sf::Text sfPoints;
+    sf::Font font;
+
 };
 
 
