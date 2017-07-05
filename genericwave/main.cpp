@@ -4,6 +4,9 @@
 
 int main() {
     /*
+     * NB!!!!
+     * Random crash sometimes with obstacle collision
+     *
      * Need to create bounds for the game
      * Should view control be in gamemachine.cpp or in each state???
      * fix no image when player colliding with obstacle
@@ -26,7 +29,7 @@ int main() {
      * Round obstacles for rebound shots
      *
      */
-    std::cout << "Hello, World!" << std::endl;
+    //std::cout << "Hello, World!" << std::endl;
 
     GameMachine* WaveShooter = new GameMachine();
 
