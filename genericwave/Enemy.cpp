@@ -40,6 +40,8 @@ Enemy::Enemy() {
     speed = 3;
 
     health = 5;
+
+    points = 50;
 }
 
 void Enemy::move(sf::Vector2f playerPos) {

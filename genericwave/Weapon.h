@@ -14,13 +14,13 @@ public:
     Weapon(){}
     friend class Player;
     virtual void fire(std::vector<Bullet*>& bullets){
-        float angle = weapon.getRotation();
-        float xdiff = cos(angle*pi/180.0) * weaponWidth;
-        float ydiff = sin(angle*pi/180.0) * weaponHeight;
+        double angle = weapon.getRotation();
+        double xdiff = cos(angle*pi/180.0) * weaponWidth;
+        double ydiff = sin(angle*pi/180.0) * weaponHeight;
 
         // Position of pistol nozzle, i.e. where the bullet will be fired.
-        float bulletx = weapon.getPosition().x + xdiff;
-        float bullety = weapon.getPosition().y + ydiff;
+        double bulletx = weapon.getPosition().x + xdiff;
+        double bullety = weapon.getPosition().y + ydiff;
 
         //std::cout << "xdiff: " << xdiff <<std::endl;
         //std::cout << "ydiff: " << ydiff << std::endl;

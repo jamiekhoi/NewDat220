@@ -17,7 +17,7 @@
 #include "layer.h"
 #include "Obstacle.h"
 
-bool Map::load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles)
+bool Map::load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles, std::vector<sf::FloatRect*>& spawnpoints)
 {
 	// Will contain the data we read in
 	Json::Value root;
@@ -51,8 +51,12 @@ bool Map::load(std::string filename, std::list<Object*>& objects, std::list<Obst
             loadObjects(root, layer, objects, tileSize);
         }
         else if(layer["name"].asString() == "obstacles"){
-            std::cout << "Loading obstacles" << std::endl;
+            //std::cout << "Loading obstacles" << std::endl;
             loadObstacles(layer, obstacles, tileSize);
+        }
+        else if(layer["name"].asString() == "spawn"){
+            //std::cout << "Loading obstacles" << std::endl;
+            loadSpawnpoints(layer, spawnpoints);
         }
 		else
         {
@@ -131,5 +135,19 @@ void Map::loadObstacles(Json::Value& layer, std::list<Obstacle*>& obstacles, Til
         obstacle->setOutlineThickness(1);
 
         obstacles.push_back(obstacle);
+    }
+}
+
+void Map::loadSpawnpoints(Json::Value &layer, std::vector<sf::FloatRect *> &spawnpoints) {
+    // Get all objects from layer
+    for (Json::Value& object: layer["objects"])
+    {
+        sf::FloatRect* spawn = new sf::FloatRect();
+        spawn->width = object["width"].asInt();
+        spawn->height = object["height"].asInt();
+        spawn->left = object["x"].asInt();
+        spawn->top = object["y"].asInt();
+
+        spawnpoints.push_back(spawn);
     }
 }

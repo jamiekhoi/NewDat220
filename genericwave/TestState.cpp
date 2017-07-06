@@ -31,7 +31,7 @@ TestState::TestState() {
     sfPoints.setFont(font);
 
     // Load map information from JSON into object list
-    if (!Map::load("Bilder/Stages/TMX/teststage3.json", objects, obstacles))
+    if (!Map::load("Bilder/Stages/TMX/teststage3.json", objects, obstacles, spawnpoints))
     {
         std::cout << "Failed to load map data." << std::endl;
     }
@@ -104,10 +104,10 @@ void TestState::Running() {
 
                 // Check enemy health
                 if((*en)->dead((*bull)->getDamage())){
+                    points += (*en)->points;
                     delete (*en);
                     (*en) = nullptr;
                     en = enemies.erase(en);
-                    points += 50;
                 }
 
                 // Check bullet penetration
@@ -147,8 +147,6 @@ void TestState::Running() {
         }
     }
 
-    // Test bullet-enemy collision
-
 
     // Set the view (what the user sees of the game map)
     // Crude. Actually centers around player sprite's upper left corner
@@ -158,13 +156,16 @@ void TestState::Running() {
     tempView.setCenter(tempx, tempy);
     machine->getWindow().setView(tempView);
 
+    // Info about the window view
     sf::View tempv = machine->getWindow().getView();
     auto tempcenter = tempv.getCenter();
     auto tempsize = tempv.getSize();
 
+    // Draw wave number
     sfWave.setPosition(tempcenter.x - tempsize.x/2 + 50, tempcenter.y - tempsize.y/2 + 50);
     machine->getWindow().draw(sfWave);
 
+    // Draw points
     sfPoints.setString("Points: " + std::to_string(points));
     sfPoints.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y - tempsize.y/2 + 50);
     machine->getWindow().draw(sfPoints);
@@ -212,6 +213,32 @@ void TestState::handleEvent(sf::Event &event) {
         if(event.key.code == sf::Keyboard::E){
             // Create enemy
             Enemy* en = new Enemy();
+
+            // Create a hitbox for the screen
+            sf::View tempv = machine->getWindow().getView();
+            auto tempcenter = tempv.getCenter();
+            auto tempsize = tempv.getSize();
+            float xpos = tempcenter.x - tempsize.x/2;
+            float ypos = tempcenter.y - tempsize.y/2;
+            sf::FloatRect viewhitbox = sf::FloatRect(xpos, ypos, tempsize.x, tempsize.y);
+
+            std::vector<sf::FloatRect*> validspawns;
+            // Check for spawn points not in the view
+            for(sf::FloatRect* spawn: spawnpoints){
+                if(!spawn->intersects(viewhitbox)){
+                    validspawns.push_back(spawn);
+                }
+            }
+
+            int num = rand()%validspawns.size();
+            sf::FloatRect* spa = validspawns[num];
+
+            // Should fix this later
+            int enx = rand()%(int)spa->width;
+            int eny = rand()%(int)spa->height;
+
+            en->setPosition(spa->left + enx, spa->top + eny);
+
             enemies.push_back(en);
         }
     }

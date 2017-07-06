@@ -26,7 +26,7 @@ void Bullet::move() {
 
 }
 
-void Bullet::setPosition(int x, int y) {
+void Bullet::setPosition(double x, double y) {
     this->x = x;
     this->y = y;
     this->sprite.setPosition(x, y);

@@ -39,6 +39,9 @@ protected:
     // List of live enemies
     std::vector<Enemy*> enemies;
 
+    // Spawnpoints for the enemy
+    std::vector<sf::FloatRect*> spawnpoints;
+
     sf::Clock clock;
 
     // Player that the user controls
@@ -50,6 +53,9 @@ protected:
 
     sf::Text sfWave;
     sf::Text sfPoints;
+    sf::Text sfHealth;
+    sf::Text sfAmmo;
+    sf::Text sfWeapon;
     sf::Font font;
 
 };

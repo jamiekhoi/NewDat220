@@ -18,7 +18,7 @@ public:
     void move();
     void draw(sf::RenderWindow & window);
     void setAngle(double angle);
-    void setPosition(int x, int y);
+    void setPosition(double x, double y);
     bool checkCollisionObs(Obstacle* obs);
     bool checkCollisionEnemy(Enemy* en);
     bool hit();
@@ -27,15 +27,15 @@ public:
 protected:
     float width;
     float height;
-    float speed;
-    float xspeed;
-    float yspeed;
+    double speed;
+    double xspeed;
+    double yspeed;
     int damage;
     int penetration;
     int effectiveRange;
     double angle;
     sf::Sprite sprite;
-    int x, y;
+    double x, y;
 };
 
 

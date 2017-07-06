@@ -24,7 +24,7 @@ class Map
 {
 public:
 	// Load map from Tiled JSON file
-	static bool load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles);
+	static bool load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles, std::vector<sf::FloatRect*>& spawnpoints);
 
 private:
 	// Handles regular layers
@@ -34,6 +34,8 @@ private:
 	static void loadObjects(Json::Value& root, Json::Value& layer, std::list<Object*>& objects, TileSize tileSize);
 
 	static void loadObstacles(Json::Value &layer, std::list<Obstacle*> &obstacles, TileSize tileSize);
+
+	static void loadSpawnpoints(Json::Value &layer, std::vector<sf::FloatRect*> &spawnpoints);
 };
 
 #endif

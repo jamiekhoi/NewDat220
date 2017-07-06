@@ -27,6 +27,8 @@ protected:
     sf::Texture* texture;
     sf::Sprite sprite;
 
+    int points;
+
     int health;
     // Position of Enemy
     float x, y;
