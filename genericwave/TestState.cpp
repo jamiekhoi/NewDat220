@@ -48,6 +48,13 @@ TestState::TestState() {
 
 void TestState::Running() {
 
+    // Create enemy every few seconds
+    if(clock.getElapsedTime().asMilliseconds() > 4000){
+        createEnemy();
+        //std::cout << "enemy" << std::endl;
+        clock.restart();
+    }
+    
     // Move the user, ect.
     player->process();
 
@@ -211,35 +218,7 @@ void TestState::handleEvent(sf::Event &event) {
     }else if(event.type == sf::Event::KeyPressed){
 
         if(event.key.code == sf::Keyboard::E){
-            // Create enemy
-            Enemy* en = new Enemy();
-
-            // Create a hitbox for the screen
-            sf::View tempv = machine->getWindow().getView();
-            auto tempcenter = tempv.getCenter();
-            auto tempsize = tempv.getSize();
-            float xpos = tempcenter.x - tempsize.x/2;
-            float ypos = tempcenter.y - tempsize.y/2;
-            sf::FloatRect viewhitbox = sf::FloatRect(xpos, ypos, tempsize.x, tempsize.y);
-
-            std::vector<sf::FloatRect*> validspawns;
-            // Check for spawn points not in the view
-            for(sf::FloatRect* spawn: spawnpoints){
-                if(!spawn->intersects(viewhitbox)){
-                    validspawns.push_back(spawn);
-                }
-            }
-
-            int num = rand()%validspawns.size();
-            sf::FloatRect* spa = validspawns[num];
-
-            // Should fix this later
-            int enx = rand()%(int)spa->width;
-            int eny = rand()%(int)spa->height;
-
-            en->setPosition(spa->left + enx, spa->top + eny);
-
-            enemies.push_back(en);
+            createEnemy();
         }
     }
 
@@ -251,6 +230,41 @@ void TestState::setMachine(GameMachine *machine) {
 
 void TestState::extrafunc(std::string command) {
     State::extrafunc(command);
+}
+
+void TestState::createEnemy() {
+    // Create enemy
+    Enemy* en = new Enemy();
+
+    // Create a hitbox for the screen
+    sf::View tempv = machine->getWindow().getView();
+    auto tempcenter = tempv.getCenter();
+    auto tempsize = tempv.getSize();
+    float xpos = tempcenter.x - tempsize.x/2;
+    float ypos = tempcenter.y - tempsize.y/2;
+    sf::FloatRect viewhitbox = sf::FloatRect(xpos, ypos, tempsize.x, tempsize.y);
+
+    std::vector<sf::FloatRect*> validspawns;
+    // Check for spawn points not in the view
+    for(sf::FloatRect* spawn: spawnpoints){
+        if(!spawn->intersects(viewhitbox)){
+            validspawns.push_back(spawn);
+        }
+    }
+
+    int num = rand()%validspawns.size();
+    sf::FloatRect* spa = validspawns[num];
+
+    // Should fix this later
+    int enx = rand()%(int)spa->width;
+    int eny = rand()%(int)spa->height;
+
+    en->setPosition(spa->left + enx, spa->top + eny);
+
+    // Testing
+    // en->setPosition(350, 350);
+
+    enemies.push_back(en);
 }
 
 

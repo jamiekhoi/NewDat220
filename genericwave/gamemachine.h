@@ -5,6 +5,7 @@
 #ifndef GENERICWAVE_GAMEMACHINE_H
 #define GENERICWAVE_GAMEMACHINE_H
 
+#include <SFML/Audio.hpp>
 #include "state.h"
 
 class State;
@@ -26,6 +27,11 @@ public:
 
 
 protected:
+    void playtest();
+    sf::Sound soundeffectplayer;
+    sf::SoundBuffer selectsound;
+
+
     bool running = true;
     State* currentState;
     std::vector<State*> states;

@@ -58,6 +58,7 @@ protected:
     sf::Text sfWeapon;
     sf::Font font;
 
+    void createEnemy();
 };
 
 

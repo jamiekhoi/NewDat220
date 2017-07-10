@@ -28,12 +28,18 @@ GameMachine::GameMachine() {
     window.setKeyRepeatEnabled(false);
 
     sf::View view1 = window.getDefaultView();
-    //view1.setSize(640, 360);
-    //view1.setCenter(640, 360);
     view1.setSize(viewWidth, viewHeight);
     view1.setCenter(viewCenterX, viewCenterY);
     view1.zoom(1);
     window.setView(view1);
+
+    // load something into the sound buffer...
+    if (!selectsound.loadFromFile("Audio/Effects/Kingdom Hearts Select.ogg")){
+        std::cout << "Failed to load sound effect" << std::endl;
+    }
+
+    soundeffectplayer.setBuffer(selectsound);
+
 }
 
 void GameMachine::AddState(State *s) {
@@ -70,7 +76,10 @@ void GameMachine::Run() {
             // Test if this results in multple key presses if button is help on another computer
             if (event.key.code == sf::Keyboard::R){
                 std::cout << sf::VideoMode::getDesktopMode().height << ", w:" << sf::VideoMode::getDesktopMode().width << std::endl;
-            }else{
+            }else if(event.key.code == sf::Keyboard::Return){
+                playtest();
+            }
+            else{
                 currentState->handleEvent(event);
             }
         }
@@ -97,4 +106,8 @@ void GameMachine::SetState(GameMachine::StateId state) {
 
 void GameMachine::SetState(int index) {
     currentState = states[index];
+}
+
+void GameMachine::playtest() {
+    soundeffectplayer.play();
 }
