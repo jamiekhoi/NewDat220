@@ -25,7 +25,7 @@ Pistol::Pistol() {
     damage = 5;
     effectiveRange = 9999;
 
-    weaponPenetration = 1;
+    weaponPenetration = 5;
 
     if (!weaponTexture.loadFromFile("Bilder/Weapons/pistola.png"))
     {

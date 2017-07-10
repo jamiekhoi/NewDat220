@@ -48,7 +48,7 @@ protected:
     Player* player;
 
     int points = 0;
-
+    int kills = 0;
     int wave = 1;
 
     sf::Text sfWave;

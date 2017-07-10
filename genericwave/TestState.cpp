@@ -54,7 +54,7 @@ void TestState::Running() {
         //std::cout << "enemy" << std::endl;
         clock.restart();
     }
-    
+
     // Move the user, ect.
     player->process();
 
@@ -115,6 +115,8 @@ void TestState::Running() {
                     delete (*en);
                     (*en) = nullptr;
                     en = enemies.erase(en);
+                    kills++;
+                    wave = kills/2 + 1;
                 }
 
                 // Check bullet penetration
@@ -169,6 +171,7 @@ void TestState::Running() {
     auto tempsize = tempv.getSize();
 
     // Draw wave number
+    sfWave.setString("Wave: " + std::to_string(wave));
     sfWave.setPosition(tempcenter.x - tempsize.x/2 + 50, tempcenter.y - tempsize.y/2 + 50);
     machine->getWindow().draw(sfWave);
 
