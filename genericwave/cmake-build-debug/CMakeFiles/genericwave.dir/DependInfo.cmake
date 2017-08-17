@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/CollisionTester.cpp.obj"
   "C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Enemy.cpp.obj"
   "C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Obstacle.cpp.obj"
+  "C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Pickup.cpp.obj"
   "C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Pistol.cpp.obj"
   "C:/Users/Jack/Desktop/NewDat220/genericwave/Player.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/Player.cpp.obj"
   "C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.cpp" "C:/Users/Jack/Desktop/NewDat220/genericwave/cmake-build-debug/CMakeFiles/genericwave.dir/TestState.cpp.obj"

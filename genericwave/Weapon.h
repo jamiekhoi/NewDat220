@@ -7,40 +7,58 @@
 
 #include <cmath>
 #include "Bullet.h"
+#include "TestState.h"
+
 const double pi = 3.14159265358979323846;
 
 class Weapon {
 public:
     Weapon(){}
     friend class Player;
+    friend class TestState;
     virtual void fire(std::vector<Bullet*>& bullets){
-        double angle = weapon.getRotation();
-        double xdiff = cos(angle*pi/180.0) * weaponWidth;
-        double ydiff = sin(angle*pi/180.0) * weaponHeight;
 
-        // Position of pistol nozzle, i.e. where the bullet will be fired.
-        double bulletx = weapon.getPosition().x + xdiff;
-        double bullety = weapon.getPosition().y + ydiff;
+        if(ammo > 0){
+            // If that was last bullet
+            if(--ammo == 0){
+                // Reload if possible
+                reload();
+            }
+            double angle = weapon.getRotation();
+            double xdiff = cos(angle*pi/180.0) * weaponWidth;
+            double ydiff = sin(angle*pi/180.0) * weaponHeight;
 
-        //std::cout << "xdiff: " << xdiff <<std::endl;
-        //std::cout << "ydiff: " << ydiff << std::endl;
+            // Position of pistol nozzle, i.e. where the bullet will be fired.
+            double bulletx = weapon.getPosition().x + xdiff;
+            double bullety = weapon.getPosition().y + ydiff;
 
-        Bullet* bullet = new Bullet();
+            //std::cout << "xdiff: " << xdiff <<std::endl;
+            //std::cout << "ydiff: " << ydiff << std::endl;
 
-        bullet->width = bulletWidth;
-        bullet->height = bulletHeight;
-        bullet->sprite.setTexture(*bulletTexture);
-        bullet->setPosition(bulletx, bullety);
+            Bullet* bullet = new Bullet();
 
-        bullet->penetration = weaponPenetration;
-        bullet->damage = damage;
-        bullet->effectiveRange = effectiveRange;
-        bullet->speed = bulletSpeed;
-        bullet->setAngle(angle);
+            bullet->width = bulletWidth;
+            bullet->height = bulletHeight;
+            bullet->sprite.setTexture(*bulletTexture);
+            bullet->setPosition(bulletx, bullety);
 
-        bullets.push_back(bullet);
+            bullet->penetration = weaponPenetration;
+            bullet->damage = damage;
+            bullet->effectiveRange = effectiveRange;
+            bullet->speed = bulletSpeed;
+            bullet->setAngle(angle);
+
+            bullets.push_back(bullet);
+
+        }
     }
-    virtual void reload(){}
+    virtual void reload(){
+        // Check for more magazines and reload if possible
+        if(magazines != 0){
+            magazines--;
+            ammo = maxAmmoCount;
+        }
+    }
     virtual void addAmmo(){}
     virtual void draw(sf::RenderWindow &window){}
     virtual void setPosition(float x, float y){}
@@ -51,13 +69,15 @@ public:
 
 protected:
 
+    std::string name;
+
     int ammo;
     int magazines;
     // Since Pistol is default weapon it should have infinite ammo. Change later.
     int maxMagazineCount;
     int maxAmmoCount;
     int damage;
-    // Should change to infinte range after a while
+    // Should change to infinite range after a while
     int effectiveRange = 9999;
 
     sf::Texture weaponTexture;

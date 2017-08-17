@@ -20,15 +20,27 @@ TestState::TestState() {
     sfWave.setFillColor(sf::Color::White);
     sfWave.setOutlineColor(sf::Color::Black);
     sfWave.setOutlineThickness(2);
-    sfWave.setString("Wave " + std::to_string(wave));
+    //sfWave.setString("Wave " + std::to_string(wave));
     sfWave.setFont(font);
 
     sfPoints.setCharacterSize(24);
     sfPoints.setFillColor(sf::Color::White);
     sfPoints.setOutlineColor(sf::Color::Black);
     sfPoints.setOutlineThickness(2);
-    sfPoints.setString("Points: " + std::to_string(wave));
+    //sfPoints.setString("Points: " + std::to_string(wave));
     sfPoints.setFont(font);
+
+    sfWeapon.setCharacterSize(24);
+    sfWeapon.setFillColor(sf::Color::White);
+    sfWeapon.setOutlineColor(sf::Color::Black);
+    sfWeapon.setOutlineThickness(2);
+    sfWeapon.setFont(font);
+
+    sfAmmo.setCharacterSize(24);
+    sfAmmo.setFillColor(sf::Color::White);
+    sfAmmo.setOutlineColor(sf::Color::Black);
+    sfAmmo.setOutlineThickness(2);
+    sfAmmo.setFont(font);
 
     // Load map information from JSON into object list
     if (!Map::load("Bilder/Stages/TMX/teststage3.json", objects, obstacles, spawnpoints))
@@ -95,7 +107,7 @@ void TestState::Running() {
         en->draw(machine->getWindow());
     }
 
-    // Move and draw bullets
+    // Move and draw bullets. Also bullet collision test
     for( std::vector<Bullet*>::iterator bull = bullets.begin(); bull != bullets.end();){
 
         (*bull)->move();
@@ -109,7 +121,7 @@ void TestState::Running() {
             // Check collision with enemy
             if((*bull)->checkCollisionEnemy((*en))){
 
-                // Check enemy health
+                // Decrease enemy health and check if enemie is dead
                 if((*en)->dead((*bull)->getDamage())){
                     points += (*en)->points;
                     delete (*en);
@@ -117,6 +129,11 @@ void TestState::Running() {
                     en = enemies.erase(en);
                     kills++;
                     wave = kills/2 + 1;
+
+                    // Check how many kills and create a pickup for new weapon if needed
+                    if(kills == 2){
+                        createPickup("ammo");
+                    }
                 }
 
                 // Check bullet penetration
@@ -156,6 +173,46 @@ void TestState::Running() {
         }
     }
 
+    // See if player gets a pickup
+    for( std::vector<Pickup*>::iterator pick = pickups.begin(); pick != pickups.end();){
+        bool s = player->getsfSprite().getGlobalBounds().intersects((*pick)->getGlobalBounds());
+        if(player->getsfSprite().getGlobalBounds().intersects((*pick)->getGlobalBounds())){
+            // Check what type of pickup
+            if((*pick)->type == "ammo"){
+                // Give player more ammo
+                player->currentWeapon->magazines += 5;
+                if (player->currentWeapon->magazines > player->currentWeapon->maxMagazineCount){
+                    player->currentWeapon->magazines = player->currentWeapon->maxMagazineCount;
+                }
+                if(player->currentWeapon->ammo == 0){
+                    player->currentWeapon->reload();
+                }
+            }
+            else if((*pick)->type == "doublepoints"){
+                // Turn on a score multiplier
+
+            }
+            else if((*pick)->type == "weapon2"){
+                // Give player new weapon
+
+            }
+
+            // Delete the pickup
+            delete (*pick);
+            (*pick) = nullptr;
+            pick = pickups.erase(pick);
+            break;
+
+        }else{
+            pick++;
+        }
+    }
+
+    // Draw live pickups
+    for(auto p: pickups){
+        machine->getWindow().draw(*p);
+    }
+
 
     // Set the view (what the user sees of the game map)
     // Crude. Actually centers around player sprite's upper left corner
@@ -179,6 +236,18 @@ void TestState::Running() {
     sfPoints.setString("Points: " + std::to_string(points));
     sfPoints.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y - tempsize.y/2 + 50);
     machine->getWindow().draw(sfPoints);
+
+    // Draw health
+
+
+    // Draw weapon name, ammo count and magazine count
+    sfWeapon.setString(player->currentWeapon->name);
+    sfWeapon.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 100);
+    machine->getWindow().draw(sfWeapon);
+
+    sfAmmo.setString(std::to_string(player->currentWeapon->ammo) + "/" + std::to_string(player->currentWeapon->magazines));
+    sfAmmo.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 50);
+    machine->getWindow().draw(sfAmmo);
 
     // Draw the screen
     machine->getWindow().display();
@@ -268,6 +337,34 @@ void TestState::createEnemy() {
     // en->setPosition(350, 350);
 
     enemies.push_back(en);
+}
+
+void TestState::createPickup() {
+    sf::Texture* t = new sf::Texture();
+    if (!t->loadFromFile("Bilder/Pickups/Weapons/weapon2pickup.png"))
+    {
+        std::cout << "Failed to load weapon2pickup texture" << std::endl;
+    }
+    Pickup* p = new Pickup();
+    p->type = "weapon2";
+    p->bettertexturesetter(t);
+    // Should set pickup position to a random spot on the map that doesn't collide with any obstacles
+    p->setPosition(500, 500);
+    pickups.push_back(p);
+}
+
+void TestState::createPickup(std::string type) {
+    sf::Texture* t = new sf::Texture();
+    if (!t->loadFromFile("Bilder/Pickups/Weapons/weapon2pickup.png"))
+    {
+        std::cout << "Failed to load weapon2pickup texture" << std::endl;
+    }
+    Pickup* p = new Pickup();
+    p->type = type;
+    p->bettertexturesetter(t);
+    // Should set pickup position to a random spot on the map that doesn't collide with any obstacles
+    p->setPosition(500, 500);
+    pickups.push_back(p);
 }
 
 

@@ -16,6 +16,7 @@ class Bullet;
 class Player {
 public:
     Player();
+    friend class TestState;
     bool setTexture(sf::Texture texture);
     void setPosition(float x, float y);
     void move(float x, float y);

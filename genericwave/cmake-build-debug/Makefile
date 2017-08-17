@@ -230,6 +230,33 @@ Obstacle.cpp.s:
 	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Obstacle.cpp.s
 .PHONY : Obstacle.cpp.s
 
+Pickup.obj: Pickup.cpp.obj
+
+.PHONY : Pickup.obj
+
+# target to build an object file
+Pickup.cpp.obj:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Pickup.cpp.obj
+.PHONY : Pickup.cpp.obj
+
+Pickup.i: Pickup.cpp.i
+
+.PHONY : Pickup.i
+
+# target to preprocess a source file
+Pickup.cpp.i:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Pickup.cpp.i
+.PHONY : Pickup.cpp.i
+
+Pickup.s: Pickup.cpp.s
+
+.PHONY : Pickup.s
+
+# target to generate assembly for a file
+Pickup.cpp.s:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Pickup.cpp.s
+.PHONY : Pickup.cpp.s
+
 Pistol.obj: Pistol.cpp.obj
 
 .PHONY : Pistol.obj
@@ -494,6 +521,9 @@ help:
 	@echo ... Obstacle.obj
 	@echo ... Obstacle.i
 	@echo ... Obstacle.s
+	@echo ... Pickup.obj
+	@echo ... Pickup.i
+	@echo ... Pickup.s
 	@echo ... Pistol.obj
 	@echo ... Pistol.i
 	@echo ... Pistol.s

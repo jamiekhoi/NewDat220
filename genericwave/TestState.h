@@ -6,6 +6,7 @@
 #define GENERICWAVE_TESTSTATE_H
 
 #include "state.h"
+#include "Pickup.h"
 #include <list>
 
 class Player;
@@ -25,6 +26,9 @@ public:
     void setMachine(GameMachine* machine);
     void extrafunc(std::string command);
 
+    void createPickup();
+    void createPickup(std::string type);
+
 protected:
     GameMachine* machine;
     // List of game objects. Should of course be put somewhere else in a bigger game
@@ -42,6 +46,9 @@ protected:
     // Spawnpoints for the enemy
     std::vector<sf::FloatRect*> spawnpoints;
 
+    // List of live pickups/powerups
+    std::vector<Pickup*> pickups;
+
     sf::Clock clock;
 
     // Player that the user controls
@@ -55,6 +62,7 @@ protected:
     sf::Text sfPoints;
     sf::Text sfHealth;
     sf::Text sfAmmo;
+    sf::Text sfMagazines;
     sf::Text sfWeapon;
     sf::Font font;
 

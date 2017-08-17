@@ -6,8 +6,12 @@ CMakeFiles/genericwave.dir/Bullet.cpp.obj
  C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Weapon.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/state.h
 CMakeFiles/genericwave.dir/CollisionTester.cpp.obj
  C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.cpp
  C:/Users/Jack/Desktop/NewDat220/genericwave/CollisionTester.h
@@ -16,28 +20,44 @@ CMakeFiles/genericwave.dir/Enemy.cpp.obj
  C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.cpp
  C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Weapon.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/state.h
 CMakeFiles/genericwave.dir/Obstacle.cpp.obj
  C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.cpp
  C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+CMakeFiles/genericwave.dir/Pickup.cpp.obj
+ C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.cpp
+ C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.h
 CMakeFiles/genericwave.dir/Pistol.cpp.obj
  C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.cpp
  C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Weapon.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/state.h
 CMakeFiles/genericwave.dir/Player.cpp.obj
  C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Player.cpp
  C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Weapon.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/state.h
 CMakeFiles/genericwave.dir/TestState.cpp.obj
  C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Enemy.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
+ C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.cpp
  C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
@@ -55,6 +75,7 @@ CMakeFiles/genericwave.dir/layer.cpp.obj
  C:/Users/Jack/Desktop/NewDat220/genericwave/layer.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/object.h
 CMakeFiles/genericwave.dir/main.cpp.obj
+ C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.h
  C:/Users/Jack/Desktop/NewDat220/genericwave/main.cpp

@@ -9,6 +9,8 @@
 
 Pistol::Pistol() {
 
+    name = "pistol";
+
     // Weapon specific info
     weaponWidth = 80;
     weaponHeight = 40;
@@ -16,10 +18,10 @@ Pistol::Pistol() {
     bulletWidth = 5;
     bulletHeight = 5;
 
-    ammo = 1;
-    maxAmmoCount = 17;
-    magazines = 1;
-    maxMagazineCount = 99;
+    maxAmmoCount = 3;
+    ammo = maxAmmoCount;
+    maxMagazineCount = 2;
+    magazines = maxMagazineCount;
 
     bulletSpeed = 20;
     damage = 5;
@@ -56,7 +58,7 @@ void Pistol::fire(std::vector<Bullet*>& bullets) {
 }
 
 void Pistol::reload() {
-
+    Weapon::reload();
 }
 
 void Pistol::addAmmo() {
