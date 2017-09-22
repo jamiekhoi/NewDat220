@@ -18,6 +18,7 @@ class Enemy;
 class TestState: public State {
 public:
     TestState();
+    ~TestState();
     void Running();
 
     // Handles event
@@ -31,6 +32,9 @@ public:
 
 protected:
     GameMachine* machine;
+    int multiplier = 1;
+    int pointsPerEnemy = 50;
+
     // List of game objects. Should of course be put somewhere else in a bigger game
     std::list<Object*> objects;
 
@@ -49,7 +53,11 @@ protected:
     // List of live pickups/powerups
     std::vector<Pickup*> pickups;
 
-    sf::Clock clock;
+    // Clocks and timers for automated events
+    sf::Clock spawnClock;
+    sf::Clock wavePauseClock;
+    sf::Clock scoreMultiplierClock;
+    sf::Clock playerHitClock;
 
     // Player that the user controls
     Player* player;

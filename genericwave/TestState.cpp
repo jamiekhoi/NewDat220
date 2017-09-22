@@ -11,7 +11,7 @@
 #include "Enemy.h"
 
 TestState::TestState() {
-
+    createPickup("multiplier");
     if (!font.loadFromFile("Font/Montserrat-Regular.ttf"))
     {
         std::cout << "Error loading font" << std::endl;
@@ -60,11 +60,18 @@ TestState::TestState() {
 
 void TestState::Running() {
 
+    // Check if score multiplier is active and when to deactivate it
+    if(multiplier != 1){
+        if(scoreMultiplierClock.getElapsedTime().asSeconds() > 10){
+            multiplier = 1;
+        }
+    }
+
     // Create enemy every few seconds
-    if(clock.getElapsedTime().asMilliseconds() > 4000){
+    if(spawnClock.getElapsedTime().asSeconds() > 4){
         createEnemy();
         //std::cout << "enemy" << std::endl;
-        clock.restart();
+        spawnClock.restart();
     }
 
     // Move the user, ect.
@@ -133,7 +140,7 @@ void TestState::Running() {
 
                 // Decrease enemy health and check if enemie is dead
                 if((*en)->dead((*bull)->getDamage())){
-                    points += (*en)->points;
+                    points += (*en)->points*multiplier;
                     delete (*en);
                     (*en) = nullptr;
                     en = enemies.erase(en);
@@ -198,9 +205,10 @@ void TestState::Running() {
                     player->currentWeapon->reload();
                 }
             }
-            else if((*pick)->type == "doublepoints"){
+            else if((*pick)->type == "multiplier"){
                 // Turn on a score multiplier
-
+                multiplier = 2;
+                scoreMultiplierClock.restart();
             }
             else if((*pick)->type == "weapon2"){
                 // Give player new weapon
@@ -377,9 +385,16 @@ void TestState::createPickup() {
 
 void TestState::createPickup(std::string type) {
     sf::Texture* t = new sf::Texture();
-    if (!t->loadFromFile("Bilder/Pickups/Weapons/weapon2pickup.png"))
-    {
-        std::cout << "Failed to load weapon2pickup texture" << std::endl;
+    if(type == "ammo"){
+        if (!t->loadFromFile("Bilder/Pickups/Weapons/weapon2pickup.png"))
+        {
+            std::cout << "Failed to load weapon2pickup texture" << std::endl;
+        }
+    }else if(type == "multiplier"){
+        if (!t->loadFromFile("Bilder/Pickups/Weapons/weapon2pickup.png"))
+        {
+            std::cout << "Failed to load weapon2pickup texture" << std::endl;
+        }
     }
     Pickup* p = new Pickup();
     p->type = type;
@@ -387,6 +402,10 @@ void TestState::createPickup(std::string type) {
     // Should set pickup position to a random spot on the map that doesn't collide with any obstacles
     p->setPosition(500, 500);
     pickups.push_back(p);
+}
+
+TestState::~TestState() {
+
 }
 
 
