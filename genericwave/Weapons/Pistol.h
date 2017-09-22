@@ -6,7 +6,7 @@
 #define GENERICWAVE_PISTOL_H
 
 #include <SFML/Graphics.hpp>
-#include "Weapon.h"
+#include "../Weapon.h"
 
 class Pistol: public Weapon {
 public:

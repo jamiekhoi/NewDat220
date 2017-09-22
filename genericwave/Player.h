@@ -36,6 +36,10 @@ public:
     sf::Sprite getsfSprite();
     void printPos();
 
+    void addWeapon();
+
+    void switchWeapon(int weaponPos);
+
     std::ostream& operator<<(std::ostream& stream){
         stream << "Player pos: (" << x << ", " << y << ")" << std::endl;
         stream << "Frame count: " << framecount << std::endl;
@@ -69,7 +73,7 @@ protected:
     // Duration of one frame in ms
     int frameDuration;
 
-    std::list<Weapon*> weapons;
+    std::vector<Weapon*> weapons;
 
     int currentWeaponNr;
 

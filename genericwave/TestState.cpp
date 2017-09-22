@@ -245,7 +245,7 @@ void TestState::Running() {
     sfWeapon.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 100);
     machine->getWindow().draw(sfWeapon);
 
-    sfAmmo.setString(std::to_string(player->currentWeapon->ammo) + "/" + std::to_string(player->currentWeapon->magazines));
+    sfAmmo.setString(std::to_string(player->currentWeapon->ammo) + "/" + std::to_string(player->currentWeapon->magazines*player->currentWeapon->maxAmmoCount));
     sfAmmo.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 50);
     machine->getWindow().draw(sfAmmo);
 
@@ -286,11 +286,22 @@ void TestState::handleEvent(sf::Event &event) {
             std::cout << "didnt hit player" << std::endl;
         }
          */
-        player->fireWeapon(bullets);
-    }else if(event.type == sf::Event::KeyPressed){
+        if(event.mouseButton.button == sf::Mouse::Left){
+            player->fireWeapon(bullets);
+        }
+
+    }else if(sf::Event::MouseButtonReleased){
+        if(event.mouseButton.button == sf::Mouse::Left){
+            std::cout << "released" << std::endl;
+        }
+    } else if(event.type == sf::Event::KeyPressed){
 
         if(event.key.code == sf::Keyboard::E){
             createEnemy();
+        }else if(event.key.code == sf::Keyboard::Num1){
+            player->switchWeapon(0);
+        }else if(event.key.code == sf::Keyboard::Num2){
+            player->switchWeapon(1);
         }
     }
 

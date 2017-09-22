@@ -257,33 +257,6 @@ Pickup.cpp.s:
 	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Pickup.cpp.s
 .PHONY : Pickup.cpp.s
 
-Pistol.obj: Pistol.cpp.obj
-
-.PHONY : Pistol.obj
-
-# target to build an object file
-Pistol.cpp.obj:
-	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Pistol.cpp.obj
-.PHONY : Pistol.cpp.obj
-
-Pistol.i: Pistol.cpp.i
-
-.PHONY : Pistol.i
-
-# target to preprocess a source file
-Pistol.cpp.i:
-	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Pistol.cpp.i
-.PHONY : Pistol.cpp.i
-
-Pistol.s: Pistol.cpp.s
-
-.PHONY : Pistol.s
-
-# target to generate assembly for a file
-Pistol.cpp.s:
-	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Pistol.cpp.s
-.PHONY : Pistol.cpp.s
-
 Player.obj: Player.cpp.obj
 
 .PHONY : Player.obj
@@ -337,6 +310,60 @@ TestState.s: TestState.cpp.s
 TestState.cpp.s:
 	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/TestState.cpp.s
 .PHONY : TestState.cpp.s
+
+Weapons/AutomaticWeapon.obj: Weapons/AutomaticWeapon.cpp.obj
+
+.PHONY : Weapons/AutomaticWeapon.obj
+
+# target to build an object file
+Weapons/AutomaticWeapon.cpp.obj:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj
+.PHONY : Weapons/AutomaticWeapon.cpp.obj
+
+Weapons/AutomaticWeapon.i: Weapons/AutomaticWeapon.cpp.i
+
+.PHONY : Weapons/AutomaticWeapon.i
+
+# target to preprocess a source file
+Weapons/AutomaticWeapon.cpp.i:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.i
+.PHONY : Weapons/AutomaticWeapon.cpp.i
+
+Weapons/AutomaticWeapon.s: Weapons/AutomaticWeapon.cpp.s
+
+.PHONY : Weapons/AutomaticWeapon.s
+
+# target to generate assembly for a file
+Weapons/AutomaticWeapon.cpp.s:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.s
+.PHONY : Weapons/AutomaticWeapon.cpp.s
+
+Weapons/Pistol.obj: Weapons/Pistol.cpp.obj
+
+.PHONY : Weapons/Pistol.obj
+
+# target to build an object file
+Weapons/Pistol.cpp.obj:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj
+.PHONY : Weapons/Pistol.cpp.obj
+
+Weapons/Pistol.i: Weapons/Pistol.cpp.i
+
+.PHONY : Weapons/Pistol.i
+
+# target to preprocess a source file
+Weapons/Pistol.cpp.i:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.i
+.PHONY : Weapons/Pistol.cpp.i
+
+Weapons/Pistol.s: Weapons/Pistol.cpp.s
+
+.PHONY : Weapons/Pistol.s
+
+# target to generate assembly for a file
+Weapons/Pistol.cpp.s:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.s
+.PHONY : Weapons/Pistol.cpp.s
 
 gamemachine.obj: gamemachine.cpp.obj
 
@@ -524,15 +551,18 @@ help:
 	@echo ... Pickup.obj
 	@echo ... Pickup.i
 	@echo ... Pickup.s
-	@echo ... Pistol.obj
-	@echo ... Pistol.i
-	@echo ... Pistol.s
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s
 	@echo ... TestState.obj
 	@echo ... TestState.i
 	@echo ... TestState.s
+	@echo ... Weapons/AutomaticWeapon.obj
+	@echo ... Weapons/AutomaticWeapon.i
+	@echo ... Weapons/AutomaticWeapon.s
+	@echo ... Weapons/Pistol.obj
+	@echo ... Weapons/Pistol.i
+	@echo ... Weapons/Pistol.s
 	@echo ... gamemachine.obj
 	@echo ... gamemachine.i
 	@echo ... gamemachine.s

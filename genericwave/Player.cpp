@@ -6,8 +6,9 @@
 #include <cmath>
 
 #include "Player.h"
-#include "Pistol.h"
+#include "Weapons/Pistol.h"
 #include "Bullet.h"
+#include "Weapons/AutomaticWeapon.h"
 
 
 Player::Player() {
@@ -46,6 +47,8 @@ Player::Player() {
     // Create default weapon
     currentWeaponNr = 0;
     currentWeapon = new Pistol();
+    weapons.push_back(currentWeapon);
+    currentWeapon = new AutomaticWeapon();
     weapons.push_back(currentWeapon);
 }
 
@@ -229,4 +232,13 @@ bool Player::fireWeapon(std::vector<Bullet*>& bullets) {
 
 sf::Vector2f Player::getPosition() {
     return sf::Vector2f(x, y);
+}
+
+void Player::addWeapon() {
+
+}
+
+void Player::switchWeapon(int weaponPos) {
+    currentWeaponNr = weaponPos;
+    currentWeapon = weapons[weaponPos];
 }

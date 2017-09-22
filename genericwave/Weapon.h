@@ -8,6 +8,7 @@
 #include <cmath>
 #include "Bullet.h"
 #include "TestState.h"
+#include <iostream>
 
 const double pi = 3.14159265358979323846;
 
@@ -60,12 +61,27 @@ public:
         }
     }
     virtual void addAmmo(){}
-    virtual void draw(sf::RenderWindow &window){}
-    virtual void setPosition(float x, float y){}
-    virtual sf::Vector2f getPosition(){}
-    virtual void setRotation(double angle){}
-    virtual void rotate(double angle){}
-    virtual void setAnimationDirection(int direction){}
+    virtual bool holdFire(){}
+    virtual void draw(sf::RenderWindow &window){
+        window.draw(weapon);
+    }
+    virtual void setPosition(float x, float y){
+        weapon.setPosition(x, y);
+    }
+    virtual sf::Vector2f getPosition(){
+        return weapon.getPosition();
+    }
+    virtual void setRotation(double angle){
+        weapon.setRotation(angle);
+    }
+    virtual void rotate(double angle){
+        weapon.rotate(angle);
+    }
+    virtual void setAnimationDirection(int direction){
+        currentDirectionAnimation = direction;
+        weapon.setTextureRect(sf::IntRect(0, currentDirectionAnimation*weaponHeight, weaponWidth, weaponHeight));
+
+    }
 
 protected:
 

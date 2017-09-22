@@ -54,6 +54,7 @@ protected:
     // Player that the user controls
     Player* player;
 
+    bool fireheld = false;
     int points = 0;
     int kills = 0;
     int wave = 1;

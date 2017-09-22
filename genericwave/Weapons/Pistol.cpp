@@ -3,7 +3,7 @@
 //
 
 #include "Pistol.h"
-#include "Bullet.h"
+#include "../Bullet.h"
 #include <iostream>
 #include <cmath>
 
@@ -66,28 +66,27 @@ void Pistol::addAmmo() {
 }
 
 void Pistol::setPosition(float x, float y) {
-    weapon.setPosition(x, y);
+    Weapon::setPosition(x, y);
 }
 
 void Pistol::setRotation(double angle) {
-    weapon.setRotation(angle);
+    Weapon::setRotation(angle);
 }
 
 void Pistol::rotate(double angle) {
-    weapon.rotate(angle);
+    Weapon::rotate(angle);
 }
 
 void Pistol::draw(sf::RenderWindow &window) {
     //std::cout << currentDirectionAnimation << std::endl;
-
-    window.draw(weapon);
+    Weapon::draw(window);
+    //window.draw(weapon);
 }
 
 sf::Vector2f Pistol::getPosition() {
-    return weapon.getPosition();
+    return Weapon::getPosition();
 }
 
 void Pistol::setAnimationDirection(int direction) {
-    currentDirectionAnimation = direction;
-    weapon.setTextureRect(sf::IntRect(0, currentDirectionAnimation*weaponHeight, weaponWidth, weaponHeight));
+    Weapon::setAnimationDirection(direction);
 }

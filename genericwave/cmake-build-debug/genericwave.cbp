@@ -110,12 +110,6 @@
 		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Pickup.h">
 			<Option target="genericwave"/>
 		</Unit>
-		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.cpp">
-			<Option target="genericwave"/>
-		</Unit>
-		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Pistol.h">
-			<Option target="genericwave"/>
-		</Unit>
 		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Player.cpp">
 			<Option target="genericwave"/>
 		</Unit>
@@ -129,6 +123,18 @@
 			<Option target="genericwave"/>
 		</Unit>
 		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Weapon.h">
+			<Option target="genericwave"/>
+		</Unit>
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Weapons/AutomaticWeapon.cpp">
+			<Option target="genericwave"/>
+		</Unit>
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Weapons/AutomaticWeapon.h">
+			<Option target="genericwave"/>
+		</Unit>
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Weapons/Pistol.cpp">
+			<Option target="genericwave"/>
+		</Unit>
+		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/Weapons/Pistol.h">
 			<Option target="genericwave"/>
 		</Unit>
 		<Unit filename="C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.cpp">

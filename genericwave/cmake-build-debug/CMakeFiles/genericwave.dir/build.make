@@ -248,28 +248,28 @@ CMakeFiles/genericwave.dir/Player.cpp.obj.provides: CMakeFiles/genericwave.dir/P
 CMakeFiles/genericwave.dir/Player.cpp.obj.provides.build: CMakeFiles/genericwave.dir/Player.cpp.obj
 
 
-CMakeFiles/genericwave.dir/Pistol.cpp.obj: CMakeFiles/genericwave.dir/flags.make
-CMakeFiles/genericwave.dir/Pistol.cpp.obj: ../Pistol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/genericwave.dir/Pistol.cpp.obj"
-	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\Pistol.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\Pistol.cpp
+CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: CMakeFiles/genericwave.dir/flags.make
+CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../Weapons/Pistol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\Weapons\Pistol.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\Weapons\Pistol.cpp
 
-CMakeFiles/genericwave.dir/Pistol.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/Pistol.cpp.i"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\Pistol.cpp > CMakeFiles\genericwave.dir\Pistol.cpp.i
+CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.i"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\Weapons\Pistol.cpp > CMakeFiles\genericwave.dir\Weapons\Pistol.cpp.i
 
-CMakeFiles/genericwave.dir/Pistol.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/Pistol.cpp.s"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\Pistol.cpp -o CMakeFiles\genericwave.dir\Pistol.cpp.s
+CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.s"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\Weapons\Pistol.cpp -o CMakeFiles\genericwave.dir\Weapons\Pistol.cpp.s
 
-CMakeFiles/genericwave.dir/Pistol.cpp.obj.requires:
+CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj.requires:
 
-.PHONY : CMakeFiles/genericwave.dir/Pistol.cpp.obj.requires
+.PHONY : CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj.requires
 
-CMakeFiles/genericwave.dir/Pistol.cpp.obj.provides: CMakeFiles/genericwave.dir/Pistol.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Pistol.cpp.obj.provides.build
-.PHONY : CMakeFiles/genericwave.dir/Pistol.cpp.obj.provides
+CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj.provides: CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj.provides.build
+.PHONY : CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj.provides
 
-CMakeFiles/genericwave.dir/Pistol.cpp.obj.provides.build: CMakeFiles/genericwave.dir/Pistol.cpp.obj
+CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj.provides.build: CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj
 
 
 CMakeFiles/genericwave.dir/CollisionTester.cpp.obj: CMakeFiles/genericwave.dir/flags.make
@@ -392,6 +392,30 @@ CMakeFiles/genericwave.dir/Pickup.cpp.obj.provides: CMakeFiles/genericwave.dir/P
 CMakeFiles/genericwave.dir/Pickup.cpp.obj.provides.build: CMakeFiles/genericwave.dir/Pickup.cpp.obj
 
 
+CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: CMakeFiles/genericwave.dir/flags.make
+CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../Weapons/AutomaticWeapon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj"
+	C:\mingw64\bin\g++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\genericwave.dir\Weapons\AutomaticWeapon.cpp.obj -c C:\Users\Jack\Desktop\NewDat220\genericwave\Weapons\AutomaticWeapon.cpp
+
+CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.i"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Jack\Desktop\NewDat220\genericwave\Weapons\AutomaticWeapon.cpp > CMakeFiles\genericwave.dir\Weapons\AutomaticWeapon.cpp.i
+
+CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.s"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Jack\Desktop\NewDat220\genericwave\Weapons\AutomaticWeapon.cpp -o CMakeFiles\genericwave.dir\Weapons\AutomaticWeapon.cpp.s
+
+CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj.requires:
+
+.PHONY : CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj.requires
+
+CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj.provides: CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj.provides.build
+.PHONY : CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj.provides
+
+CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj.provides.build: CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj
+
+
 # Object files for target genericwave
 genericwave_OBJECTS = \
 "CMakeFiles/genericwave.dir/main.cpp.obj" \
@@ -402,12 +426,13 @@ genericwave_OBJECTS = \
 "CMakeFiles/genericwave.dir/object.cpp.obj" \
 "CMakeFiles/genericwave.dir/sprite.cpp.obj" \
 "CMakeFiles/genericwave.dir/Player.cpp.obj" \
-"CMakeFiles/genericwave.dir/Pistol.cpp.obj" \
+"CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj" \
 "CMakeFiles/genericwave.dir/CollisionTester.cpp.obj" \
 "CMakeFiles/genericwave.dir/Obstacle.cpp.obj" \
 "CMakeFiles/genericwave.dir/Bullet.cpp.obj" \
 "CMakeFiles/genericwave.dir/Enemy.cpp.obj" \
-"CMakeFiles/genericwave.dir/Pickup.cpp.obj"
+"CMakeFiles/genericwave.dir/Pickup.cpp.obj" \
+"CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj"
 
 # External object files for target genericwave
 genericwave_EXTERNAL_OBJECTS =
@@ -420,17 +445,18 @@ genericwave.exe: CMakeFiles/genericwave.dir/layer.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/object.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/sprite.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/Player.cpp.obj
-genericwave.exe: CMakeFiles/genericwave.dir/Pistol.cpp.obj
+genericwave.exe: CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/CollisionTester.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/Obstacle.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/Bullet.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/Enemy.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/Pickup.cpp.obj
+genericwave.exe: CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj
 genericwave.exe: CMakeFiles/genericwave.dir/build.make
 genericwave.exe: CMakeFiles/genericwave.dir/linklibs.rsp
 genericwave.exe: CMakeFiles/genericwave.dir/objects1.rsp
 genericwave.exe: CMakeFiles/genericwave.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable genericwave.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Jack\Desktop\NewDat220\genericwave\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable genericwave.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\genericwave.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -446,12 +472,13 @@ CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/layer.cpp.obj.re
 CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/object.cpp.obj.requires
 CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/sprite.cpp.obj.requires
 CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/Player.cpp.obj.requires
-CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/Pistol.cpp.obj.requires
+CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj.requires
 CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/CollisionTester.cpp.obj.requires
 CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/Obstacle.cpp.obj.requires
 CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/Bullet.cpp.obj.requires
 CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/Enemy.cpp.obj.requires
 CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/Pickup.cpp.obj.requires
+CMakeFiles/genericwave.dir/requires: CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj.requires
 
 .PHONY : CMakeFiles/genericwave.dir/requires
 

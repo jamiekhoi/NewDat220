@@ -28,7 +28,7 @@ int main() {
      *
      * Round obstacles for rebound shots
      *
-     * Create a store for player to buy ammo and other things
+     * Create a store aaaafor player to buy ammo and other things
      * Should reloading weapon take time?
      */
     //std::cout << "Hello, World!" << std::endl;
