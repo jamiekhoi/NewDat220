@@ -6,8 +6,8 @@
 #define GENERICWAVE_WEAPON_H
 
 #include <cmath>
-#include "Bullet.h"
-#include "TestState.h"
+#include "../Bullet.h"
+#include "../TestState.h"
 #include <iostream>
 
 const double pi = 3.14159265358979323846;
@@ -61,7 +61,9 @@ public:
         }
     }
     virtual void addAmmo(){}
-    virtual bool holdFire(){}
+    virtual void holdFire(std::vector<Bullet*>& bullets){
+        fire(bullets);
+    }
     virtual void draw(sf::RenderWindow &window){
         window.draw(weapon);
     }
@@ -89,6 +91,7 @@ protected:
 
     int ammo;
     int magazines;
+    std::string firemode;
     // Since Pistol is default weapon it should have infinite ammo. Change later.
     int maxMagazineCount;
     int maxAmmoCount;

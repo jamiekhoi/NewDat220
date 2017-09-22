@@ -8,7 +8,7 @@ CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../Obstacle.h
 CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../Pickup.h
 CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../Player.h
 CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../TestState.h
-CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../Weapon.h
+CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../Weapons/Weapon.h
 CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../gamemachine.h
 CMakeFiles/genericwave.dir/Bullet.cpp.obj: ../state.h
 
@@ -22,7 +22,7 @@ CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../Obstacle.h
 CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../Pickup.h
 CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../Player.h
 CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../TestState.h
-CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../Weapon.h
+CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../Weapons/Weapon.h
 CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../gamemachine.h
 CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../state.h
 
@@ -38,9 +38,9 @@ CMakeFiles/genericwave.dir/Player.cpp.obj: ../Pickup.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Player.cpp
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Player.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../TestState.h
-CMakeFiles/genericwave.dir/Player.cpp.obj: ../Weapon.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Weapons/AutomaticWeapon.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../Weapons/Pistol.h
+CMakeFiles/genericwave.dir/Player.cpp.obj: ../Weapons/Weapon.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../gamemachine.h
 CMakeFiles/genericwave.dir/Player.cpp.obj: ../state.h
 
@@ -51,7 +51,7 @@ CMakeFiles/genericwave.dir/TestState.cpp.obj: ../Pickup.h
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../Player.h
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../TestState.cpp
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../TestState.h
-CMakeFiles/genericwave.dir/TestState.cpp.obj: ../Weapon.h
+CMakeFiles/genericwave.dir/TestState.cpp.obj: ../Weapons/Weapon.h
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../gamemachine.h
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../map.h
 CMakeFiles/genericwave.dir/TestState.cpp.obj: ../object.h
@@ -61,9 +61,9 @@ CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../Bullet.h
 CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../Obstacle.h
 CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../Pickup.h
 CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../TestState.h
-CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../Weapon.h
 CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../Weapons/AutomaticWeapon.cpp
 CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../Weapons/AutomaticWeapon.h
+CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../Weapons/Weapon.h
 CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../gamemachine.h
 CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj: ../state.h
 
@@ -71,9 +71,9 @@ CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../Bullet.h
 CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../Obstacle.h
 CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../Pickup.h
 CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../TestState.h
-CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../Weapon.h
 CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../Weapons/Pistol.cpp
 CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../Weapons/Pistol.h
+CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../Weapons/Weapon.h
 CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../gamemachine.h
 CMakeFiles/genericwave.dir/Weapons/Pistol.cpp.obj: ../state.h
 

@@ -8,7 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 
-#include "Weapon.h"
+#include "Weapons/Weapon.h"
 #include "Obstacle.h"
 
 class Bullet;

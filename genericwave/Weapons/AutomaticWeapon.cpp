@@ -9,6 +9,7 @@ AutomaticWeapon::AutomaticWeapon() {
     name = "automatic";
 
     // Weapon specific info
+    firemode = "auto";
     weaponWidth = 80;
     weaponHeight = 40;
 
@@ -82,6 +83,6 @@ void AutomaticWeapon::setAnimationDirection(int direction) {
     Weapon::setAnimationDirection(direction);
 }
 
-bool AutomaticWeapon::holdFire() {
-    return Weapon::holdFire();
+void AutomaticWeapon::holdFire(std::vector<Bullet*>& bullets) {
+    Weapon::holdFire(bullets);
 }

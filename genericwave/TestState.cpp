@@ -70,6 +70,16 @@ void TestState::Running() {
     // Move the user, ect.
     player->process();
 
+    // Continue firing weapon if left mouse is still held
+    if(fireheld ){
+        if(player->currentWeapon->firemode == "auto"){
+            player->currentWeapon->holdFire(bullets);
+        }
+        if(player->currentWeapon->firemode == "burst"){
+
+        }
+    }
+
     // Check player-obstacle collision
     for(Obstacle* obs: obstacles) {
 
@@ -288,13 +298,14 @@ void TestState::handleEvent(sf::Event &event) {
          */
         if(event.mouseButton.button == sf::Mouse::Left){
             player->fireWeapon(bullets);
+            fireheld = true;
         }
 
     }else if(sf::Event::MouseButtonReleased){
         if(event.mouseButton.button == sf::Mouse::Left){
-            std::cout << "released" << std::endl;
+            fireheld = false;
         }
-    } else if(event.type == sf::Event::KeyPressed){
+    } if(event.type == sf::Event::KeyPressed){
 
         if(event.key.code == sf::Keyboard::E){
             createEnemy();

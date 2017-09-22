@@ -6,7 +6,7 @@
 #define GENERICWAVE_AUTOMATICWEAPON_H
 
 
-#include "../Weapon.h"
+#include "Weapon.h"
 
 class AutomaticWeapon: public Weapon {
 public:
@@ -20,7 +20,7 @@ public:
     void setRotation(double angle);
     void rotate(double angle);
     void setAnimationDirection(int direction);
-    bool holdFire();
+    void holdFire(std::vector<Bullet*>& bullets);
 };
 
 

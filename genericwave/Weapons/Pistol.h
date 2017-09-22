@@ -6,7 +6,7 @@
 #define GENERICWAVE_PISTOL_H
 
 #include <SFML/Graphics.hpp>
-#include "../Weapon.h"
+#include "Weapon.h"
 
 class Pistol: public Weapon {
 public:
@@ -20,6 +20,7 @@ public:
     void setRotation(double angle);
     void rotate(double angle);
     void setAnimationDirection(int direction);
+    void holdFire(std::vector<Bullet*>& bullets);
 
 protected:
     /*

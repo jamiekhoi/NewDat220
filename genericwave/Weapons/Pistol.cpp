@@ -12,6 +12,7 @@ Pistol::Pistol() {
     name = "pistol";
 
     // Weapon specific info
+    firemode = "semi";
     weaponWidth = 80;
     weaponHeight = 40;
 
@@ -89,4 +90,8 @@ sf::Vector2f Pistol::getPosition() {
 
 void Pistol::setAnimationDirection(int direction) {
     Weapon::setAnimationDirection(direction);
+}
+
+void Pistol::holdFire(std::vector<Bullet *> &bullets) {
+
 }
