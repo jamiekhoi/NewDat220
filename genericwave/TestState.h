@@ -47,6 +47,12 @@ protected:
     // List of live enemies
     std::vector<Enemy*> enemies;
 
+    // List of doors the player can spend points on to unlock new areas of the map
+    //std::vector<
+
+    // List of stores where player can buy ammo and other things
+    std::list<Obstacle*> stores;
+
     // Spawnpoints for the enemy
     std::vector<sf::FloatRect*> spawnpoints;
 

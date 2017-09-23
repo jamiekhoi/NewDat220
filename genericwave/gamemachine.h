@@ -42,9 +42,9 @@ protected:
 
     //1920x1080 1280x720
     //1700/800 = 2.125 (i.e. width = height*2.125)
-    int windowHeight = 800;
-    int windowWidth = 1700;
-    int lowResWindowHeight = 580;
+    unsigned int windowHeight = 800;
+    unsigned int windowWidth = 1700;
+    unsigned int lowResWindowHeight = 580;
     float lowResWindowWidth = 1232.5;
 
     int viewCenterX = 0;
@@ -55,7 +55,7 @@ protected:
     int viewHeight = 800;
 
     // Frame Rate Limit
-    int frameRateLimit = 60;
+    unsigned int frameRateLimit = 60;
 
     // Is the game in focus?
     bool inFocus = true;

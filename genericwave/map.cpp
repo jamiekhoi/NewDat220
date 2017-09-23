@@ -17,7 +17,7 @@
 #include "layer.h"
 #include "Obstacle.h"
 
-bool Map::load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles, std::vector<sf::FloatRect*>& spawnpoints)
+bool Map::load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles, std::vector<sf::FloatRect*>& spawnpoints, std::list<Obstacle *> & stores)
 {
 	// Will contain the data we read in
 	Json::Value root;
@@ -58,6 +58,9 @@ bool Map::load(std::string filename, std::list<Object*>& objects, std::list<Obst
             //std::cout << "Loading obstacles" << std::endl;
             loadSpawnpoints(layer, spawnpoints);
         }
+		else if(layer["name"].asString() == "stores"){
+            loadObstacles(layer, stores, tileSize);
+		}
 		else
         {
             loadLayer(layer, objects, tileSize);
@@ -99,7 +102,7 @@ void Map::loadObjects(Json::Value& root, Json::Value& layer, std::list<Object*>&
 	for (Json::Value& object: layer["objects"])
 	{
 		Sprite* sprite = new Sprite(tileSize);
-
+std::cout << "fksjdalf" << std::endl;
 		// Load basic object info
 		sprite->x = object["x"].asInt();
 		sprite->y = object["y"].asInt() - sprite->tileSize.y;

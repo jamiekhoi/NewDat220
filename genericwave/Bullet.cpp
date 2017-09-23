@@ -8,7 +8,7 @@
 #include "Enemy.h"
 
 
-void Bullet::setAngle(double angle) {
+void Bullet::setAngle(long double angle) {
     this->angle = angle;
     xspeed = cos(angle*pi/180.0) * speed;
     yspeed = sin(angle*pi/180.0) * speed;
@@ -26,7 +26,7 @@ void Bullet::move() {
 
 }
 
-void Bullet::setPosition(double x, double y) {
+void Bullet::setPosition(long double x, long double y) {
     this->x = x;
     this->y = y;
     this->sprite.setPosition(x, y);

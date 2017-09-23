@@ -2,6 +2,7 @@
 // Created by Jack on 25.06.2017.
 //
 
+#include <iostream>
 #include "Obstacle.h"
 
 void Obstacle::setPosition(float x, float y) {

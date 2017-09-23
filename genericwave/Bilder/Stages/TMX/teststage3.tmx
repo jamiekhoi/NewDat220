@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="45" height="40" tilewidth="40" tileheight="40" nextobjectid="17">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="45" height="40" tilewidth="40" tileheight="40" nextobjectid="31">
  <tileset firstgid="1" name="stage3" tilewidth="40" tileheight="40" tilecount="1800" columns="45">
   <image source="../stage3.png" width="1800" height="1600"/>
  </tileset>
@@ -47,6 +47,10 @@
 1756,1757,1758,1759,1760,1761,1762,1763,1764,1765,1766,1767,1768,1769,1770,1771,1772,1773,1774,1775,1776,1777,1778,1779,1780,1781,1782,1783,1784,1785,1786,1787,1788,1789,1790,1791,1792,1793,1794,1795,1796,1797,1798,1799,1800
 </data>
  </layer>
+ <objectgroup name="stores">
+  <object id="29" name="ammoStore" x="644" y="682" width="214" height="210"/>
+  <object id="30" name="weaponStore" x="1074" y="662" width="240" height="224"/>
+ </objectgroup>
  <objectgroup name="obstacles">
   <object id="6" x="0" y="0" width="426" height="432"/>
   <object id="7" x="1320" y="0" width="480" height="480"/>

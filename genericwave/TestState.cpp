@@ -43,7 +43,7 @@ TestState::TestState() {
     sfAmmo.setFont(font);
 
     // Load map information from JSON into object list
-    if (!Map::load("Bilder/Stages/TMX/teststage3.json", objects, obstacles, spawnpoints))
+    if (!Map::load("Bilder/Stages/TMX/teststage4.json", objects, obstacles, spawnpoints, stores))
     {
         std::cout << "Failed to load map data." << std::endl;
     }
@@ -321,6 +321,18 @@ void TestState::handleEvent(sf::Event &event) {
             player->switchWeapon(0);
         }else if(event.key.code == sf::Keyboard::Num2){
             player->switchWeapon(1);
+        }else if(event.key.code == sf::Keyboard::F){
+            std::cout << "F button" << std::endl;
+            for(auto store: stores){
+                if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
+                    if(points >= 100){
+                        points -= 100;
+                        // Give player more ammo
+                        player->currentWeapon->magazines = player->currentWeapon->maxMagazineCount;
+                        player->currentWeapon->ammo = player->currentWeapon->maxAmmoCount;
+                    }
+                }
+            }
         }
     }
 

@@ -24,7 +24,7 @@ class Map
 {
 public:
 	// Load map from Tiled JSON file
-	static bool load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles, std::vector<sf::FloatRect*>& spawnpoints);
+	static bool load(std::string filename, std::list<Object*>& objects, std::list<Obstacle*>& obstacles, std::vector<sf::FloatRect*>& spawnpoints, std::list<Obstacle *> & stores);
 
 private:
 	// Handles regular layers
