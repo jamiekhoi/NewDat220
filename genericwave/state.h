@@ -14,14 +14,15 @@ class GameMachine;
 class State {
 public:
     State(){}
-    virtual void Running() = 0;/*
-    virtual void buttonPressed(std::string button) = 0;
-    virtual void buttonHeld(std::string button) = 0;
-    virtual void mouseClick() = 0;
-    virtual void mouseScroll() = 0;*/
+    virtual void Running() = 0;
     virtual void handleEvent(sf::Event& event) = 0;
-    virtual void setMachine(GameMachine* machine) = 0;
+    virtual void setMachine(GameMachine* machine){
+        this->machine = machine;
+    }
     virtual void extrafunc(std::string command){}
+
+protected:
+    GameMachine* machine;
 };
 
 

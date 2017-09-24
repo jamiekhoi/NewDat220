@@ -42,6 +42,14 @@ C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.h
 Player.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/Player.h
 
+C:/Users/Jack/Desktop/NewDat220/genericwave/MainMenuState.cpp
+MainMenuState.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/MainMenuState.h
+
+C:/Users/Jack/Desktop/NewDat220/genericwave/MainMenuState.h
+state.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/state.h
+
 C:/Users/Jack/Desktop/NewDat220/genericwave/Obstacle.cpp
 iostream
 -
@@ -175,6 +183,8 @@ gamemachine.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/gamemachine.h
 TestState.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/TestState.h
+MainMenuState.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/MainMenuState.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/map.cpp
 fstream

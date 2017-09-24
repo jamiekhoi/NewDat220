@@ -26,6 +26,11 @@ CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../Weapons/Weapon.h
 CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../gamemachine.h
 CMakeFiles/genericwave.dir/Enemy.cpp.obj: ../state.h
 
+CMakeFiles/genericwave.dir/MainMenuState.cpp.obj: ../MainMenuState.cpp
+CMakeFiles/genericwave.dir/MainMenuState.cpp.obj: ../MainMenuState.h
+CMakeFiles/genericwave.dir/MainMenuState.cpp.obj: ../gamemachine.h
+CMakeFiles/genericwave.dir/MainMenuState.cpp.obj: ../state.h
+
 CMakeFiles/genericwave.dir/Obstacle.cpp.obj: ../Obstacle.cpp
 CMakeFiles/genericwave.dir/Obstacle.cpp.obj: ../Obstacle.h
 
@@ -85,6 +90,7 @@ CMakeFiles/genericwave.dir/layer.cpp.obj: ../layer.cpp
 CMakeFiles/genericwave.dir/layer.cpp.obj: ../layer.h
 CMakeFiles/genericwave.dir/layer.cpp.obj: ../object.h
 
+CMakeFiles/genericwave.dir/main.cpp.obj: ../MainMenuState.h
 CMakeFiles/genericwave.dir/main.cpp.obj: ../Pickup.h
 CMakeFiles/genericwave.dir/main.cpp.obj: ../TestState.h
 CMakeFiles/genericwave.dir/main.cpp.obj: ../gamemachine.h

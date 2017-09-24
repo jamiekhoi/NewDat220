@@ -322,7 +322,6 @@ void TestState::handleEvent(sf::Event &event) {
         }else if(event.key.code == sf::Keyboard::Num2){
             player->switchWeapon(1);
         }else if(event.key.code == sf::Keyboard::F){
-            std::cout << "F button" << std::endl;
             for(auto store: stores){
                 if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
                     if(points >= 100){
@@ -336,10 +335,6 @@ void TestState::handleEvent(sf::Event &event) {
         }
     }
 
-}
-
-void TestState::setMachine(GameMachine *machine) {
-    this->machine = machine;
 }
 
 void TestState::extrafunc(std::string command) {
@@ -418,6 +413,11 @@ void TestState::createPickup(std::string type) {
 
 TestState::~TestState() {
 
+}
+
+TestState::TestState(GameMachine *machine) {
+    TestState();
+    setMachine(machine);
 }
 
 

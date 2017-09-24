@@ -1,6 +1,7 @@
 #include <iostream>
 #include "gamemachine.h"
 #include "TestState.h"
+#include "MainMenuState.h"
 
 int main() {
     /*
@@ -49,12 +50,15 @@ int main() {
 
     // Create states
     TestState* teststate = new TestState();
+    MainMenuState* mainmenustate = new MainMenuState();
 
     // Add machine access to states // Why couldn't I do this in the constructor???
     teststate->setMachine(WaveShooter);
+    mainmenustate->setMachine(WaveShooter);
 
     // Add states
     WaveShooter->AddState(teststate);
+    WaveShooter->AddState(mainmenustate);
 
     // Set current state
     WaveShooter->SetState(0);

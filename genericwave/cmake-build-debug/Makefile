@@ -203,6 +203,33 @@ Enemy.cpp.s:
 	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/Enemy.cpp.s
 .PHONY : Enemy.cpp.s
 
+MainMenuState.obj: MainMenuState.cpp.obj
+
+.PHONY : MainMenuState.obj
+
+# target to build an object file
+MainMenuState.cpp.obj:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/MainMenuState.cpp.obj
+.PHONY : MainMenuState.cpp.obj
+
+MainMenuState.i: MainMenuState.cpp.i
+
+.PHONY : MainMenuState.i
+
+# target to preprocess a source file
+MainMenuState.cpp.i:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/MainMenuState.cpp.i
+.PHONY : MainMenuState.cpp.i
+
+MainMenuState.s: MainMenuState.cpp.s
+
+.PHONY : MainMenuState.s
+
+# target to generate assembly for a file
+MainMenuState.cpp.s:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/MainMenuState.cpp.s
+.PHONY : MainMenuState.cpp.s
+
 Obstacle.obj: Obstacle.cpp.obj
 
 .PHONY : Obstacle.obj
@@ -545,6 +572,9 @@ help:
 	@echo ... Enemy.obj
 	@echo ... Enemy.i
 	@echo ... Enemy.s
+	@echo ... MainMenuState.obj
+	@echo ... MainMenuState.i
+	@echo ... MainMenuState.s
 	@echo ... Obstacle.obj
 	@echo ... Obstacle.i
 	@echo ... Obstacle.s

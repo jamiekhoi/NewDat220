@@ -18,20 +18,18 @@ class Enemy;
 class TestState: public State {
 public:
     TestState();
+    TestState(GameMachine* machine);
     ~TestState();
     void Running();
 
     // Handles event
     void handleEvent(sf::Event& event);
-
-    void setMachine(GameMachine* machine);
     void extrafunc(std::string command);
 
     void createPickup();
     void createPickup(std::string type);
 
 protected:
-    GameMachine* machine;
     int multiplier = 1;
     int pointsPerEnemy = 50;
 

@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/genericwave.dir/Enemy.cpp.obj"
   "CMakeFiles/genericwave.dir/Pickup.cpp.obj"
   "CMakeFiles/genericwave.dir/Weapons/AutomaticWeapon.cpp.obj"
+  "CMakeFiles/genericwave.dir/MainMenuState.cpp.obj"
   "genericwave.pdb"
   "genericwave.exe"
   "genericwave.exe.manifest"
