@@ -21,6 +21,9 @@ public:
     void rotate(double angle);
     void setAnimationDirection(int direction);
     void holdFire(std::vector<Bullet*>& bullets);
+
+protected:
+    sf::Clock autofireClock;
 };
 
 

@@ -48,6 +48,7 @@ void AutomaticWeapon::fire(std::vector<Bullet *> &bullets) {
     // Create a new bullet
     // Posistion of bullet is tip of gun
     // Bullet should move angle
+    autofireClock.restart();
     Weapon::fire(bullets);
 }
 
@@ -84,5 +85,8 @@ void AutomaticWeapon::setAnimationDirection(int direction) {
 }
 
 void AutomaticWeapon::holdFire(std::vector<Bullet*>& bullets) {
-    Weapon::holdFire(bullets);
+    if(autofireClock.getElapsedTime().asSeconds() > 0.3){
+        Weapon::holdFire(bullets);
+        autofireClock.restart();
+    }
 }

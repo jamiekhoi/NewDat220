@@ -20,11 +20,8 @@ public:
     virtual void fire(std::vector<Bullet*>& bullets){
 
         if(ammo > 0){
-            // If that was last bullet
-            if(--ammo == 0){
-                // Reload if possible
-                reload();
-            }
+            --ammo;
+            reloadClock.restart();
             long double angle = weapon.getRotation();
             long double xdiff = cos(angle*pi/180.0) * weaponWidth;
             long double ydiff = sin(angle*pi/180.0) * weaponHeight;
@@ -51,6 +48,10 @@ public:
 
             bullets.push_back(bullet);
 
+        }// If that was last bullet
+        else{
+            if(reloadClock.getElapsedTime().asSeconds() > 1)
+                reload();
         }
     }
     virtual void reload(){
@@ -86,6 +87,8 @@ public:
     }
 
 protected:
+
+    sf::Clock reloadClock;
 
     std::string name;
 
