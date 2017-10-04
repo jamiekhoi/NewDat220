@@ -14,10 +14,11 @@ public:
     MainMenuState(GameMachine* machine);
     void Running();
     void handleEvent(sf::Event& event);
-    void setMachine(GameMachine* machine);
 
 protected:
-
+    bool mousePressed = false;
+    sf::Text sfPlay;
+    sf::Font font;
 };
 
 

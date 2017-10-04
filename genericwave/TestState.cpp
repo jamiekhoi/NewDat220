@@ -12,16 +12,16 @@
 
 TestState::TestState() {
     createPickup("multiplier");
-    if (!font.loadFromFile("Font/Montserrat-Regular.ttf"))
-    {
-        std::cout << "Error loading font" << std::endl;
-    }
-    sfWave.setCharacterSize(24);
-    sfWave.setFillColor(sf::Color::White);
-    sfWave.setOutlineColor(sf::Color::Black);
-    sfWave.setOutlineThickness(2);
-    //sfWave.setString("Wave " + std::to_string(wave));
-    sfWave.setFont(font);
+        if (!font.loadFromFile("Font/Montserrat-Regular.ttf"))
+        {
+            std::cout << "Error loading font" << std::endl;
+        }
+        sfWave.setCharacterSize(24);
+        sfWave.setFillColor(sf::Color::White);
+        sfWave.setOutlineColor(sf::Color::Black);
+        sfWave.setOutlineThickness(2);
+        //sfWave.setString("Wave " + std::to_string(wave));
+        sfWave.setFont(font);
 
     sfPoints.setCharacterSize(24);
     sfPoints.setFillColor(sf::Color::White);
@@ -309,7 +309,7 @@ void TestState::handleEvent(sf::Event &event) {
             fireheld = true;
         }
 
-    }else if(sf::Event::MouseButtonReleased){
+    }else if(event.type == sf::Event::MouseButtonReleased){
         if(event.mouseButton.button == sf::Mouse::Left){
             fireheld = false;
         }

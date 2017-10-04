@@ -61,7 +61,7 @@ int main() {
     WaveShooter->AddState(mainmenustate);
 
     // Set current state
-    WaveShooter->SetState(0);
+    WaveShooter->SetState(1);
 
     // Run until the running flag is set to false
     while (WaveShooter->GetRunning()){
