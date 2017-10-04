@@ -16,12 +16,18 @@ TestState::TestState() {
         {
             std::cout << "Error loading font" << std::endl;
         }
-        sfWave.setCharacterSize(24);
-        sfWave.setFillColor(sf::Color::White);
-        sfWave.setOutlineColor(sf::Color::Black);
-        sfWave.setOutlineThickness(2);
-        //sfWave.setString("Wave " + std::to_string(wave));
-        sfWave.setFont(font);
+    sfWave.setCharacterSize(24);
+    sfWave.setFillColor(sf::Color::White);
+    sfWave.setOutlineColor(sf::Color::Black);
+    sfWave.setOutlineThickness(2);
+    //sfWave.setString("Wave " + std::to_string(wave));
+    sfWave.setFont(font);
+
+    sfHealth.setCharacterSize(24);
+    sfHealth.setFillColor(sf::Color::White);
+    sfHealth.setOutlineColor(sf::Color::Black);
+    sfHealth.setOutlineThickness(2);
+    sfHealth.setFont(font);
 
     sfPoints.setCharacterSize(24);
     sfPoints.setFillColor(sf::Color::White);
@@ -114,7 +120,16 @@ void TestState::Running() {
     }
 
     // Draw the player
-    player->draw(machine->getWindow());
+    if(playerHit){
+        if(hitSwitch){
+            player->draw(machine->getWindow());
+            hitSwitch = false;
+        }else{
+            hitSwitch = true;
+        }
+    }else{
+        player->draw(machine->getWindow());
+    }
 
     // For testing. Drawing obstacles
     for(Obstacle* obstacle: obstacles)
@@ -131,7 +146,122 @@ void TestState::Running() {
     }
 
     // Move and draw bullets. Also bullet collision test
-    for( std::vector<Bullet*>::iterator bull = bullets.begin(); bull != bullets.end();){
+    moveAndDrawBullets();
+
+    // See if player gets a pickup
+    for( std::vector<Pickup*>::iterator pick = pickups.begin(); pick != pickups.end();){
+        bool s = player->getsfSprite().getGlobalBounds().intersects((*pick)->getGlobalBounds());
+        if(player->getsfSprite().getGlobalBounds().intersects((*pick)->getGlobalBounds())){
+            // Check what type of pickup
+            if((*pick)->type == "ammo"){
+                // Give player more ammo
+                player->currentWeapon->magazines += 5;
+                if (player->currentWeapon->magazines > player->currentWeapon->maxMagazineCount){
+                    player->currentWeapon->magazines = player->currentWeapon->maxMagazineCount;
+                }
+                if(player->currentWeapon->ammo == 0){
+                    player->currentWeapon->reload();
+                }
+            }
+            else if((*pick)->type == "multiplier"){
+                // Turn on a score multiplier
+                multiplier = 2;
+                scoreMultiplierClock.restart();
+            }
+            else if((*pick)->type == "weapon2"){
+                // Give player new weapon
+
+            }
+
+            // Delete the pickup
+            delete (*pick);
+            (*pick) = nullptr;
+            pick = pickups.erase(pick);
+            break;
+
+        }else{
+            pick++;
+        }
+    }
+
+
+    // See if enemy attacks player
+    if(playerHit){
+        if(playerHitClock.getElapsedTime().asSeconds() > 1.5){
+            playerHit = false;
+        }
+    }else{
+        for(Enemy* en: enemies){
+            if(en->checkCollisionPlayer(player)){
+                health -= 10;
+                playerHit = true;
+                playerHitClock.restart();
+                break;
+            }
+        }
+    }
+
+    // See if player is touching a store
+    sfInfo.setString("");
+    for(auto store: stores){
+        if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
+            sfInfo.setString("Press F to buy stuff!");
+        }
+    }
+
+    // Draw live pickups
+    for(auto p: pickups){
+        machine->getWindow().draw(*p);
+    }
+
+
+    // Set the view (what the user sees of the game map)
+    // Crude. Actually centers around player sprite's upper left corner
+    sf::View tempView = machine->getWindow().getView();
+    float tempx = player->getX();
+    float tempy = player->getY();
+    tempView.setCenter(tempx, tempy);
+    machine->getWindow().setView(tempView);
+
+    // Info about the window view
+    sf::View tempv = machine->getWindow().getView();
+    auto tempcenter = tempv.getCenter();
+    auto tempsize = tempv.getSize();
+
+    // Draw wave number
+    sfWave.setString("Wave: " + std::to_string(wave));
+    sfWave.setPosition(tempcenter.x - tempsize.x/2 + 50, tempcenter.y - tempsize.y/2 + 50);
+    machine->getWindow().draw(sfWave);
+
+    // Draw points
+    sfPoints.setString("Points: " + std::to_string(points));
+    sfPoints.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y - tempsize.y/2 + 50);
+    machine->getWindow().draw(sfPoints);
+
+    // Draw health
+    sfHealth.setString("HP: " + std::to_string(health) + " <3");
+    sfHealth.setPosition(tempcenter.x - tempsize.x/2 + 50, tempcenter.y + tempsize.y/2 - 100);
+    machine->getWindow().draw(sfHealth);
+
+    // Draw weapon name, ammo count and magazine count
+    sfWeapon.setString(player->currentWeapon->name);
+    sfWeapon.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 100);
+    machine->getWindow().draw(sfWeapon);
+    sfAmmo.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 50);
+    sfAmmo.setString(std::to_string(player->currentWeapon->ammo) + "/" + std::to_string(player->currentWeapon->magazines*player->currentWeapon->maxAmmoCount));
+    machine->getWindow().draw(sfAmmo);
+
+    // Draw info
+    sfInfo.setPosition(tempcenter);
+    //machine->getWindow().draw(sfInfo);
+
+    // Draw the screen
+    machine->getWindow().display();
+
+}
+
+void TestState::moveAndDrawBullets() {
+    for(auto bull = bullets.begin(); bull != bullets.end();){
 
         (*bull)->move();
 
@@ -146,12 +276,12 @@ void TestState::Running() {
 
                 // Decrease enemy health and check if enemie is dead
                 if((*en)->dead((*bull)->getDamage())){
-                    points += (*en)->points*multiplier;
+                    points += (*en)->points * multiplier;
                     delete (*en);
                     (*en) = nullptr;
                     en = enemies.erase(en);
                     kills++;
-                    wave = kills/2 + 1;
+                    wave = kills / 2 + 1;
 
                     // Check how many kills and create a pickup for new weapon if needed
                     if(kills == 2){
@@ -195,98 +325,6 @@ void TestState::Running() {
             bull++;
         }
     }
-
-    // See if player gets a pickup
-    for( std::vector<Pickup*>::iterator pick = pickups.begin(); pick != pickups.end();){
-        bool s = player->getsfSprite().getGlobalBounds().intersects((*pick)->getGlobalBounds());
-        if(player->getsfSprite().getGlobalBounds().intersects((*pick)->getGlobalBounds())){
-            // Check what type of pickup
-            if((*pick)->type == "ammo"){
-                // Give player more ammo
-                player->currentWeapon->magazines += 5;
-                if (player->currentWeapon->magazines > player->currentWeapon->maxMagazineCount){
-                    player->currentWeapon->magazines = player->currentWeapon->maxMagazineCount;
-                }
-                if(player->currentWeapon->ammo == 0){
-                    player->currentWeapon->reload();
-                }
-            }
-            else if((*pick)->type == "multiplier"){
-                // Turn on a score multiplier
-                multiplier = 2;
-                scoreMultiplierClock.restart();
-            }
-            else if((*pick)->type == "weapon2"){
-                // Give player new weapon
-
-            }
-
-            // Delete the pickup
-            delete (*pick);
-            (*pick) = nullptr;
-            pick = pickups.erase(pick);
-            break;
-
-        }else{
-            pick++;
-        }
-    }
-
-    // See if player is touching a store
-    sfInfo.setString("");
-    for(auto store: stores){
-        if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
-            sfInfo.setString("Press F to buy stuff!");
-        }
-    }
-
-    // Draw live pickups
-    for(auto p: pickups){
-        machine->getWindow().draw(*p);
-    }
-
-
-    // Set the view (what the user sees of the game map)
-    // Crude. Actually centers around player sprite's upper left corner
-    sf::View tempView = machine->getWindow().getView();
-    float tempx = player->getX();
-    float tempy = player->getY();
-    tempView.setCenter(tempx, tempy);
-    machine->getWindow().setView(tempView);
-
-    // Info about the window view
-    sf::View tempv = machine->getWindow().getView();
-    auto tempcenter = tempv.getCenter();
-    auto tempsize = tempv.getSize();
-
-    // Draw wave number
-    sfWave.setString("Wave: " + std::to_string(wave));
-    sfWave.setPosition(tempcenter.x - tempsize.x/2 + 50, tempcenter.y - tempsize.y/2 + 50);
-    machine->getWindow().draw(sfWave);
-
-    // Draw points
-    sfPoints.setString("Points: " + std::to_string(points));
-    sfPoints.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y - tempsize.y/2 + 50);
-    machine->getWindow().draw(sfPoints);
-
-    // Draw health
-
-
-    // Draw weapon name, ammo count and magazine count
-    sfWeapon.setString(player->currentWeapon->name);
-    sfWeapon.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 100);
-    machine->getWindow().draw(sfWeapon);
-
-    sfAmmo.setString(std::to_string(player->currentWeapon->ammo) + "/" + std::to_string(player->currentWeapon->magazines*player->currentWeapon->maxAmmoCount));
-    machine->getWindow().draw(sfAmmo);
-
-    // Draw info
-    sfInfo.setPosition(tempcenter);
-    machine->getWindow().draw(sfInfo);
-
-    // Draw the screen
-    machine->getWindow().display();
-
 }
 
 void TestState::handleEvent(sf::Event &event) {

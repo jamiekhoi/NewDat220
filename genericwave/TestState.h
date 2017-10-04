@@ -26,10 +26,12 @@ public:
     void handleEvent(sf::Event& event);
     void extrafunc(std::string command);
 
-    void createPickup();
-    void createPickup(std::string type);
 
 protected:
+
+    int maxHealth = 100;
+    int health = maxHealth;
+
     int multiplier = 1;
     int pointsPerEnemy = 50;
 
@@ -63,6 +65,9 @@ protected:
     sf::Clock scoreMultiplierClock;
     sf::Clock playerHitClock;
 
+    bool playerHit = false;
+    bool hitSwitch= false;
+
     // Player that the user controls
     Player* player;
 
@@ -81,6 +86,10 @@ protected:
     sf::Font font;
 
     void createEnemy();
+    void createPickup();
+    void createPickup(std::string type);
+
+    void moveAndDrawBullets();
 };
 
 

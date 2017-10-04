@@ -17,7 +17,7 @@ public:
     void move(sf::Vector2f playerPos);
     void draw(sf::RenderWindow &window);
     bool checkCollisionObs(Obstacle* ob);
-    bool checkCollisionPlayer(Player player);
+    bool checkCollisionPlayer(Player* player);
     void setPosition(int x, int y);
     void setSize(int width, int height);
     bool dead(int damage);

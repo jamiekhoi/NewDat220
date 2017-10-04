@@ -128,8 +128,8 @@ bool Enemy::checkCollisionObs(Obstacle *ob) {
     return false;
 }
 
-bool Enemy::checkCollisionPlayer(Player player) {
-    return false;
+bool Enemy::checkCollisionPlayer(Player* player) {
+    return sprite.getGlobalBounds().intersects(player->getsfSprite().getGlobalBounds());
 }
 
 void Enemy::setPosition(int x, int y) {

@@ -66,11 +66,6 @@ void GameMachine::Run() {
             window.close();
             running = false;
         }
-        /*else if (event.type == sf::Event::MouseButtonPressed)
-        {
-            player.printPos();
-            std::cout << "Mouse pos" << std::endl << "x: " << sf::Mouse::getPosition().x << "\ty: " << sf::Mouse::getPosition().y << std::endl;
-        }*/
         else if (event.type == sf::Event::KeyPressed)
         {
             // Test if this results in multple key presses if button is help on another computer
