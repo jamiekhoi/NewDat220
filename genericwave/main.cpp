@@ -41,7 +41,6 @@ int main() {
      *
      * If game is slowing down change pickup creating/deletion
      */
-    //std::cout << "Hello, World!" << std::endl;
 
     GameMachine* WaveShooter = new GameMachine();
 
@@ -61,7 +60,7 @@ int main() {
     WaveShooter->AddState(mainmenustate);
 
     // Set current state
-    WaveShooter->SetState(1);
+    WaveShooter->SetState(0);
 
     // Run until the running flag is set to false
     while (WaveShooter->GetRunning()){

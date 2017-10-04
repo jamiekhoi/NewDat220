@@ -71,6 +71,7 @@ protected:
     int kills = 0;
     int wave = 1;
 
+    sf::Text sfInfo;
     sf::Text sfWave;
     sf::Text sfPoints;
     sf::Text sfHealth;

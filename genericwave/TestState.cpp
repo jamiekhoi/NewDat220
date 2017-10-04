@@ -42,6 +42,12 @@ TestState::TestState() {
     sfAmmo.setOutlineThickness(2);
     sfAmmo.setFont(font);
 
+    sfInfo.setCharacterSize(24);
+    sfInfo.setFillColor(sf::Color::White);
+    sfInfo.setOutlineColor(sf::Color::Black);
+    sfInfo.setOutlineThickness(2);
+    sfInfo.setFont(font);
+
     // Load map information from JSON into object list
     if (!Map::load("Bilder/Stages/TMX/teststage4.json", objects, obstacles, spawnpoints, stores))
     {
@@ -226,6 +232,14 @@ void TestState::Running() {
         }
     }
 
+    // See if player is touching a store
+    sfInfo.setString("");
+    for(auto store: stores){
+        if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
+            sfInfo.setString("Press F to buy stuff!");
+        }
+    }
+
     // Draw live pickups
     for(auto p: pickups){
         machine->getWindow().draw(*p);
@@ -264,8 +278,11 @@ void TestState::Running() {
     machine->getWindow().draw(sfWeapon);
 
     sfAmmo.setString(std::to_string(player->currentWeapon->ammo) + "/" + std::to_string(player->currentWeapon->magazines*player->currentWeapon->maxAmmoCount));
-    sfAmmo.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 50);
     machine->getWindow().draw(sfAmmo);
+
+    // Draw info
+    sfInfo.setPosition(tempcenter);
+    machine->getWindow().draw(sfInfo);
 
     // Draw the screen
     machine->getWindow().display();
@@ -321,6 +338,8 @@ void TestState::handleEvent(sf::Event &event) {
             player->switchWeapon(0);
         }else if(event.key.code == sf::Keyboard::Num2){
             player->switchWeapon(1);
+        }else if(event.key.code == sf::Keyboard::Num3){
+
         }else if(event.key.code == sf::Keyboard::F){
             for(auto store: stores){
                 if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
