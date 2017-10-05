@@ -40,6 +40,12 @@ int main() {
      * Should reloading weapon take time?
      *
      * If game is slowing down change pickup creating/deletion
+     *
+     * Enemy may drop pickup on death
+     *
+     * Make bullet contain list of enemies it has hit, so that it only hits each enemy once
+     *
+     * Make player texture loading dynamic, based on image size, not hardcoded
      */
 
     GameMachine* WaveShooter = new GameMachine();

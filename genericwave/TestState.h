@@ -65,8 +65,10 @@ protected:
     sf::Clock scoreMultiplierClock;
     sf::Clock playerHitClock;
 
-    bool playerHit = false;
-    bool hitSwitch= false;
+    bool newWavePause = false;
+    bool playerWasHit = false;
+    bool hitSwitch = false;
+    bool playerIsDead = false;
 
     // Player that the user controls
     Player* player;
@@ -90,6 +92,16 @@ protected:
     void createPickup(std::string type);
 
     void moveAndDrawBullets();
+
+    void checkMultiplier();
+
+    void checkEnemyPlayerCollsion();
+
+    void drawHUD();
+
+    void centerView() const;
+
+    void checkPlayerPickup();
 };
 
 

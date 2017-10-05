@@ -71,13 +71,7 @@ TestState::TestState() {
 }
 
 void TestState::Running() {
-
-    // Check if score multiplier is active and when to deactivate it
-    if(multiplier != 1){
-        if(scoreMultiplierClock.getElapsedTime().asSeconds() > 10){
-            multiplier = 1;
-        }
-    }
+    checkMultiplier();
 
     // Create enemy every few seconds
     if(spawnClock.getElapsedTime().asSeconds() > 4){
@@ -120,7 +114,7 @@ void TestState::Running() {
     }
 
     // Draw the player
-    if(playerHit){
+    if(playerWasHit){
         if(hitSwitch){
             player->draw(machine->getWindow());
             hitSwitch = false;
@@ -149,7 +143,39 @@ void TestState::Running() {
     moveAndDrawBullets();
 
     // See if player gets a pickup
-    for( std::vector<Pickup*>::iterator pick = pickups.begin(); pick != pickups.end();){
+    checkPlayerPickup();
+
+    // See if enemy attacks player
+    checkEnemyPlayerCollsion();
+
+
+    // See if player is touching a store
+    sfInfo.setString("");
+    for(auto store: stores){
+        if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
+            sfInfo.setString("Press F to buy stuff!");
+        }
+    }
+
+    // Draw live pickups
+    for(auto p: pickups){
+        machine->getWindow().draw(*p);
+    }
+
+    // Center the view (What the user is shown on screen)
+    centerView();
+
+    //Draw HUD info. Helath, points, ammo etc.
+    drawHUD();
+
+    // Display the screen
+    machine->getWindow().display();
+
+}
+
+void TestState::checkPlayerPickup() {
+    // See if player gets a pickup
+    for(auto pick = pickups.begin(); pick != pickups.end();){
         bool s = player->getsfSprite().getGlobalBounds().intersects((*pick)->getGlobalBounds());
         if(player->getsfSprite().getGlobalBounds().intersects((*pick)->getGlobalBounds())){
             // Check what type of pickup
@@ -183,81 +209,79 @@ void TestState::Running() {
             pick++;
         }
     }
+}
 
-
-    // See if enemy attacks player
-    if(playerHit){
-        if(playerHitClock.getElapsedTime().asSeconds() > 1.5){
-            playerHit = false;
-        }
-    }else{
-        for(Enemy* en: enemies){
-            if(en->checkCollisionPlayer(player)){
-                health -= 10;
-                playerHit = true;
-                playerHitClock.restart();
-                break;
-            }
-        }
-    }
-
-    // See if player is touching a store
-    sfInfo.setString("");
-    for(auto store: stores){
-        if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
-            sfInfo.setString("Press F to buy stuff!");
-        }
-    }
-
-    // Draw live pickups
-    for(auto p: pickups){
-        machine->getWindow().draw(*p);
-    }
-
-
-    // Set the view (what the user sees of the game map)
+void TestState::centerView() const {// Set the view (what the user sees of the game map)
     // Crude. Actually centers around player sprite's upper left corner
     sf::View tempView = machine->getWindow().getView();
     float tempx = player->getX();
     float tempy = player->getY();
     tempView.setCenter(tempx, tempy);
     machine->getWindow().setView(tempView);
+}
 
-    // Info about the window view
+void TestState::drawHUD() {// Info about the window view
     sf::View tempv = machine->getWindow().getView();
     auto tempcenter = tempv.getCenter();
     auto tempsize = tempv.getSize();
 
     // Draw wave number
-    sfWave.setString("Wave: " + std::to_string(wave));
-    sfWave.setPosition(tempcenter.x - tempsize.x/2 + 50, tempcenter.y - tempsize.y/2 + 50);
+    sfWave.setString("Wave: " + std::__cxx11::to_string(wave));
+    sfWave.setPosition(tempcenter.x - tempsize.x / 2 + 50, tempcenter.y - tempsize.y / 2 + 50);
     machine->getWindow().draw(sfWave);
 
     // Draw points
-    sfPoints.setString("Points: " + std::to_string(points));
-    sfPoints.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y - tempsize.y/2 + 50);
+    sfPoints.setString("Points: " + std::__cxx11::to_string(points));
+    sfPoints.setPosition(tempcenter.x + tempsize.x / 2 - 200, tempcenter.y - tempsize.y / 2 + 50);
     machine->getWindow().draw(sfPoints);
 
     // Draw health
-    sfHealth.setString("HP: " + std::to_string(health) + " <3");
-    sfHealth.setPosition(tempcenter.x - tempsize.x/2 + 50, tempcenter.y + tempsize.y/2 - 100);
+    sfHealth.setString("HP: " + std::__cxx11::to_string(health) + " <3");
+    sfHealth.setPosition(tempcenter.x - tempsize.x / 2 + 50, tempcenter.y + tempsize.y / 2 - 100);
     machine->getWindow().draw(sfHealth);
 
     // Draw weapon name, ammo count and magazine count
     sfWeapon.setString(player->currentWeapon->name);
-    sfWeapon.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 100);
+    sfWeapon.setPosition(tempcenter.x + tempsize.x / 2 - 200, tempcenter.y + tempsize.y / 2 - 100);
     machine->getWindow().draw(sfWeapon);
-    sfAmmo.setPosition(tempcenter.x + tempsize.x/2 - 200, tempcenter.y + tempsize.y/2 - 50);
-    sfAmmo.setString(std::to_string(player->currentWeapon->ammo) + "/" + std::to_string(player->currentWeapon->magazines*player->currentWeapon->maxAmmoCount));
+    sfAmmo.setPosition(tempcenter.x + tempsize.x / 2 - 200, tempcenter.y + tempsize.y / 2 - 50);
+    sfAmmo.setString(std::__cxx11::to_string(player->currentWeapon->ammo) + "/" + std::__cxx11::to_string(
+            player->currentWeapon->magazines * player->currentWeapon->maxAmmoCount));
     machine->getWindow().draw(sfAmmo);
 
     // Draw info
-    sfInfo.setPosition(tempcenter);
-    //machine->getWindow().draw(sfInfo);
+    sfInfo.setPosition(tempcenter.x - 100, tempcenter.y);
+    machine->getWindow().draw(sfInfo);
 
-    // Draw the screen
-    machine->getWindow().display();
+}
 
+void TestState::checkEnemyPlayerCollsion() {// See if enemy attacks player
+    if(playerWasHit){
+        if(playerHitClock.getElapsedTime().asSeconds() > 1.5){
+            playerWasHit = false;
+        }
+    }else{
+        for(Enemy* en: enemies){
+            if(en->checkCollisionPlayer(player)){
+                health -= 10;
+                if(health <= 0){
+                    health = 0;
+                    playerIsDead = true;
+                }
+                playerWasHit = true;
+                playerHitClock.restart();
+                break;
+            }
+        }
+    }
+}
+
+void TestState::checkMultiplier() {// Check if score multiplier is active and when to deactivate it
+    if(multiplier != 1){
+        if(scoreMultiplierClock.getElapsedTime().asSeconds() > 10){
+            multiplier = 1;
+        }
+    }
 }
 
 void TestState::moveAndDrawBullets() {

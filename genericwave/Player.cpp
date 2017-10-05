@@ -12,7 +12,8 @@
 
 
 Player::Player() {
-    if (!texture.loadFromFile("Bilder/Player/TestPlayer2scaleddown.png"))
+    //if (!texture.loadFromFile("Bilder/Player/TestPlayer2scaleddown.png"))
+    if (!texture.loadFromFile("Bilder/Player/TestPlayer.png"))
     {
         std::cout << "Failed to load Player texture" << std::endl;
     }
