@@ -6,7 +6,7 @@
 #include "MainMenuState.h"
 
 MainMenuState::MainMenuState() {
-    if (!font.loadFromFile("Font/Montserrat-Regular2.ttf"))
+    if (!font.loadFromFile("Font/Montserrat-Regular.ttf"))
     {
         std::cout << "Error loading font" << std::endl;
     }
@@ -27,7 +27,9 @@ void MainMenuState::Running() {
 
 void MainMenuState::handleEvent(sf::Event &event) {
     if(event.type == sf::Event::MouseButtonReleased){
+        std::cout << "click" << std::endl;
         if(sfPlay.getGlobalBounds().contains(machine->getWindow().mapPixelToCoords(sf::Mouse::getPosition(machine->getWindow())))){
+            std::cout << "click play" << std::endl;
             machine->SetState(GameMachine::StateId::RUNNING);
         }
     }

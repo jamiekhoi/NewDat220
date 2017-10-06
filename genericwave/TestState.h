@@ -95,7 +95,7 @@ protected:
 
     void createEnemy();
     void createPickup();
-    void createPickup(std::string type);
+    void createPickup(std::string type, int x = 500, int y = 500);
 
     void moveAndDrawBullets();
 

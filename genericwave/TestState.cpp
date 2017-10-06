@@ -333,16 +333,16 @@ void TestState::moveAndDrawBullets() {
                 // Decrease enemy health and check if enemie is dead
                 if((*en)->dead((*bull)->getDamage())){
                     points += (*en)->points * multiplier;
+                    if(rand() % droprate == 0){
+                        createPickup("ammo", (*en)->x, (*en)->y);
+                    }
+
                     delete (*en);
                     (*en) = nullptr;
                     en = enemies.erase(en);
                     kills++;
                     wave = kills / 2 + 1;
-
-                    // Check how many kills and create a pickup for new weapon if needed
-                    if(kills == 2){
-                        createPickup("ammo");
-                    }
+                    
                 }
 
                 // Check bullet penetration
@@ -512,7 +512,7 @@ void TestState::createPickup() {
     pickups.push_back(p);
 }
 
-void TestState::createPickup(std::string type) {
+void TestState::createPickup(std::string type, int x, int y) {
     sf::Texture* t = new sf::Texture();
     if(type == "ammo"){
         if (!t->loadFromFile("Bilder/Pickups/Weapons/weapon2pickup.png"))
@@ -529,7 +529,7 @@ void TestState::createPickup(std::string type) {
     p->type = type;
     p->bettertexturesetter(t);
     // Should set pickup position to a random spot on the map that doesn't collide with any obstacles
-    p->setPosition(500, 500);
+    p->setPosition(x, y);
     pickups.push_back(p);
 }
 
