@@ -91,6 +91,7 @@ protected:
     sf::Text sfMagazines;
     sf::Text sfWeapon;
     sf::Text sfDeadText;
+    sf::Text sfMultiplierText;
     sf::Font font;
 
     void createEnemy();

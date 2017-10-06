@@ -36,6 +36,12 @@ TestState::TestState() {
     //sfPoints.setString("Points: " + std::to_string(wave));
     sfPoints.setFont(font);
 
+    sfMultiplierText.setCharacterSize(24);
+    sfMultiplierText.setFillColor(sf::Color::White);
+    sfMultiplierText.setOutlineColor(sf::Color::Black);
+    sfMultiplierText.setOutlineThickness(2);
+    sfMultiplierText.setFont(font);
+
     sfWeapon.setCharacterSize(24);
     sfWeapon.setFillColor(sf::Color::White);
     sfWeapon.setOutlineColor(sf::Color::Black);
@@ -53,6 +59,12 @@ TestState::TestState() {
     sfInfo.setOutlineColor(sf::Color::Black);
     sfInfo.setOutlineThickness(2);
     sfInfo.setFont(font);
+
+    sfMagazines.setCharacterSize(24);
+    sfMagazines.setFillColor(sf::Color::White);
+    sfMagazines.setOutlineColor(sf::Color::Black);
+    sfMagazines.setOutlineThickness(2);
+    sfMagazines.setFont(font);
 
     sfDeadText.setCharacterSize(120);
     sfDeadText.setFillColor(sf::Color(50,125,100,1));
@@ -244,6 +256,14 @@ void TestState::drawHUD() {// Info about the window view
     sfPoints.setPosition(tempcenter.x + tempsize.x / 2 - 200, tempcenter.y - tempsize.y / 2 + 50);
     machine->getWindow().draw(sfPoints);
 
+    // Draw multiplier text
+    if(multiplier != 1){
+        std::cout << "fjkd2 " << std::endl;
+        sfMultiplierText.setString("X" + std::__cxx11::to_string(multiplier));
+        sfMultiplierText.setPosition(tempcenter.x + tempsize.x / 2 - 200, tempcenter.y - tempsize.y / 2 + 75);
+        machine->getWindow().draw(sfMultiplierText);
+    }
+
     // Draw health
     sfHealth.setString("HP: " + std::__cxx11::to_string(health) + " <3");
     sfHealth.setPosition(tempcenter.x - tempsize.x / 2 + 50, tempcenter.y + tempsize.y / 2 - 100);
@@ -334,7 +354,11 @@ void TestState::moveAndDrawBullets() {
                 if((*en)->dead((*bull)->getDamage())){
                     points += (*en)->points * multiplier;
                     if(rand() % droprate == 0){
-                        createPickup("ammo", (*en)->x, (*en)->y);
+                        if(rand() % 2 == 0){
+                            createPickup("ammo", (*en)->x, (*en)->y);
+                        }else{
+                            createPickup("multiplier", (*en)->x, (*en)->y);
+                        }
                     }
 
                     delete (*en);
@@ -342,7 +366,7 @@ void TestState::moveAndDrawBullets() {
                     en = enemies.erase(en);
                     kills++;
                     wave = kills / 2 + 1;
-                    
+
                 }
 
                 // Check bullet penetration
