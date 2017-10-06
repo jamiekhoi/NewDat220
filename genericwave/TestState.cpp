@@ -417,6 +417,7 @@ void TestState::handleEvent(sf::Event &event) {
          */
         if(readyToExit){
             machine->SetState(GameMachine::StateId::MAINMENU);
+            resetEverything();
         } else if(!playerIsDead){
             if(event.mouseButton.button == sf::Mouse::Left){
                 player->fireWeapon(bullets);
@@ -539,6 +540,52 @@ TestState::~TestState() {
 TestState::TestState(GameMachine *machine) {
     TestState();
     setMachine(machine);
+}
+
+void TestState::resetEverything() {
+    health = maxHealth;
+    multiplier = 1;
+    spawnClock.restart();
+    machine->getWindow().clear(sf::Color::Black);
+
+    // Erase all bullets
+    for(auto b: bullets){
+        delete b;
+    }
+    bullets.clear();
+
+    // Erase all enemies
+    for(auto e: enemies){
+        delete e;
+    }
+    enemies.clear();
+
+    // Delete all pickups
+    for(auto p: pickups){
+        delete p;
+    }
+    pickups.clear();
+
+    newWavePause = false;
+    playerWasHit = false;
+    playerIsDead = false;
+    hitSwitch = false;
+    readyToExit = false;
+
+    //RESET PLAYER
+    player->setPosition(500, 500);
+
+    bool fireheld = false;
+
+    points = 0;
+    kills = 0;
+    wave = 1;
+
+    // Reset sfDeadText
+    sfDeadText.setFillColor(sf::Color(50,125,100,1));
+    sfDeadText.setOutlineColor(sf::Color(255,255,255,1));
+
+
 }
 
 

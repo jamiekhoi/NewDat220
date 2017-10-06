@@ -20,7 +20,7 @@ MainMenuState::MainMenuState() {
 }
 
 void MainMenuState::Running() {
-    machine->getWindow().clear(sf::Color::Black);
+    machine->getWindow().clear(sf::Color::Blue);
     machine->getWindow().draw(sfPlay);
     machine->getWindow().display();
 }

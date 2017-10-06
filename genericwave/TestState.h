@@ -21,6 +21,7 @@ public:
     TestState(GameMachine* machine);
     ~TestState();
     void Running();
+    void resetEverything();
 
     // Handles event
     void handleEvent(sf::Event& event);
@@ -34,6 +35,7 @@ protected:
 
     int multiplier = 1;
     int pointsPerEnemy = 50;
+    int droprate = 5;
 
     // List of game objects. Should of course be put somewhere else in a bigger game
     std::list<Object*> objects;
@@ -68,6 +70,7 @@ protected:
 
     bool newWavePause = false;
     bool playerWasHit = false;
+    // Bool for whether player was hit by enemy. Used to make player temp invisible
     bool hitSwitch = false;
     bool playerIsDead = false;
     bool readyToExit = false;
