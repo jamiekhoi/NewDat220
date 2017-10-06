@@ -29,7 +29,7 @@ public:
 
 protected:
 
-    int maxHealth = 100;
+    int maxHealth = 20;
     int health = maxHealth;
 
     int multiplier = 1;
@@ -64,11 +64,13 @@ protected:
     sf::Clock wavePauseClock;
     sf::Clock scoreMultiplierClock;
     sf::Clock playerHitClock;
+    //sf::Clock deadClock;
 
     bool newWavePause = false;
     bool playerWasHit = false;
     bool hitSwitch = false;
     bool playerIsDead = false;
+    bool readyToExit = false;
 
     // Player that the user controls
     Player* player;
@@ -85,6 +87,7 @@ protected:
     sf::Text sfAmmo;
     sf::Text sfMagazines;
     sf::Text sfWeapon;
+    sf::Text sfDeadText;
     sf::Font font;
 
     void createEnemy();

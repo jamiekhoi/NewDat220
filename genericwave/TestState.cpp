@@ -54,6 +54,13 @@ TestState::TestState() {
     sfInfo.setOutlineThickness(2);
     sfInfo.setFont(font);
 
+    sfDeadText.setCharacterSize(120);
+    sfDeadText.setFillColor(sf::Color(50,125,100,1));
+    sfDeadText.setOutlineColor(sf::Color(255,255,255,1));
+    sfDeadText.setOutlineThickness(3);
+    sfDeadText.setFont(font);
+    sfDeadText.setString("YOU DIED!");
+
     // Load map information from JSON into object list
     if (!Map::load("Bilder/Stages/TMX/teststage4.json", objects, obstacles, spawnpoints, stores))
     {
@@ -80,8 +87,10 @@ void TestState::Running() {
         spawnClock.restart();
     }
 
-    // Move the user, ect.
-    player->process();
+    if(!playerIsDead){
+        // Move the user, ect.
+        player->process();
+    }
 
     // Continue firing weapon if left mouse is still held
     if(fireheld ){
@@ -253,6 +262,29 @@ void TestState::drawHUD() {// Info about the window view
     sfInfo.setPosition(tempcenter.x - 100, tempcenter.y);
     machine->getWindow().draw(sfInfo);
 
+    // Draw you died text if player is dead
+    if(playerIsDead){
+        sfDeadText.setPosition(tempcenter.x - 250, tempcenter.y - 100);
+        uint8_t opacity = sfDeadText.getFillColor().a;
+        if(opacity < 255){
+            sf::Color outlineColor = sfDeadText.getOutlineColor();
+            sf::Color fillColor = sfDeadText.getFillColor();
+            int changerate = 2;
+            if(opacity + changerate >= 255){
+                outlineColor.a = 255;
+                fillColor.a = 255;
+                readyToExit = true;
+
+            } else if(opacity + changerate < 255){
+                outlineColor.a += changerate;
+                fillColor.a += changerate;
+            }
+            sfDeadText.setOutlineColor(outlineColor);
+            sfDeadText.setFillColor(fillColor);
+        }
+        machine->getWindow().draw(sfDeadText);
+    }
+
 }
 
 void TestState::checkEnemyPlayerCollsion() {// See if enemy attacks player
@@ -383,14 +415,20 @@ void TestState::handleEvent(sf::Event &event) {
             std::cout << "didnt hit player" << std::endl;
         }
          */
-        if(event.mouseButton.button == sf::Mouse::Left){
-            player->fireWeapon(bullets);
-            fireheld = true;
+        if(readyToExit){
+            machine->SetState(GameMachine::StateId::MAINMENU);
+        } else if(!playerIsDead){
+            if(event.mouseButton.button == sf::Mouse::Left){
+                player->fireWeapon(bullets);
+                fireheld = true;
+            }
         }
 
     }else if(event.type == sf::Event::MouseButtonReleased){
-        if(event.mouseButton.button == sf::Mouse::Left){
-            fireheld = false;
+        if(!playerIsDead){
+            if(event.mouseButton.button == sf::Mouse::Left){
+                fireheld = false;
+            }
         }
     } if(event.type == sf::Event::KeyPressed){
 
@@ -403,13 +441,15 @@ void TestState::handleEvent(sf::Event &event) {
         }else if(event.key.code == sf::Keyboard::Num3){
 
         }else if(event.key.code == sf::Keyboard::F){
-            for(auto store: stores){
-                if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
-                    if(points >= 100){
-                        points -= 100;
-                        // Give player more ammo
-                        player->currentWeapon->magazines = player->currentWeapon->maxMagazineCount;
-                        player->currentWeapon->ammo = player->currentWeapon->maxAmmoCount;
+            if(!playerIsDead){
+                for(auto store: stores){
+                    if(player->getsfSprite().getGlobalBounds().intersects(store->getGlobalBounds())){
+                        if(points >= 100){
+                            points -= 100;
+                            // Give player more ammo
+                            player->currentWeapon->magazines = player->currentWeapon->maxMagazineCount;
+                            player->currentWeapon->ammo = player->currentWeapon->maxAmmoCount;
+                        }
                     }
                 }
             }
