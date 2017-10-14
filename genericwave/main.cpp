@@ -9,11 +9,7 @@ int main() {
      * Random crash sometimes with obstacle collision
      *
      * Main todo:
-     * -Make pickups random position
-     * -Finish multiplier pickup
-     * -Make Player have health
-     * -Make player lose health when hit by enemy
-     *
+     * when player dies and returns to main menu, need to reset the view or play button may appear offscreen
      *
      * Need to create bounds for the game
      * Should view control be in gamemachine.cpp or in each state???
@@ -36,12 +32,9 @@ int main() {
      *
      * Round obstacles for rebound shots
      *
-     * Create a store for player to buy ammo and other things
      * Should reloading weapon take time?
      *
      * If game is slowing down change pickup creating/deletion
-     *
-     * Enemy may drop pickup on death
      *
      * Make bullet contain list of enemies it has hit, so that it only hits each enemy once
      *

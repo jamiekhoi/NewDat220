@@ -102,7 +102,7 @@ protected:
 
     void checkMultiplier();
 
-    void checkEnemyPlayerCollsion();
+    void checkEnemyPlayerCollision();
 
     void drawHUD();
 

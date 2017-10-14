@@ -167,7 +167,7 @@ void TestState::Running() {
     checkPlayerPickup();
 
     // See if enemy attacks player
-    checkEnemyPlayerCollsion();
+    checkEnemyPlayerCollision();
 
 
     // See if player is touching a store
@@ -307,7 +307,7 @@ void TestState::drawHUD() {// Info about the window view
 
 }
 
-void TestState::checkEnemyPlayerCollsion() {// See if enemy attacks player
+void TestState::checkEnemyPlayerCollision() {// See if enemy attacks player
     if(playerWasHit){
         if(playerHitClock.getElapsedTime().asSeconds() > 1.5){
             playerWasHit = false;
@@ -609,7 +609,8 @@ void TestState::resetEverything() {
     sfDeadText.setFillColor(sf::Color(50,125,100,1));
     sfDeadText.setOutlineColor(sf::Color(255,255,255,1));
 
-
+    // Resets the view. Otherwise the formatting in other States() would be wrong
+    machine->getWindow().setView(machine->getWindow().getDefaultView());
 }
 
 
