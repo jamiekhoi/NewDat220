@@ -122,6 +122,33 @@ genericwave/fast:
 	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/build
 .PHONY : genericwave/fast
 
+AudioPlayer.obj: AudioPlayer.cpp.obj
+
+.PHONY : AudioPlayer.obj
+
+# target to build an object file
+AudioPlayer.cpp.obj:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/AudioPlayer.cpp.obj
+.PHONY : AudioPlayer.cpp.obj
+
+AudioPlayer.i: AudioPlayer.cpp.i
+
+.PHONY : AudioPlayer.i
+
+# target to preprocess a source file
+AudioPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/AudioPlayer.cpp.i
+.PHONY : AudioPlayer.cpp.i
+
+AudioPlayer.s: AudioPlayer.cpp.s
+
+.PHONY : AudioPlayer.s
+
+# target to generate assembly for a file
+AudioPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles\genericwave.dir\build.make CMakeFiles/genericwave.dir/AudioPlayer.cpp.s
+.PHONY : AudioPlayer.cpp.s
+
 Bullet.obj: Bullet.cpp.obj
 
 .PHONY : Bullet.obj
@@ -563,6 +590,9 @@ help:
 	@echo ... genericwave
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... AudioPlayer.obj
+	@echo ... AudioPlayer.i
+	@echo ... AudioPlayer.s
 	@echo ... Bullet.obj
 	@echo ... Bullet.i
 	@echo ... Bullet.s

@@ -258,7 +258,6 @@ void TestState::drawHUD() {// Info about the window view
 
     // Draw multiplier text
     if(multiplier != 1){
-        std::cout << "fjkd2 " << std::endl;
         sfMultiplierText.setString("X" + std::__cxx11::to_string(multiplier));
         sfMultiplierText.setPosition(tempcenter.x + tempsize.x / 2 - 200, tempcenter.y - tempsize.y / 2 + 75);
         machine->getWindow().draw(sfMultiplierText);

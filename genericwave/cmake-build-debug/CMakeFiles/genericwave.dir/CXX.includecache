@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Jack/Desktop/NewDat220/genericwave/AudioPlayer.cpp
+iostream
+-
+AudioPlayer.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/AudioPlayer.h
+
+C:/Users/Jack/Desktop/NewDat220/genericwave/AudioPlayer.h
+SFML/Audio.hpp
+-
+
 C:/Users/Jack/Desktop/NewDat220/genericwave/Bullet.cpp
 cmath
 -
@@ -167,6 +177,8 @@ SFML/Audio.hpp
 -
 state.h
 C:/Users/Jack/Desktop/NewDat220/genericwave/state.h
+AudioPlayer.h
+C:/Users/Jack/Desktop/NewDat220/genericwave/AudioPlayer.h
 
 C:/Users/Jack/Desktop/NewDat220/genericwave/layer.cpp
 SFML/Graphics.hpp

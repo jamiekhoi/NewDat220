@@ -7,6 +7,7 @@
 
 #include <SFML/Audio.hpp>
 #include "state.h"
+#include "AudioPlayer.h"
 
 class State;
 
@@ -27,10 +28,8 @@ public:
 
 
 protected:
-    void playtest();
-    sf::Sound soundeffectplayer;
-    sf::SoundBuffer selectsound;
 
+    AudioPlayer audioplayer;
 
     bool running = true;
     State* currentState;
